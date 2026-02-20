@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swetha M — My Samosa Story as a Product Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #D4A017;
+  --gold-light: #F2D06B;
+  --gold-dark: #A37B0B;
+  --cream: #FFF8E7;
+  --cream-dark: #F5E6C8;
+  --charcoal: #1A1410;
+  --charcoal-light: #2D2520;
+  --brown: #3D2B1F;
+  --brown-light: #6B4F3A;
+  --orange: #E8960C;
+  --peach: #FFDAB3;
+  --white: #FFFDF7;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow: hidden; background: var(--charcoal); }
+body { font-family: var(--font-body); color: var(--charcoal); overflow: hidden; height: 100vh; }
+::-webkit-scrollbar { width: 0; }
+
+/* Grain */
+.grain-overlay {
+  position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+  pointer-events: none; z-index: 9998; opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.5s steps(10) infinite;
+}
+@keyframes grain {
+  0%,100%{transform:translate(0,0)} 20%{transform:translate(-5%,-10%)} 40%{transform:translate(3%,-15%)}
+  60%{transform:translate(12%,9%)} 80%{transform:translate(-1%,7%)}
+}
+
+/* Layout */
+.app { display: flex; height: 100vh; width: 100vw; overflow: hidden; }
+
+/* ══════ SIDEBAR ══════ */
+.sidebar {
+  width: 15%; min-width: 180px; max-width: 240px; height: 100vh;
+  background: var(--charcoal); position: relative; z-index: 100;
+  display: flex; flex-direction: column; align-items: center; padding: 2rem 0;
+  border-right: 1px solid rgba(212,160,23,0.12);
+}
+.sidebar-logo { font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); font-weight: 700; cursor: pointer; transition: .3s; letter-spacing:.03em; }
+.sidebar-logo:hover { color: var(--gold-light); }
+.sidebar-tag { font-family: var(--font-mono); font-size: .5rem; color: rgba(212,160,23,0.4); letter-spacing: .15em; text-transform: uppercase; margin-bottom: 2rem; margin-top: .2rem; }
+
+/* Tracker */
+.tracker { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; }
+.tracker-rail { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: rgba(212,160,23,0.1); transform: translateX(-50%); }
+.tracker-fill { position: absolute; left: 50%; top: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--orange)); transform: translateX(-50%); height: 0%; transition: height .6s cubic-bezier(.22,1,.36,1); box-shadow: 0 0 12px rgba(212,160,23,0.4); }
+
+.tracker-nodes { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: space-between; height: 100%; width: 100%; }
+.tracker-node { display: flex; align-items: center; cursor: pointer; position: relative; height: 20px; }
+.node-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(212,160,23,0.25); background: var(--charcoal); position: absolute; left: 50%; transform: translateX(-50%); transition: all .4s cubic-bezier(.22,1,.36,1); }
+.tracker-node.active .node-dot { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 14px rgba(212,160,23,0.6); transform: translateX(-50%) scale(1.3); }
+.tracker-node.passed .node-dot { background: var(--gold-dark); border-color: var(--gold-dark); }
+.node-label { font-family: var(--font-mono); font-size: .55rem; color: rgba(212,160,23,0.3); text-transform: uppercase; letter-spacing: .1em; white-space: nowrap; transition: .4s; position: absolute; left: calc(50% + 16px); }
+.tracker-node.active .node-label { color: var(--gold); font-weight: 700; }
+.tracker-node.passed .node-label { color: rgba(212,160,23,0.55); }
+
+/* Samosa tracker icon */
+.samosa-icon {
+  position: absolute; left: 50%; transform: translateX(-50%); width: 32px; height: 32px;
+  transition: top .6s cubic-bezier(.22,1,.36,1); z-index: 5;
+  filter: drop-shadow(0 0 6px rgba(212,160,23,0.5));
+}
+
+/* Sidebar bottom */
+.sidebar-btm { display: flex; flex-direction: column; align-items: center; gap: .6rem; margin-top: 1.5rem; }
+.resume-btn {
+  display: flex; align-items: center; gap: .4rem;
+  background: transparent; border: 1px solid var(--gold); color: var(--gold);
+  font-family: var(--font-mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: .5rem .9rem; border-radius: 4px; cursor: pointer; text-decoration: none; transition: .3s;
+}
+.resume-btn:hover { background: var(--gold); color: var(--charcoal); box-shadow: 0 0 16px rgba(212,160,23,0.3); }
+.sidebar-social { display: flex; gap: .6rem; }
+.sidebar-social a { color: rgba(212,160,23,0.35); transition: .3s; display: flex; align-items: center; }
+.sidebar-social a:hover { color: var(--gold); transform: translateY(-2px); }
+
+/* ══════ MAIN ══════ */
+.main { flex: 1; height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+.sec { height: 100vh; scroll-snap-align: start; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+
+/* Blobs */
+.blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .12; pointer-events: none; animation: blobF 12s ease-in-out infinite alternate; }
+@keyframes blobF {
+  0%{transform:translate(0,0) scale(1)} 50%{transform:translate(25px,-30px) scale(1.1)} 100%{transform:translate(-15px,15px) scale(.95)}
+}
+
+/* Reveal */
+.rv { opacity: 0; transform: translateY(35px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.rv.vis { opacity: 1; transform: translateY(0); }
+.rv:nth-child(2){transition-delay:.08s} .rv:nth-child(3){transition-delay:.16s}
+.rv:nth-child(4){transition-delay:.24s} .rv:nth-child(5){transition-delay:.32s} .rv:nth-child(6){transition-delay:.4s}
+
+/* Section common */
+.sec-inner { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 4rem 6%; position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; }
+.sec-num { font-family: var(--font-display); font-size: clamp(4rem,8vw,7rem); font-weight: 900; font-style: italic; opacity: .07; position: absolute; top: 2rem; right: 4%; pointer-events: none; }
+.sec-label { font-family: var(--font-mono); font-size: .65rem; text-transform: uppercase; letter-spacing: .25em; margin-bottom: .4rem; }
+.sec-title { font-family: var(--font-display); font-size: clamp(2rem,4vw,3.2rem); font-weight: 900; line-height: 1.15; margin-bottom: .8rem; }
+.sec-sub { font-family: var(--font-display); font-size: 1rem; font-style: italic; font-weight: 400; line-height: 1.6; max-width: 560px; margin-bottom: 1.2rem; }
+.sec-body { font-size: .85rem; line-height: 1.7; max-width: 500px; opacity: .7; }
+
+/* ══════ HOME ══════ */
+.sec-home { background: radial-gradient(ellipse at 30% 50%, #2D2318 0%, var(--charcoal) 70%); }
+.home-wrap { position: relative; z-index: 2; display: flex; align-items: center; gap: 3.5rem; padding: 0 6%; width: 100%; max-width: 1100px; }
+.home-text { flex: 1; }
+.home-greet { font-family: var(--font-mono); font-size: .7rem; color: var(--gold); text-transform: uppercase; letter-spacing: .3em; margin-bottom: .8rem; opacity:0; transform:translateY(20px); animation: fiu .7s .3s forwards; }
+.home-name { font-family: var(--font-display); font-size: clamp(2.8rem,5vw,4.2rem); color: var(--cream); font-weight: 900; line-height: 1.1; margin-bottom: .4rem; opacity:0; transform:translateY(25px); animation: fiu .7s .5s forwards; }
+.home-name span { display: block; font-weight: 400; font-style: italic; font-size: .5em; color: var(--gold-light); margin-top: .15em; }
+.home-role { font-size: 1rem; color: var(--cream-dark); font-weight: 300; margin-bottom: 1.2rem; opacity:0; transform:translateY(20px); animation: fiu .7s .65s forwards; }
+.home-role strong { color: var(--gold); font-weight: 700; }
+.home-desc { font-size: .85rem; color: rgba(245,230,200,0.55); line-height: 1.7; max-width: 440px; margin-bottom: 1.5rem; opacity:0; transform:translateY(20px); animation: fiu .7s .8s forwards; }
+
+.home-samosa { flex: 0 0 auto; position: relative; width: 280px; height: 280px; opacity:0; animation: samIn 1s .6s forwards; }
+@keyframes samIn { 0%{opacity:0;transform:scale(.5) rotate(-20deg)} 60%{opacity:1;transform:scale(1.03) rotate(3deg)} 100%{opacity:1;transform:scale(1) rotate(0)} }
+
+.samosa-hero { width: 100%; height: 100%; animation: samFloat 4s ease-in-out infinite; }
+@keyframes samFloat { 0%,100%{transform:translateY(0) rotate(0)} 25%{transform:translateY(-10px) rotate(1.5deg)} 75%{transform:translateY(6px) rotate(-1.5deg)} }
+
+.speech { position: absolute; top: -16px; right: -24px; background: var(--cream); color: var(--charcoal); font-family: var(--font-display); font-size: .8rem; font-weight: 700; padding: .6rem 1rem; border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.2); opacity:0; animation: pop .4s 1.4s forwards; white-space: nowrap; }
+.speech::after { content:''; position: absolute; bottom: -7px; left: 28px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid var(--cream); }
+@keyframes pop { 0%{opacity:0;transform:scale(.5)} 60%{opacity:1;transform:scale(1.08)} 100%{opacity:1;transform:scale(1)} }
+
+.scroll-cta { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .4rem; opacity:0; animation: fiu .7s 1.6s forwards; cursor: pointer; }
+.scroll-cta span { font-family: var(--font-mono); font-size: .55rem; color: rgba(212,160,23,0.5); text-transform: uppercase; letter-spacing: .2em; }
+.scroll-arrow { width: 20px; height: 20px; border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(45deg); animation: bounce 1.5s infinite; }
+@keyframes bounce { 0%,100%{transform:rotate(45deg) translate(0,0);opacity:1} 50%{transform:rotate(45deg) translate(4px,4px);opacity:.5} }
+@keyframes fiu { to{opacity:1;transform:translateY(0)} }
+
+/* Deco circles */
+.deco { border-radius: 50%; border: 1px solid; position: absolute; pointer-events: none; }
+
+/* ══════ SOFT DOUGH ══════ */
+.sec-sd { background: linear-gradient(135deg, var(--cream) 0%, #F5E6C8 50%, #EDD9AF 100%); color: var(--charcoal); }
+.sec-sd .sec-num,.sec-sd .sec-label { color: var(--gold-dark); }
+.dough-vis { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 280px; height: 280px; }
+.dough-blob { width: 100%; height: 100%; background: radial-gradient(circle, var(--gold-light) 0%, var(--gold) 60%, var(--gold-dark) 100%); border-radius: 60% 40% 50% 50%/50% 60% 40% 50%; animation: morph 8s ease-in-out infinite; box-shadow: 0 16px 50px rgba(163,123,11,0.2); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:2rem; }
+@keyframes morph { 0%,100%{border-radius:60% 40% 50% 50%/50% 60% 40% 50%} 25%{border-radius:50% 60% 40% 60%/60% 40% 60% 40%} 50%{border-radius:40% 50% 60% 40%/40% 60% 50% 60%} 75%{border-radius:55% 45% 55% 45%/45% 55% 45% 55%} }
+.dough-blob .ph { font-family: var(--font-mono); font-size: .5rem; text-transform: uppercase; letter-spacing: .15em; opacity: .5; margin-bottom: .4rem; color: var(--charcoal); }
+.dough-blob .pt { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--charcoal); }
+
+.pills { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.2rem; }
+.pill { background: rgba(26,20,16,0.05); border: 1px solid rgba(26,20,16,0.1); padding: .5rem 1rem; border-radius: 100px; font-size: .7rem; font-weight: 500; color: var(--brown); transition: .3s; cursor: default; }
+.pill:hover { background: var(--gold); color: var(--charcoal); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(212,160,23,0.25); }
+
+/* ══════ FILLING ══════ */
+.sec-fl { background: linear-gradient(160deg, #2D2318 0%, var(--charcoal) 40%, #1D1815 100%); color: var(--cream); }
+.sec-fl .sec-num,.sec-fl .sec-label { color: var(--gold); }
+.sec-fl .sec-sub { color: var(--peach); }
+
+/* ══════ DEEP FRY ══════ */
+.sec-df { background: linear-gradient(160deg, #3D2B1F 0%, #2D1F15 50%, #1A1410 100%); color: var(--cream); }
+.sec-df .sec-num,.sec-df .sec-label { color: var(--orange); }
+.sec-df .sec-sub { color: var(--peach); }
+
+.heat-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hp { position: absolute; bottom: -10px; border-radius: 50%; opacity: 0; animation: rise 3s infinite; }
+@keyframes rise { 0%{opacity:0;transform:translateY(0) scale(1)} 10%{opacity:.6} 90%{opacity:0} 100%{transform:translateY(-100vh) scale(.3);opacity:0} }
+
+/* ══════ PLATING ══════ */
+.sec-pl { background: radial-gradient(ellipse at 50% 80%, #2D2318 0%, var(--charcoal) 60%); color: var(--cream); }
+.sec-pl .sec-num { color: var(--gold); }
+.sec-pl .sec-label { color: var(--gold-light); }
+
+.pl-wrap { display: flex; gap: 3rem; align-items: flex-start; margin-top: 1.2rem; }
+.pl-msg { flex: 1; }
+.pl-msg p { font-family: var(--font-display); font-size: 1.05rem; font-style: italic; color: var(--peach); line-height: 1.7; margin-bottom: 1.5rem; }
+
+.c-links { display: flex; flex-direction: column; gap: .8rem; }
+.c-link { display: flex; align-items: center; gap: .8rem; text-decoration: none; color: var(--cream); font-size: .9rem; padding: .8rem 1.2rem; border: 1px solid rgba(212,160,23,0.12); border-radius: 10px; transition: .4s; background: rgba(255,255,255,0.02); }
+.c-link:hover { border-color: var(--gold); background: rgba(212,160,23,0.07); transform: translateX(6px); box-shadow: 0 4px 16px rgba(212,160,23,0.1); }
+.c-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(212,160,23,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: .3s; }
+.c-link:hover .c-icon { background: var(--gold); color: var(--charcoal); }
+.c-icon svg { width: 18px; height: 18px; }
+.c-label { font-family: var(--font-mono); font-size: .5rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); margin-bottom: .15rem; }
+
+.pl-samosa { flex: 0 0 240px; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+.pl-samosa svg { width: 180px; height: 180px; animation: present 3s ease-in-out infinite; }
+@keyframes present { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-8px) rotate(2deg)} }
+
+.dl-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--gold); color: var(--charcoal); font-family: var(--font-mono); font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .75rem 1.5rem; border-radius: 6px; text-decoration: none; transition: .3s; box-shadow: 0 4px 16px rgba(212,160,23,0.3); }
+.dl-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,23,0.4); }
+
+.copy { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: .5rem; color: rgba(212,160,23,0.25); letter-spacing: .1em; }
+
+/* ══════ PROJECT CARDS ══════ */
+.cards { display: flex; gap: 1.2rem; margin-top: 1.2rem; flex-wrap: wrap; }
+.card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(212,160,23,0.12);
+  border-radius: 10px; padding: 1.3rem; width: 260px; cursor: pointer;
+  transition: all .4s cubic-bezier(.22,1,.36,1); position: relative; overflow: hidden;
+}
+.card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(212,160,23,0.08) 0%,transparent 50%); opacity:0; transition: opacity .4s; }
+.card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(212,160,23,0.12); }
+.card:hover::before { opacity: 1; }
+.card-cat { font-family: var(--font-mono); font-size: .5rem; text-transform: uppercase; letter-spacing: .18em; color: var(--gold); margin-bottom: .6rem; position: relative; z-index: 1; }
+.card-t { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--cream); margin-bottom: .4rem; position: relative; z-index: 1; }
+.card-d { font-size: .7rem; color: rgba(245,230,200,0.45); line-height: 1.5; position: relative; z-index: 1; }
+.card-arr { position: absolute; bottom: .8rem; right: .8rem; width: 24px; height: 24px; border-radius: 50%; border: 1px solid rgba(212,160,23,0.25); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: .7rem; transition: .3s; }
+.card:hover .card-arr { background: var(--gold); color: var(--charcoal); border-color: var(--gold); }
+
+/* ══════ NAV ══════ */
+.nav-f { position: fixed; top: 1.2rem; right: 1.5rem; z-index: 500; display: flex; gap: .6rem; }
+.nav-btn { font-family: var(--font-mono); font-size: .6rem; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); background: rgba(26,20,16,0.7); backdrop-filter: blur(8px); border: 1px solid rgba(212,160,23,0.18); padding: .45rem 1rem; border-radius: 100px; cursor: pointer; transition: .3s; text-decoration: none; }
+.nav-btn:hover { background: var(--gold); color: var(--charcoal); border-color: var(--gold); }
+
+/* ══════ ABOUT OVERLAY ══════ */
+.about-ov { position: fixed; inset: 0; background: rgba(26,20,16,0.95); backdrop-filter: blur(20px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .5s; }
+.about-ov.open { opacity: 1; pointer-events: all; }
+.about-ov.open .about-c { transform: translateY(0); opacity: 1; }
+.about-x { position: absolute; top: 1.5rem; right: 1.5rem; width: 44px; height: 44px; border: 1px solid rgba(212,160,23,0.25); border-radius: 50%; background: none; color: var(--gold); font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: .3s; z-index: 10; }
+.about-x:hover { background: var(--gold); color: var(--charcoal); }
+.about-c { width: 90%; max-width: 860px; max-height: 85vh; overflow-y: auto; padding: 2.5rem; transform: translateY(25px); opacity: 0; transition: all .6s cubic-bezier(.22,1,.36,1) .1s; }
+.about-c::-webkit-scrollbar{width:4px} .about-c::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px}
+.ab-label { font-family: var(--font-mono); font-size: .65rem; color: var(--gold); text-transform: uppercase; letter-spacing: .25em; margin-bottom: .8rem; }
+.ab-h { font-family: var(--font-display); font-size: 2.2rem; color: var(--cream); font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem; }
+.ab-intro { font-size: .95rem; color: var(--peach); line-height: 1.8; max-width: 660px; font-style: italic; font-family: var(--font-display); margin-bottom: 1.2rem; }
+.roles { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.role { font-family: var(--font-display); font-size: .8rem; font-weight: 700; color: var(--cream); padding: .4rem .8rem; border: 1px solid rgba(212,160,23,0.18); border-radius: 6px; background: rgba(212,160,23,0.04); }
+.ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.ab-sec-t { font-family: var(--font-mono); font-size: .6rem; color: var(--gold); text-transform: uppercase; letter-spacing: .18em; margin-bottom: 1rem; padding-bottom: .4rem; border-bottom: 1px solid rgba(212,160,23,0.12); }
+.tl-item { margin-bottom: 1.2rem; padding-left: 1rem; border-left: 2px solid rgba(212,160,23,0.12); }
+.tl-item .dt { font-family: var(--font-mono); font-size: .55rem; color: var(--gold); letter-spacing: .08em; }
+.tl-item .rl { font-family: var(--font-display); font-size: .9rem; font-weight: 700; color: var(--cream); margin: .2rem 0; }
+.tl-item .og { font-size: .75rem; color: var(--peach); font-style: italic; }
+.tl-item .ds { font-size: .75rem; color: rgba(245,230,200,0.45); line-height: 1.5; margin-top: .3rem; }
+.sk-grid { display: flex; flex-wrap: wrap; gap: .5rem; }
+.sk { background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.15); color: var(--gold-light); font-family: var(--font-mono); font-size: .55rem; letter-spacing: .04em; padding: .35rem .7rem; border-radius: 100px; transition: .3s; }
+.sk:hover { background: var(--gold); color: var(--charcoal); border-color: var(--gold); }
+.tools { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+.tool { font-size: .7rem; color: rgba(245,230,200,0.5); padding: .25rem .5rem; background: rgba(255,255,255,0.03); border-radius: 4px; }
+.ab-vol { margin-top: .8rem; }
+.ab-vol p { font-size: .75rem; color: rgba(245,230,200,0.5); line-height: 1.6; margin-bottom: .6rem; }
+
+/* ══════ MODAL ══════ */
+.modal-ov { position: fixed; inset: 0; background: rgba(26,20,16,0.9); backdrop-filter: blur(12px); z-index: 900; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .4s; }
+.modal-ov.open { opacity: 1; pointer-events: all; }
+.modal-ov.open .modal { transform: scale(1) translateY(0); opacity: 1; }
+.modal { background: var(--charcoal-light); border: 1px solid rgba(212,160,23,0.18); border-radius: 14px; padding: 2.2rem; width: 90%; max-width: 650px; max-height: 80vh; overflow-y: auto; transform: scale(.9) translateY(16px); opacity: 0; transition: all .5s cubic-bezier(.22,1,.36,1); position: relative; }
+.modal-x { position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px; border: 1px solid rgba(212,160,23,0.25); border-radius: 50%; background: none; color: var(--gold); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: .3s; }
+.modal-x:hover { background: var(--gold); color: var(--charcoal); }
+.m-cat { font-family: var(--font-mono); font-size: .55rem; text-transform: uppercase; letter-spacing: .18em; color: var(--gold); margin-bottom: .6rem; }
+.m-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--cream); margin-bottom: .8rem; }
+.m-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.2rem; }
+.m-tag { font-family: var(--font-mono); font-size: .5rem; text-transform: uppercase; letter-spacing: .08em; color: var(--orange); padding: .25rem .5rem; border: 1px solid rgba(232,150,12,0.25); border-radius: 3px; }
+.m-body { font-size: .85rem; color: rgba(245,230,200,0.65); line-height: 1.7; }
+.m-body p { margin-bottom: .8rem; }
+
+/* ══════ RESPONSIVE ══════ */
+@media(max-width:900px) {
+  .sidebar{display:none} .home-wrap{flex-direction:column;gap:2rem;text-align:center;padding:0 5%}
+  .home-desc{margin:0 auto 1.5rem} .home-samosa{width:200px;height:200px} .dough-vis{display:none}
+  .pl-wrap{flex-direction:column} .pl-samosa{flex:none;order:-1} .ab-grid{grid-template-columns:1fr}
+  .cards{flex-direction:column} .card{width:100%} .nav-f{right:1rem;top:1rem}
+}
+</style>
+</head>
+<body>
+<div class="grain-overlay"></div>
+
+<nav class="nav-f">
+  <button class="nav-btn" id="aboutBtn">About</button>
+</nav>
+
+<div class="app">
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sidebar">
+  <div class="sidebar-logo" onclick="go(0)">Swetha</div>
+  <div class="sidebar-tag">Samosa Story</div>
+  <div class="tracker">
+    <div class="tracker-rail"></div>
+    <div class="tracker-fill" id="tFill"></div>
+    <svg class="samosa-icon" id="samIcon" viewBox="0 0 60 60">
+      <defs><radialGradient id="sg" cx="40%" cy="40%"><stop offset="0%" stop-color="#F2D06B"/><stop offset="60%" stop-color="#D4A017"/><stop offset="100%" stop-color="#A37B0B"/></radialGradient></defs>
+      <path d="M30 6 L54 48 Q54 54 48 54 L12 54 Q6 54 6 48 Z" fill="url(#sg)" stroke="#8B6914" stroke-width="1.5"/>
+      <circle cx="22" cy="32" r="2.5" fill="#1A1410"/><circle cx="38" cy="32" r="2.5" fill="#1A1410"/>
+      <circle cx="23" cy="31" r="1" fill="white" opacity=".8"/><circle cx="39" cy="31" r="1" fill="white" opacity=".8"/>
+      <path d="M24 38 Q30 44 36 38" fill="none" stroke="#1A1410" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="18" cy="37" rx="3" ry="2" fill="#FFDAB3" opacity=".4"/><ellipse cx="42" cy="37" rx="3" ry="2" fill="#FFDAB3" opacity=".4"/>
+    </svg>
+    <div class="tracker-nodes">
+      <div class="tracker-node active" onclick="go(0)"><div class="node-dot"></div><span class="node-label">Home</span></div>
+      <div class="tracker-node" onclick="go(1)"><div class="node-dot"></div><span class="node-label">Soft Dough</span></div>
+      <div class="tracker-node" onclick="go(2)"><div class="node-dot"></div><span class="node-label">Filling</span></div>
+      <div class="tracker-node" onclick="go(3)"><div class="node-dot"></div><span class="node-label">Deep Fry</span></div>
+      <div class="tracker-node" onclick="go(4)"><div class="node-dot"></div><span class="node-label">Plating</span></div>
+    </div>
+  </div>
+  <div class="sidebar-btm">
+    <a href="Resume.pdf" download class="resume-btn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Resume
+    </a>
+    <div class="sidebar-social">
+      <a href="mailto:swetha@example.com" title="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+      <a href="https://linkedin.com/in/swetha" target="_blank" title="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main" id="main">
+
+<!-- HOME -->
+<section class="sec sec-home" id="s0">
+  <div class="blob" style="width:380px;height:380px;background:radial-gradient(circle,rgba(212,160,23,0.25),transparent);top:-10%;right:20%;animation-duration:14s"></div>
+  <div class="blob" style="width:280px;height:280px;background:radial-gradient(circle,rgba(232,150,12,0.18),transparent);bottom:10%;left:10%;animation-duration:10s;animation-delay:2s"></div>
+  <div class="deco" style="width:100px;height:100px;border-color:rgba(212,160,23,0.06);top:15%;left:8%"></div>
+  <div class="deco" style="width:50px;height:50px;border-color:rgba(212,160,23,0.05);bottom:25%;right:12%"></div>
+  <div class="home-wrap">
+    <div class="home-text">
+      <div class="home-greet">Product Designer</div>
+      <h1 class="home-name">Swetha<span>My Samosa Story</span></h1>
+      <p class="home-role">Cooking up <strong>user-centric designs!</strong></p>
+      <p class="home-desc">Just like crafting a samosa, my journey in product design is all about molding ideas with care, filling them with purpose, and giving them the perfect crispy finish to make users happy.</p>
+    </div>
+    <div class="home-samosa">
+      <div class="speech">Hey! I'm Swetha! 👋</div>
+      <svg class="samosa-hero" viewBox="0 0 300 300">
+        <defs>
+          <radialGradient id="hg" cx="40%" cy="35%"><stop offset="0%" stop-color="#F7E09C"/><stop offset="40%" stop-color="#F2D06B"/><stop offset="75%" stop-color="#D4A017"/><stop offset="100%" stop-color="#A37B0B"/></radialGradient>
+          <filter id="ss"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#A37B0B" flood-opacity=".3"/></filter>
+        </defs>
+        <path d="M150 30 L270 230 Q275 252 255 255 L45 255 Q25 252 30 230 Z" fill="url(#hg)" filter="url(#ss)" stroke="#8B6914" stroke-width="2"/>
+        <path d="M100 140 Q130 130 160 145" fill="none" stroke="#C49215" stroke-width="1" opacity=".4"/>
+        <path d="M120 170 Q155 158 190 172" fill="none" stroke="#C49215" stroke-width="1" opacity=".3"/>
+        <path d="M80 200 Q140 185 210 202" fill="none" stroke="#C49215" stroke-width="1" opacity=".3"/>
+        <ellipse cx="115" cy="155" rx="13" ry="15" fill="white"/>
+        <ellipse cx="185" cy="155" rx="13" ry="15" fill="white"/>
+        <circle cx="118" cy="157" r="7" fill="#1A1410"><animate attributeName="cx" values="118;121;118;115;118" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="188" cy="157" r="7" fill="#1A1410"><animate attributeName="cx" values="188;191;188;185;188" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="120" cy="154" r="2.5" fill="white" opacity=".9"/><circle cx="190" cy="154" r="2.5" fill="white" opacity=".9"/>
+        <path d="M125 190 Q150 215 175 190" fill="none" stroke="#1A1410" stroke-width="3" stroke-linecap="round"/>
+        <ellipse cx="95" cy="185" rx="11" ry="7" fill="#FFDAB3" opacity=".45"/><ellipse cx="205" cy="185" rx="11" ry="7" fill="#FFDAB3" opacity=".45"/>
+        <g><path d="M48 215 Q20 180 40 150" fill="none" stroke="#D4A017" stroke-width="5" stroke-linecap="round"><animate attributeName="d" values="M48 215 Q20 180 40 150;M48 215 Q15 175 30 140;M48 215 Q20 180 40 150" dur="2s" repeatCount="indefinite"/></path><circle cx="40" cy="148" r="7" fill="#D4A017"><animate attributeName="cy" values="148;138;148" dur="2s" repeatCount="indefinite"/><animate attributeName="cx" values="40;30;40" dur="2s" repeatCount="indefinite"/></circle></g>
+        <g><path d="M252 215 Q280 180 260 150" fill="none" stroke="#D4A017" stroke-width="5" stroke-linecap="round"><animate attributeName="d" values="M252 215 Q280 180 260 150;M252 215 Q285 175 270 140;M252 215 Q280 180 260 150" dur="2s" repeatCount="indefinite"/></path><circle cx="260" cy="148" r="7" fill="#D4A017"><animate attributeName="cy" values="148;138;148" dur="2s" repeatCount="indefinite"/><animate attributeName="cx" values="260;270;260" dur="2s" repeatCount="indefinite"/></circle></g>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-cta" onclick="go(1)"><span>Scroll to explore</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- SOFT DOUGH -->
+<section class="sec sec-sd" id="s1">
+  <div class="blob" style="width:320px;height:320px;background:radial-gradient(circle,rgba(163,123,11,0.18),transparent);top:0;right:-5%;animation-duration:16s"></div>
+  <span class="sec-num">01</span>
+  <div class="sec-inner">
+    <div class="sec-label rv">Childhood to Adolescence</div>
+    <h2 class="sec-title rv">Soft Dough</h2>
+    <p class="sec-sub rv">Where I let myself be shaped,<br>so I can rise into something stronger.</p>
+    <p class="sec-body rv">Absorbing. Adapting. Becoming. From childhood experiments to architecture school — this was my phase of molding the foundation. Every curiosity became a part of the mix.</p>
+    <div class="pills rv">
+      <span class="pill">Director & Actor</span><span class="pill">Upcycle Artist</span>
+      <span class="pill">Art Workshops</span><span class="pill">Architecture</span><span class="pill">Preserving History</span>
+    </div>
+  </div>
+  <div class="dough-vis">
+    <div class="dough-blob"><span class="ph">Grade 5 → UG</span><span class="pt">Early Experiments<br>with Design</span></div>
+  </div>
+</section>
+
+<!-- FILLING -->
+<section class="sec sec-fl" id="s2">
+  <div class="blob" style="width:280px;height:280px;background:radial-gradient(circle,rgba(212,160,23,0.12),transparent);bottom:5%;left:-5%;animation-duration:12s"></div>
+  <div class="blob" style="width:180px;height:180px;background:radial-gradient(circle,rgba(232,150,12,0.1),transparent);top:15%;right:10%;animation-duration:18s"></div>
+  <span class="sec-num">02</span>
+  <div class="sec-inner">
+    <div class="sec-label rv">UG to Masters</div>
+    <h2 class="sec-title rv">Filling</h2>
+    <p class="sec-sub rv">No longer empty dough — being filled with knowledge, experience, stories, failure, courage, and clarity.</p>
+    <p class="sec-body rv">Gaining skills, filling up ideas — designing thoughtful, impactful solutions.</p>
+    <div class="cards rv">
+      <div class="card" onclick="openM('piracy')">
+        <span class="card-cat">Virtual Social Behaviour</span>
+        <h3 class="card-t">Addressing Piracy in Telegram</h3>
+        <p class="card-d">How human social behaviours exist in virtual platforms and how interfaces trigger such behaviour.</p>
+        <div class="card-arr">→</div>
+      </div>
+      <div class="card" onclick="openM('behavior')">
+        <span class="card-cat">Behavioural Design</span>
+        <h3 class="card-t">Clean Hands Among Food Vendors</h3>
+        <p class="card-d">Creating designs that influence behavior in a positive way through understanding how people think and act.</p>
+        <div class="card-arr">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP FRY -->
+<section class="sec sec-df" id="s3">
+  <div class="blob" style="width:320px;height:320px;background:radial-gradient(circle,rgba(232,150,12,0.12),transparent);top:10%;right:-8%;animation-duration:14s"></div>
+  <span class="sec-num">03</span>
+  <div class="heat-particles" id="hp"></div>
+  <div class="sec-inner">
+    <div class="sec-label rv">Work Experience</div>
+    <h2 class="sec-title rv">Deep Fry</h2>
+    <p class="sec-sub rv">Where pressure isn't a threat, it's a teacher.<br>Where mistakes sizzle, and resilience crisps.</p>
+    <div class="cards rv">
+      <div class="card" onclick="openM('service')">
+        <span class="card-cat">Service Design</span>
+        <h3 class="card-t">Empowering Student Decisions</h3>
+        <p class="card-d">A scalable service empowering students through self-reflection and clarity.</p>
+        <div class="card-arr">→</div>
+      </div>
+      <div class="card" onclick="openM('shell')">
+        <span class="card-cat">User Research</span>
+        <h3 class="card-t">UX Research at Shell</h3>
+        <p class="card-d">Strengthening Service Design and UXR within Shell's Experience Design team.</p>
+        <div class="card-arr">→</div>
+      </div>
+      <div class="card" onclick="openM('wedding')">
+        <span class="card-cat">UXR & Service Design</span>
+        <h3 class="card-t">Wedding Workforce</h3>
+        <p class="card-d">Fair work and payment transparency in the Indian wedding industry.</p>
+        <div class="card-arr">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATING -->
+<section class="sec sec-pl" id="s4">
+  <div class="blob" style="width:360px;height:360px;background:radial-gradient(circle,rgba(212,160,23,0.1),transparent);top:-15%;left:30%;animation-duration:16s"></div>
+  <span class="sec-num">04</span>
+  <div class="sec-inner">
+    <div class="sec-label rv">Ready to be served</div>
+    <h2 class="sec-title rv">Plating</h2>
+    <p class="sec-sub rv">I'm no longer preparing, but presenting.<br>Ready to be seen and served.</p>
+    <div class="pl-wrap rv">
+      <div class="pl-msg">
+        <p>Every phase of life has meaning when seen from the right perspective. Whether you're soft dough being shaped, or facing the fire — you always have the ability to transform.</p>
+        <div class="c-links">
+          <a href="mailto:swetha@example.com" class="c-link">
+            <div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="c-label">Email</div><span>swetha@example.com</span></div>
+          </a>
+          <a href="https://linkedin.com/in/swetha" target="_blank" class="c-link">
+            <div class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></div>
+            <div><div class="c-label">LinkedIn</div><span>Connect with me</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="pl-samosa">
+        <svg viewBox="0 0 200 200">
+          <defs><radialGradient id="pg" cx="50%" cy="50%"><stop offset="0%" stop-color="#F5E6C8"/><stop offset="100%" stop-color="#D4C4A0"/></radialGradient></defs>
+          <ellipse cx="100" cy="145" rx="82" ry="24" fill="url(#pg)" stroke="#C4B490" stroke-width="1.5"/>
+          <ellipse cx="100" cy="140" rx="65" ry="16" fill="none" stroke="#C4B490" stroke-width=".7" opacity=".4"/>
+          <circle cx="55" cy="140" r="2.5" fill="#4CAF50" opacity=".5"/><circle cx="138" cy="138" r="2" fill="#4CAF50" opacity=".4"/><circle cx="75" cy="147" r="1.8" fill="#E8960C" opacity=".3"/>
+          <path d="M100 45 L155 125 Q158 135 150 137 L50 137 Q42 135 45 125 Z" fill="url(#hg)" stroke="#8B6914" stroke-width="1.5"/>
+          <circle cx="88" cy="95" r="3.5" fill="#1A1410"/><circle cx="112" cy="95" r="3.5" fill="#1A1410"/>
+          <circle cx="89.5" cy="93.5" r="1.3" fill="white" opacity=".8"/><circle cx="113.5" cy="93.5" r="1.3" fill="white" opacity=".8"/>
+          <path d="M90 108 Q100 116 110 108" fill="none" stroke="#1A1410" stroke-width="1.8" stroke-linecap="round"/>
+          <g opacity=".5"><text x="40" y="65" font-size="12" fill="#F2D06B">✦</text><text x="148" y="55" font-size="9" fill="#F2D06B">✦</text><text x="158" y="88" font-size="7" fill="#F2D06B">✦</text></g>
+        </svg>
+        <a href="Resume.pdf" download class="dl-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="copy">© 2026 Swetha's Samosa Story</div>
+</section>
+
+</main>
+</div>
+
+<!-- ABOUT OVERLAY -->
+<div class="about-ov" id="aOv">
+  <button class="about-x" id="aX">✕</button>
+  <div class="about-c">
+    <div class="ab-label">About Me</div>
+    <h2 class="ab-h">Every phase has meaning.</h2>
+    <p class="ab-intro">Creative strategist with a Master's in Strategic Design Management and 2+ years of diverse experience in service design, brand storytelling, and project planning. I specialize in building systems, content strategies, and experiences that are both human-centered and culturally rooted.</p>
+    <div class="roles"><span class="role">Architect</span><span class="role">Planner</span><span class="role">Researcher</span><span class="role">Designer</span></div>
+    <div class="ab-grid">
+      <div>
+        <h3 class="ab-sec-t">Journey</h3>
+        <div class="tl-item"><span class="dt">Apr 2025 → Present</span><div class="rl">Experience Designer</div><div class="og">Life in Frame Photography</div><div class="ds">Led service design blueprint for luxury event decor. Strategized brand positioning and go-to-market execution.</div></div>
+        <div class="tl-item"><span class="dt">Mar 2024 → Mar 2025</span><div class="rl">Service Designer & Design Coordinator</div><div class="og">Eat Drink and Party</div><div class="ds">Executed 30+ luxury weddings. Conducted design audits and built internal knowledge libraries.</div></div>
+        <div class="tl-item"><span class="dt">Sep 2023 → Feb 2024</span><div class="rl">Service Designer Intern</div><div class="og">Shell</div><div class="ds">Created research-backed communication framework for Experience Design team.</div></div>
+        <div class="tl-item"><span class="dt">Jul → Aug 2023</span><div class="rl">Design Strategist Intern</div><div class="og">Unilever</div><div class="ds">Researched communication strategies for NDPE policy on palm-based products.</div></div>
+        <div class="tl-item"><span class="dt">Aug 2022 → Aug 2024</span><div class="rl">Business Strategist (Freelance)</div><div class="og">Life in Frame Photography</div><div class="ds">Increased Instagram reach by 5x. Scaled video content to 1.5M+ views.</div></div>
+        <div class="tl-item"><span class="dt">2019 → 2022</span><div class="rl">Experience Designer</div><div class="og">The Skinlanguage</div><div class="ds">Built community of 1,500+ followers. Worked with 20+ skincare brands.</div></div>
+      </div>
+      <div>
+        <h3 class="ab-sec-t">Education</h3>
+        <div class="tl-item"><div class="rl">M.Des — Strategic Design Management</div><div class="og">National Institute of Design, Gandhinagar</div></div>
+        <div class="tl-item"><div class="rl">B.Arch — Architecture</div><div class="og">Anna University, MSOA</div></div>
+        <h3 class="ab-sec-t" style="margin-top:1.8rem">Skills</h3>
+        <div class="sk-grid">
+          <span class="sk">Design Research</span><span class="sk">Trend Mapping</span><span class="sk">Project Management</span>
+          <span class="sk">Stakeholder Mgmt</span><span class="sk">Branding</span><span class="sk">Social Media Strategy</span>
+          <span class="sk">Communication Systems</span><span class="sk">Process Design</span><span class="sk">Content Creation</span>
+        </div>
+        <h3 class="ab-sec-t" style="margin-top:1.8rem">Tools</h3>
+        <div class="tools"><span class="tool">Figma</span><span class="tool">Miro</span><span class="tool">Canva</span><span class="tool">Adobe PS</span><span class="tool">Adobe AI</span><span class="tool">MS Office</span></div>
+        <h3 class="ab-sec-t" style="margin-top:1.8rem">Volunteering & Passions</h3>
+        <div class="ab-vol">
+          <p>Art workshops for kids in shelters with Karpi NGO, Chennai. Toy & book drives with AID India NGO for tribal communities.</p>
+          <p>Passionate about hosting, food styling, floral design, and content creation. Founded The Skinlanguage — a skincare content blog.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-ov" id="mOv">
+  <div class="modal"><button class="modal-x" onclick="closeM()">✕</button><div id="mC"></div></div>
+</div>
+
+<script>
+const P={
+  piracy:{cat:'Virtual Social Behaviour',t:'Addressing Piracy in Telegram',tags:['Platform Research','Analyzing Deviant Behaviours','Ideation','Prototyping'],
+    b:'<p>In the fast-paced world of technological advancements, this project investigates how human social behaviours manifest on virtual platforms and how interface design triggers or facilitates such behaviour.</p><p>Through deep research on Telegram, we explored patterns of deviant behaviour around piracy and content sharing, leading to design recommendations that help platforms mitigate harmful behaviours while preserving user engagement.</p>'},
+  behavior:{cat:'Behavioural Design',t:'Promoting Clean Hands Among Food Vendors',tags:['Identifying Deviance','Behaviour Analysis','Change Canvas','Ideation','Prototyping'],
+    b:'<p>Understanding how people think, feel, and act to create designs that positively influence behavior. This project focused on street food vendors and hand hygiene compliance.</p><p>Through ethnographic research and the Behaviour Change Canvas framework, we designed interventions making handwashing the path of least resistance within existing vendor workflows.</p>'},
+  service:{cat:'Service Design',t:'Empowering Students in Informed Decision Making',tags:['Market Research','Ideation','Service Blueprint','Prototyping','Feedback','Iteration'],
+    b:'<p>A scalable service empowering students to take informed decisions through self-reflection and instilling clarity. Through extensive market research and student interviews, we mapped decision-making journeys and identified critical pain points.</p><p>The resulting service blueprint provides a structured yet flexible framework that educational institutions can adopt at scale.</p>'},
+  shell:{cat:'User Research',t:'Improving UX Research & Service Design at Shell',tags:['Design Maturity Assessment','Stakeholder Interviews','Framework Development'],
+    b:'<p>Strengthening Service Design and User Research within Shell\'s Experience Design team. Created a research-backed communication and efficiency framework.</p><p>Conducted interviews and usability testing to develop a scalable qualitative resource — a comprehensive toolkit that elevated research practices across Shell\'s design organization.</p>'},
+  wedding:{cat:'UXR & Service Design',t:'Reimagining the Wedding Workforce',tags:['Ethnographic Research','Service Design','Platform Design','Stakeholder Mapping'],
+    b:'<p>Formalising the Informal: Designing a digital platform for fair work and payment transparency in the Indian wedding industry.</p><p>Through extensive field research with wedding workers across multiple cities, we designed a platform bringing transparency, fair payment, and dignity to the informal wedding workforce.</p>'}
+};
+
+const main=document.getElementById('main'),secs=document.querySelectorAll('.sec'),nodes=document.querySelectorAll('.tracker-node'),
+  tFill=document.getElementById('tFill'),samIcon=document.getElementById('samIcon');
+let cur=0;
+
+function go(i){secs[i]&&secs[i].scrollIntoView({behavior:'smooth'})}
+
+main.addEventListener('scroll',()=>{
+  const st=main.scrollTop,th=main.scrollHeight-main.clientHeight,pct=st/th;
+  let a=0;
+  secs.forEach((s,i)=>{if(st>=s.offsetTop-main.clientHeight/2)a=i});
+  if(a!==cur){cur=a;updTracker(a)}
+  tFill.style.height=pct*100+'%';
+  const tc=document.querySelector('.tracker');
+  if(tc)samIcon.style.top=Math.min(pct*tc.clientHeight,tc.clientHeight-36)+'px';
+  reveal();
+});
+
+function updTracker(a){nodes.forEach((n,i)=>{n.classList.remove('active','passed');if(i===a)n.classList.add('active');else if(i<a)n.classList.add('passed')})}
+
+function reveal(){document.querySelectorAll('.rv').forEach(el=>{const r=el.getBoundingClientRect(),mr=main.getBoundingClientRect();if(r.top<mr.bottom-60)el.classList.add('vis')})}
+setTimeout(reveal,100);
+
+// Heat particles
+const hp=document.getElementById('hp');
+for(let i=0;i<18;i++){const d=document.createElement('div');d.classList.add('hp');d.style.left=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';d.style.animationDuration=(2+Math.random()*3)+'s';const sz=2+Math.random()*4;d.style.width=sz+'px';d.style.height=sz+'px';d.style.background=Math.random()>.5?'#D4A017':'#E8960C';hp.appendChild(d)}
+
+// Modal
+const mOv=document.getElementById('mOv'),mC=document.getElementById('mC');
+function openM(k){const p=P[k];if(!p)return;mC.innerHTML=`<div class="m-cat">${p.cat}</div><h3 class="m-title">${p.t}</h3><div class="m-tags">${p.tags.map(t=>`<span class="m-tag">${t}</span>`).join('')}</div><div class="m-body">${p.b}</div>`;mOv.classList.add('open')}
+function closeM(){mOv.classList.remove('open')}
+mOv.addEventListener('click',e=>{if(e.target===mOv)closeM()});
+
+// About
+const aOv=document.getElementById('aOv');
+document.getElementById('aboutBtn').addEventListener('click',()=>aOv.classList.add('open'));
+document.getElementById('aX').addEventListener('click',()=>aOv.classList.remove('open'));
+aOv.addEventListener('click',e=>{if(e.target===aOv)aOv.classList.remove('open')});
+
+// Keyboard
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeM();aOv.classList.remove('open')}
+  if(mOv.classList.contains('open')||aOv.classList.contains('open'))return;
+  if(e.key==='ArrowDown'||e.key===' '){e.preventDefault();if(cur<secs.length-1)go(cur+1)}
+  if(e.key==='ArrowUp'){e.preventDefault();if(cur>0)go(cur-1)}
+});
+
+// Mouse parallax on blobs
+document.addEventListener('mousemove',e=>{
+  const x=(e.clientX/window.innerWidth-.5)*2,y=(e.clientY/window.innerHeight-.5)*2;
+  document.querySelectorAll('.blob').forEach((b,i)=>{const s=(i+1)*6;b.style.transform=`translate(${x*s}px,${y*s}px)`});
+});
+
+updTracker(0);
+</script>
+</body>
+</html>
