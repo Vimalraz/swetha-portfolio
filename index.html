@@ -9,8 +9,16 @@
 </head>
 <body>
     <div class="grain"></div>
-    <!-- Custom cursor -->
     <div class="cursor" id="cursor"><div class="cursor-dot"></div><div class="cursor-ring"></div><div class="cursor-label"></div></div>
+
+    <!-- Mobile header (hidden on desktop) -->
+    <div class="mob-header">
+        <div class="mob-logo">Swetha</div>
+        <div class="mob-actions">
+            <button class="mob-btn" id="mobAbBtn">About</button>
+            <a href="Resume.pdf" download class="mob-btn">Resume</a>
+        </div>
+    </div>
 
     <div class="app">
         <aside class="sb">
@@ -41,11 +49,10 @@
         </aside>
 
         <main class="main" id="M">
-            <!-- HOME -->
             <section class="sec sec-home" id="s0">
                 <div class="home-glow"></div>
                 <div class="home-particles" id="homeParticles"></div>
-                <div class="bg-shapes"></div>
+                <div class="bg-particles"></div>
                 <div class="home-w">
                     <div class="home-txt">
                         <div class="home-g">User Research | Product Design</div>
@@ -61,9 +68,8 @@
                 <div class="scrl" onclick="go(1)"><span>Scroll to explore</span><div class="scrl-a"></div></div>
             </section>
 
-            <!-- SOFT DOUGH -->
             <section class="sec sec-sd" id="s1">
-                <div class="bg-shapes"></div>
+                <div class="bg-particles"></div>
                 <div class="blob" style="width:300px;height:300px;background:radial-gradient(circle,rgba(212,160,23,.06),transparent);top:-5%;right:-3%;animation-duration:16s"></div>
                 <span class="sec-num">01</span>
                 <div class="sec-in">
@@ -71,7 +77,7 @@
                         <div class="sec-lbl rv">Childhood to Adolescence</div>
                         <h2 class="sec-t rv">Soft Dough</h2>
                         <p class="sec-sub rv">Where I let myself be shaped, so I can rise into something stronger.</p>
-                        <p class="sec-body rv">Absorbing. Adapting. Becoming. From Grade 5 through UG Architecture, this was my phase of molding the foundation. Mouldable, curious, and open to shaping. Every curiosity, every experiment with creativity became a part of the mix.</p>
+                        <p class="sec-body rv">Absorbing. Adapting. Becoming. From Grade 5 through UG Architecture, this was my phase of molding the foundation. Mouldable, curious, and open to shaping.</p>
                         <div class="pills rv"><span class="pill">Director & Actor</span><span class="pill">Upcycle Artist</span><span class="pill">Art Workshops</span><span class="pill">Architecture</span><span class="pill">Preserving History</span></div>
                         <div class="rv" id="sdImgs"></div>
                     </div>
@@ -81,10 +87,9 @@
                 </div>
             </section>
 
-            <!-- FILLING -->
             <section class="sec sec-fl" id="s2">
-                <div class="bg-shapes"></div>
-                <div class="blob" style="width:260px;height:260px;background:radial-gradient(circle,rgba(255,210,51,.05),transparent);bottom:5%;left:-5%;animation-duration:12s"></div>
+                <div class="bg-particles"></div>
+                <div class="blob" style="width:260px;height:260px;background:radial-gradient(circle,rgba(255,210,51,.04),transparent);bottom:5%;left:-5%;animation-duration:12s"></div>
                 <span class="sec-num">02</span>
                 <div class="sec-in">
                     <div class="sec-txt">
@@ -95,15 +100,14 @@
                         <div class="cards rv" id="flCards"></div>
                     </div>
                     <div class="sec-vis rv">
-                        <img class="sam-img" src="images/2e8212_b565a07897c34.png" alt="Filling Samosa" style="width:380px">
+                        <img class="sam-img" src="images/2e8212_b565a07897c34.png" alt="Filling Samosa" style="width:400px">
                     </div>
                 </div>
             </section>
 
-            <!-- DEEP FRY -->
             <section class="sec sec-df" id="s3">
-                <div class="bg-shapes"></div>
-                <div class="blob" style="width:300px;height:300px;background:radial-gradient(circle,rgba(232,150,12,.05),transparent);top:8%;right:-6%;animation-duration:14s"></div>
+                <div class="bg-particles"></div>
+                <div class="blob" style="width:300px;height:300px;background:radial-gradient(circle,rgba(232,150,12,.04),transparent);top:8%;right:-6%;animation-duration:14s"></div>
                 <span class="sec-num">03</span>
                 <div class="hp-c" id="hpC"></div>
                 <div class="sec-in">
@@ -114,14 +118,13 @@
                         <div class="cards rv" id="dfCards"></div>
                     </div>
                     <div class="sec-vis rv">
-                        <img class="sam-img" src="images/2e8212_cc01caae4da64.png" alt="Deep Fry Samosa" style="width:320px">
+                        <img class="sam-img" src="images/2e8212_cc01caae4da64.png" alt="Deep Fry Samosa" style="width:340px">
                     </div>
                 </div>
             </section>
 
-            <!-- PLATING -->
             <section class="sec sec-pl" id="s4">
-                <div class="bg-shapes"></div>
+                <div class="bg-particles"></div>
                 <div class="blob" style="width:320px;height:320px;background:radial-gradient(circle,rgba(212,160,23,.04),transparent);top:-8%;left:25%;animation-duration:16s"></div>
                 <span class="sec-num">04</span>
                 <div class="sec-in">
@@ -137,7 +140,7 @@
                         <a href="Resume.pdf" download class="dl-btn rv"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Resume</a>
                     </div>
                     <div class="sec-vis rv">
-                        <img class="sam-img" src="images/2e8212_94f527cbde7e4.png" alt="Plated Samosa" style="width:340px">
+                        <img class="sam-img" src="images/2e8212_94f527cbde7e4.png" alt="Plated Samosa" style="width:360px">
                     </div>
                 </div>
                 <div class="copy">&copy; 2026 Swetha's Samosa Story</div>
