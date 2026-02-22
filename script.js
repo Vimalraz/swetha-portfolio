@@ -2,7 +2,7 @@
    SWETHA M | MY SAMOSA STORY — script.js
    ============================================== */
 
-/* ── IMAGE MAP ────────────────────────────────── */
+/* ── IMAGE MAP ── */
 const I = {
   sd_act:     'images/0f68d0_4f166f852c484.jpg',
   sd_upcycle: 'images/0f68d0_b00e0015156c4.jpg',
@@ -78,24 +78,22 @@ const I = {
   thumb_wedding:  'images/deepfry_wedding.jpg',
 };
 
-/* ── DOM REFS ──────────────────────────────────── */
-const mainEl   = document.getElementById('mainScroll');
-const sections = document.querySelectorAll('.sec');
-const tkNodes  = document.querySelectorAll('.tk-node');
-const tkSamosa = document.getElementById('tkSamosa');
-const tkProg   = document.getElementById('tkProg');
+/* ── DOM REFS ── */
+const mainEl    = document.getElementById('mainScroll');
+const sections  = document.querySelectorAll('.sec');
+const tkNodes   = document.querySelectorAll('.tk-node');
+const tkSamosa  = document.getElementById('tkSamosa');
+const tkProg    = document.getElementById('tkProg');
 const trackerEl = document.getElementById('tracker');
-let   curSec   = 0;
+let   curSec    = 0;
 
-/* ── NAVIGATION ─────────────────────────────────── */
+/* ── NAVIGATION ── */
 function go(i) {
-  if (sections[i]) {
-    mainEl.scrollTo({ top: sections[i].offsetTop, behavior: 'smooth' });
-  }
+  if (sections[i]) mainEl.scrollTo({ top: sections[i].offsetTop, behavior: 'smooth' });
 }
 window.go = go;
 
-/* ── TRACKER: precise dot Y position ───────────── */
+/* ── TRACKER ── */
 function getDotY(nodeEl) {
   const dot      = nodeEl.querySelector('.tk-dot');
   const wrapRect = trackerEl.getBoundingClientRect();
@@ -108,19 +106,16 @@ function updateTracker(idx) {
     n.classList.toggle('active', i === idx);
     n.classList.toggle('passed', i < idx);
   });
-
   const targetY = getDotY(tkNodes[idx]);
   tkSamosa.style.top = targetY + 'px';
-
   const firstY = getDotY(tkNodes[0]);
   const h = Math.max(0, targetY - firstY);
   tkProg.style.top    = firstY + 'px';
   tkProg.style.height = h + 'px';
-
   curSec = idx;
 }
 
-/* ── SCROLL HANDLER ─────────────────────────────── */
+/* ── SCROLL HANDLER ── */
 mainEl.addEventListener('scroll', () => {
   const scrollTop = mainEl.scrollTop;
   const viewH     = mainEl.clientHeight;
@@ -132,11 +127,10 @@ mainEl.addEventListener('scroll', () => {
   revealElements();
 }, { passive: true });
 
-// Init on load
 setTimeout(() => { updateTracker(0); revealElements(); }, 160);
 window.addEventListener('resize', () => updateTracker(curSec));
 
-/* ── REVEAL ON SCROLL ──────────────────────────── */
+/* ── REVEAL ── */
 function revealElements() {
   const mainRect = mainEl.getBoundingClientRect();
   document.querySelectorAll('.rv').forEach(el => {
@@ -145,12 +139,10 @@ function revealElements() {
   });
 }
 
-/* ── HOME FLOATING PARTICLES ──────────────────── */
+/* ── HOME PARTICLES ── */
 (function spawnHomeParticles() {
   const container = document.getElementById('homeParticles');
   if (!container) return;
-
-  // Inject keyframes
   const s = document.createElement('style');
   s.textContent = `
     @keyframes hFloat {
@@ -160,37 +152,24 @@ function revealElements() {
       100% { transform: translateY(-8vh) scale(1.1); opacity: 0; }
     }`;
   document.head.appendChild(s);
-
-  const colors = [
-    'rgba(212,160,23,.3)',
-    'rgba(232,150,12,.22)',
-    'rgba(255,210,51,.2)',
-    'rgba(224,124,90,.15)',
-    'rgba(255,240,180,.18)',
-  ];
-
+  const colors = ['rgba(212,160,23,.3)','rgba(232,150,12,.22)','rgba(255,210,51,.2)','rgba(224,124,90,.15)','rgba(255,240,180,.18)'];
   for (let i = 0; i < 32; i++) {
     const p   = document.createElement('div');
     const sz  = 2 + Math.random() * 5;
     const dur = 7 + Math.random() * 10;
     const del = Math.random() * 9;
-    const lft = Math.random() * 70; // keep to left/mid area
+    const lft = Math.random() * 70;
     Object.assign(p.style, {
-      position:         'absolute',
-      borderRadius:     '50%',
-      pointerEvents:    'none',
-      width:            sz + 'px',
-      height:           sz + 'px',
-      left:             lft + '%',
-      background:       colors[Math.floor(Math.random() * colors.length)],
-      animation:        `hFloat ${dur}s ${del}s linear infinite`,
-      opacity:          '0',
+      position: 'absolute', borderRadius: '50%', pointerEvents: 'none',
+      width: sz + 'px', height: sz + 'px', left: lft + '%',
+      background: colors[Math.floor(Math.random() * colors.length)],
+      animation: `hFloat ${dur}s ${del}s linear infinite`, opacity: '0',
     });
     container.appendChild(p);
   }
 })();
 
-/* ── HEAT PARTICLES (DEEP FRY) ─────────────────── */
+/* ── HEAT PARTICLES ── */
 (function spawnHeat() {
   const c = document.getElementById('heatP');
   if (!c) return;
@@ -200,10 +179,9 @@ function revealElements() {
     const sz = 2 + Math.random() * 5;
     p.classList.add('hp');
     Object.assign(p.style, {
-      left:              Math.random() * 100 + '%',
-      width:             sz + 'px',
-      height:            sz + 'px',
-      background:        colors[Math.floor(Math.random() * colors.length)],
+      left: Math.random() * 100 + '%',
+      width: sz + 'px', height: sz + 'px',
+      background: colors[Math.floor(Math.random() * colors.length)],
       animationDuration: (2.5 + Math.random() * 3) + 's',
       animationDelay:    (Math.random() * 4) + 's',
     });
@@ -211,7 +189,7 @@ function revealElements() {
   }
 })();
 
-/* ── PLATING SHIMMER DOTS ──────────────────────── */
+/* ── PLATING SHIMMER ── */
 (function spawnShimmer() {
   const c = document.getElementById('platingShimmer');
   if (!c) return;
@@ -220,13 +198,10 @@ function revealElements() {
     const sz = 2 + Math.random() * 4;
     d.classList.add('ps-dot');
     Object.assign(d.style, {
-      position:          'absolute',
-      left:              Math.random() * 100 + '%',
-      top:               Math.random() * 100 + '%',
-      width:             sz + 'px',
-      height:            sz + 'px',
-      background:        'var(--gold)',
-      borderRadius:      '50%',
+      position: 'absolute',
+      left: Math.random() * 100 + '%', top: Math.random() * 100 + '%',
+      width: sz + 'px', height: sz + 'px',
+      background: 'var(--gold)', borderRadius: '50%',
       animationDuration: (2 + Math.random() * 4) + 's',
       animationDelay:    (Math.random() * 5) + 's',
     });
@@ -234,16 +209,23 @@ function revealElements() {
   }
 })();
 
-/* ── CAROUSEL (SOFT DOUGH) ─────────────────────── */
+/* ── CAROUSEL (SOFT DOUGH) ──
+   Slide order per spec:
+   1. The Young Creative
+   2+3. As a Director & Actor
+   4+5+6. As an Upcycle Artist
+   7. Architecture Journey
+   8. As an Upcycle Artist (heritage / history)
+*/
 const slides = [
-  { img: I.sam_char,  title: 'The Young Creative',     desc: 'Every curiosity and experiment with creativity became part of the mix.' },
-  { img: I.sd_act,    title: 'As a Director & Actor',  desc: 'My earliest experiments with storytelling. Directing and acting in school, learning how narratives shape emotions.' },
-  { img: I.sd_upcycle,title: 'As an Upcycle Artist',   desc: 'Turning discarded materials into something beautiful. First taste of design thinking.' },
-  { img: I.sd_art1,   title: 'Art Workshops',           desc: 'Exploring different art forms and mediums across creative workshops.' },
-  { img: I.sd_art2,   title: 'Creative Experiments',   desc: 'From handmade crafts to mixed-media. Experiments in form, color, expression.' },
-  { img: I.sd_art3,   title: 'Hands-on Making',        desc: 'The tactile joy of creating something with your own hands.' },
-  { img: I.sd_arch,   title: 'Architecture',            desc: 'B.Arch at Anna University. Spatial design and how environments shape behavior.' },
-  { img: I.sd_hist,   title: 'Preserving History',     desc: 'Documenting architectural heritage. Design carries cultural memory.' },
+  { img: I.sam_char,  title: 'The Young Creative',     desc: 'Every curiosity and creative experiment became part of the mix.' },
+  { img: I.sd_act,    title: 'As a Director & Actor',  desc: 'My earliest experiments with storytelling — directing and acting in school.' },
+  { img: I.sd_upcycle,title: 'As a Director & Actor',  desc: 'Learning how narratives shape emotions through performance and direction.' },
+  { img: I.sd_art1,   title: 'As an Upcycle Artist',   desc: 'Turning discarded materials into something beautiful. First taste of design thinking.' },
+  { img: I.sd_art2,   title: 'As an Upcycle Artist',   desc: 'From handmade crafts to mixed-media — experiments in form, colour, and expression.' },
+  { img: I.sd_art3,   title: 'As an Upcycle Artist',   desc: 'Exploring different art forms and mediums across creative workshops.' },
+  { img: I.sd_arch,   title: 'Architecture Journey',   desc: 'B.Arch at Anna University. Spatial design and how environments shape behaviour.' },
+  { img: I.sd_hist,   title: 'As an Upcycle Artist',   desc: 'Documenting heritage through a maker\'s lens — design carries cultural memory.' },
 ];
 
 let cHTML = '<div class="carousel" id="carousel"><div class="carousel-track" id="cTrack">';
@@ -257,10 +239,11 @@ cHTML += '</div><div class="carousel-nav"><button class="carousel-btn" id="cPrev
 slides.forEach((_, i) => {
   cHTML += `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-i="${i}"></button>`;
 });
-cHTML += '</div><button class="carousel-btn" id="cNext">&#8250;</button></div></div>';
+cHTML += '</div><button class="carousel-btn" id="cPause" title="Pause / Play">⏸</button><button class="carousel-btn" id="cNext">&#8250;</button></div></div>';
 document.getElementById('sdImgs').innerHTML = cHTML;
 
-let cIdx   = 0;
+let cIdx    = 0;
+let cPaused = false;
 const cTrack = document.getElementById('cTrack');
 let   cDots  = document.querySelectorAll('.carousel-dot');
 
@@ -270,26 +253,32 @@ function goSlide(i) {
   cDots.forEach((d, j) => d.classList.toggle('active', j === cIdx));
 }
 
-document.getElementById('cPrev').onclick = () => { goSlide(cIdx - 1); resetAuto(); };
-document.getElementById('cNext').onclick = () => { goSlide(cIdx + 1); resetAuto(); };
-cDots.forEach(d => d.onclick = () => { goSlide(+d.dataset.i); resetAuto(); });
-
 let cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
 function resetAuto() {
   clearInterval(cAuto);
-  cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
+  if (!cPaused) cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
 }
+
+document.getElementById('cPrev').onclick  = () => { goSlide(cIdx - 1); resetAuto(); };
+document.getElementById('cNext').onclick  = () => { goSlide(cIdx + 1); resetAuto(); };
+document.getElementById('cPause').onclick = () => {
+  cPaused = !cPaused;
+  document.getElementById('cPause').textContent = cPaused ? '▶' : '⏸';
+  if (cPaused) clearInterval(cAuto); else resetAuto();
+};
+cDots.forEach(d => d.onclick = () => { goSlide(+d.dataset.i); resetAuto(); });
+
 const carEl = document.getElementById('carousel');
 carEl.addEventListener('mouseenter', () => clearInterval(cAuto));
-carEl.addEventListener('mouseleave', () => { cAuto = setInterval(() => goSlide(cIdx + 1), 6000); });
+carEl.addEventListener('mouseleave', () => { if (!cPaused) cAuto = setInterval(() => goSlide(cIdx + 1), 6000); });
 let touchX = 0;
 carEl.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-carEl.addEventListener('touchend', e => {
+carEl.addEventListener('touchend',   e => {
   const d = touchX - e.changedTouches[0].clientX;
   if (Math.abs(d) > 40) { goSlide(cIdx + (d > 0 ? 1 : -1)); resetAuto(); }
 }, { passive: true });
 
-/* ── FILLING CARDS ──────────────────────────────── */
+/* ── FILLING CARDS ── */
 document.getElementById('flCards').innerHTML = `
 <div class="card" onclick="openM('piracy')">
   <img class="card-img" src="${I.thumb_piracy}" alt="">
@@ -310,7 +299,7 @@ document.getElementById('flCards').innerHTML = `
   </div>
 </div>`;
 
-/* ── DEEP FRY CARDS ─────────────────────────────── */
+/* ── DEEP FRY CARDS ── */
 document.getElementById('dfCards').innerHTML = `
 <div class="card" onclick="openM('service')">
   <img class="card-img" src="${I.thumb_service}" alt="">
@@ -340,7 +329,7 @@ document.getElementById('dfCards').innerHTML = `
   </div>
 </div>`;
 
-/* ── PROJECT DATA ────────────────────────────────── */
+/* ── PROJECT DATA ── */
 const P = {
   piracy: {
     cat:  'Virtual Social Behaviour',
@@ -489,7 +478,7 @@ const P = {
   },
 };
 
-/* ── MODAL ───────────────────────────────────────── */
+/* ── MODAL ── */
 const modalOv  = document.getElementById('modalOv');
 const modalBox = document.getElementById('modalBox');
 const mInner   = document.getElementById('mInner');
@@ -514,21 +503,16 @@ function closeM() { modalOv.classList.remove('open'); }
 window.openM = openM;
 window.closeM = closeM;
 
-// Click outside modal box to close
 modalOv.addEventListener('click', e => { if (e.target === modalOv) closeM(); });
-
-// Expand button
 document.getElementById('mExpBtn').onclick = () => {
   modalBox.classList.toggle('expanded');
   modalBox.scrollTop = 0;
 };
-
-// Click images in modal body to lightbox
 document.addEventListener('click', e => {
   if (e.target.matches('.m-body img')) lbox(e.target.src);
 });
 
-/* ── ABOUT OVERLAY ───────────────────────────────── */
+/* ── ABOUT OVERLAY ── */
 const aboutOv = document.getElementById('aboutOv');
 const abWrap  = document.getElementById('abWrap');
 
@@ -643,14 +627,13 @@ abWrap.innerHTML = `
 
 function openAbout()  { aboutOv.classList.add('open'); }
 function closeAbout() { aboutOv.classList.remove('open'); }
-
 document.getElementById('abBtn').onclick   = openAbout;
 document.getElementById('abClose').onclick = closeAbout;
 aboutOv.addEventListener('click', e => { if (e.target === aboutOv) closeAbout(); });
 const mobAbBtn = document.getElementById('mobAbBtn');
 if (mobAbBtn) mobAbBtn.onclick = openAbout;
 
-/* ── LIGHTBOX ────────────────────────────────────── */
+/* ── LIGHTBOX ── */
 function lbox(src) {
   const lb  = document.getElementById('lb');
   const img = document.getElementById('lbImg');
@@ -662,7 +645,7 @@ document.getElementById('lb').addEventListener('click', function () {
   this.classList.remove('open');
 });
 
-/* ── KEYBOARD SHORTCUTS ──────────────────────────── */
+/* ── KEYBOARD SHORTCUTS ── */
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeM();
@@ -670,17 +653,11 @@ document.addEventListener('keydown', e => {
     document.getElementById('lb').classList.remove('open');
   }
   if (modalOv.classList.contains('open') || aboutOv.classList.contains('open')) return;
-  if (e.key === 'ArrowDown' || e.key === ' ') {
-    e.preventDefault();
-    if (curSec < sections.length - 1) go(curSec + 1);
-  }
-  if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    if (curSec > 0) go(curSec - 1);
-  }
+  if (e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); if (curSec < sections.length - 1) go(curSec + 1); }
+  if (e.key === 'ArrowUp')                    { e.preventDefault(); if (curSec > 0) go(curSec - 1); }
 });
 
-/* ── 3D TILT on samosa visuals ───────────────────── */
+/* ── 3D TILT on samosa visuals ── */
 document.querySelectorAll('.sam-tilt-wrap').forEach(wrap => {
   wrap.addEventListener('mousemove', e => {
     const r = wrap.getBoundingClientRect();
@@ -693,7 +670,7 @@ document.querySelectorAll('.sam-tilt-wrap').forEach(wrap => {
   });
 });
 
-/* ── CUSTOM CURSOR ───────────────────────────────── */
+/* ── CUSTOM CURSOR ── */
 (function initCursor() {
   const cursor = document.getElementById('cursor');
   if (!cursor) return;
@@ -707,7 +684,7 @@ document.querySelectorAll('.sam-tilt-wrap').forEach(wrap => {
   })();
 })();
 
-/* ── HOME SAMOSA PARALLAX ────────────────────────── */
+/* ── HOME SAMOSA PARALLAX ── */
 (function homeParallax() {
   const sam = document.getElementById('homeSam');
   const sec = document.getElementById('s0');
@@ -718,7 +695,5 @@ document.querySelectorAll('.sam-tilt-wrap').forEach(wrap => {
     const y = ((e.clientY - r.top)  / r.height - .5) * 12;
     sam.style.transform = `translateY(var(--fy,0px)) rotate(-1deg) translate(${x}px,${y}px)`;
   });
-  sec.addEventListener('mouseleave', () => {
-    sam.style.transform = '';
-  });
+  sec.addEventListener('mouseleave', () => { sam.style.transform = ''; });
 })();
