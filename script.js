@@ -236,6 +236,7 @@ function revealElements() {
 
 /* ── CAROUSEL (SOFT DOUGH) ─────────────────────── */
 const slides = [
+  { img: I.sam_char,  title: 'The Young Creative',     desc: 'Every curiosity and experiment with creativity became part of the mix.' },
   { img: I.sd_act,    title: 'As a Director & Actor',  desc: 'My earliest experiments with storytelling. Directing and acting in school, learning how narratives shape emotions.' },
   { img: I.sd_upcycle,title: 'As an Upcycle Artist',   desc: 'Turning discarded materials into something beautiful. First taste of design thinking.' },
   { img: I.sd_art1,   title: 'Art Workshops',           desc: 'Exploring different art forms and mediums across creative workshops.' },
@@ -243,7 +244,6 @@ const slides = [
   { img: I.sd_art3,   title: 'Hands-on Making',        desc: 'The tactile joy of creating something with your own hands.' },
   { img: I.sd_arch,   title: 'Architecture',            desc: 'B.Arch at Anna University. Spatial design and how environments shape behavior.' },
   { img: I.sd_hist,   title: 'Preserving History',     desc: 'Documenting architectural heritage. Design carries cultural memory.' },
-  { img: I.sam_char,  title: 'The Young Creative',     desc: 'Every curiosity and experiment with creativity became part of the mix.' },
 ];
 
 let cHTML = '<div class="carousel" id="carousel"><div class="carousel-track" id="cTrack">';
@@ -274,14 +274,14 @@ document.getElementById('cPrev').onclick = () => { goSlide(cIdx - 1); resetAuto(
 document.getElementById('cNext').onclick = () => { goSlide(cIdx + 1); resetAuto(); };
 cDots.forEach(d => d.onclick = () => { goSlide(+d.dataset.i); resetAuto(); });
 
-let cAuto = setInterval(() => goSlide(cIdx + 1), 4200);
+let cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
 function resetAuto() {
   clearInterval(cAuto);
-  cAuto = setInterval(() => goSlide(cIdx + 1), 4200);
+  cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
 }
 const carEl = document.getElementById('carousel');
 carEl.addEventListener('mouseenter', () => clearInterval(cAuto));
-carEl.addEventListener('mouseleave', () => { cAuto = setInterval(() => goSlide(cIdx + 1), 4200); });
+carEl.addEventListener('mouseleave', () => { cAuto = setInterval(() => goSlide(cIdx + 1), 6000); });
 let touchX = 0;
 carEl.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
 carEl.addEventListener('touchend', e => {
@@ -625,13 +625,13 @@ abWrap.innerHTML = `
         <span class="tool">MS Office</span>
       </div>
       <h3 class="ab-st" style="margin-top:1.2rem">Contact</h3>
-      <a href="mailto:swetha@example.com" style="display:flex;align-items:center;gap:.4rem;color:var(--gold);font-size:.82rem;margin-bottom:.4rem;text-decoration:none">
+      <a href="mailto:swetrials98@gmail.com" style="display:flex;align-items:center;gap:.4rem;color:var(--gold);font-size:.82rem;margin-bottom:.4rem;text-decoration:none">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        swetha@example.com
+        swetrials98@gmail.com
       </a>
-      <a href="https://linkedin.com/in/swetha" target="_blank" style="display:flex;align-items:center;gap:.4rem;color:var(--gold);font-size:.82rem;text-decoration:none">
+      <a href="https://www.linkedin.com/in/swetha-m-babb11201/" target="_blank" style="display:flex;align-items:center;gap:.4rem;color:var(--gold);font-size:.82rem;text-decoration:none">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
-        linkedin.com/in/swetha
+        linkedin.com/in/swetha-m-babb11201
       </a>
       <a href="Resume.pdf" download style="display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;background:var(--gold);color:var(--bg);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.6rem 1.2rem;border-radius:6px;text-decoration:none;transition:.3s">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
