@@ -12,6 +12,12 @@
   font-weight: normal; font-style: normal;
 }
 
+@font-face {
+  font-family: 'CA Smut Fill';
+  src: url('fonts/CASmut-Fill.otf') format('opentype');
+  font-weight: normal; font-style: normal;
+}
+
 /* ── VARIABLES ── */
 :root {
   /* Ink + Paper */
@@ -215,44 +221,51 @@ body:has(a:hover) .cr, body:has(button:hover) .cr {
 }
 .tk-node {
   display: flex; align-items: center; gap: .5rem;
-  padding: .4rem .7rem .4rem 2.6rem;
-  cursor: pointer; transition: background .2s;
+  padding: .35rem .7rem .35rem 2.6rem;
   position: relative;
-}
-.tk-node:hover  { background: rgba(255,224,51,.08); }
-.tk-node.active {
-  background: rgba(255,224,51,.12);
-  border-left: 3px solid var(--comic-y);
+  /* NO background, NO border on node itself */
 }
 .tk-dot {
   position: absolute; left: calc(1rem + 4px);
   width: 10px; height: 10px; border-radius: 50%;
-  border: 2px solid rgba(255,224,51,.35);
-  background: #0F0A00; z-index: 3;
-  transform: translateX(-50%); transition: .35s;
+  border: 2px solid rgba(255,224,51,.4);
+  background: #0F0A00;           /* solid fill so track line never shows through */
+  z-index: 3;
+  transform: translateX(-50%);
+  transition: background .3s, border-color .3s;
+  flex-shrink: 0;
 }
+/* visited: filled solid circle, dimmed yellow */
+.tk-node.passed .tk-dot {
+  background: rgba(255,224,51,.55);
+  border-color: rgba(255,224,51,.55);
+}
+/* active: bright solid circle */
 .tk-node.active .tk-dot {
-  background: var(--comic-y); border-color: var(--comic-y);
-  border-radius: 0; width: 9px; height: 9px;
-  box-shadow: 0 0 0 4px rgba(255,224,51,.18), 2px 2px 0 rgba(255,224,51,.4);
+  background: var(--comic-y);
+  border-color: var(--comic-y);
+  box-shadow: 0 0 0 3px rgba(255,224,51,.18);
 }
-.tk-node.passed .tk-dot { background: rgba(255,224,51,.6); border-color: rgba(255,224,51,.6); }
-.tk-info  { display: flex; flex-direction: column; gap: .04rem; }
+
+.tk-info  { display: flex; flex-direction: column; gap: .06rem; }
 .tk-title {
-  font-family: var(--fh) !important;
-  font-size: .82rem; font-weight: 400; letter-spacing: .05em;
-  color: rgba(255,224,51,.5); transition: .3s;
+  font-family: 'CA Smut Fill', 'CA Smut', cursive !important;
+  font-size: .8rem; letter-spacing: .04em;
+  color: rgba(255,224,51,.4);      /* unvisited — dim */
+  transition: color .3s;
 }
 .tk-sub {
   font-family: var(--fb) !important;
-  font-size: .58rem; font-style: italic;
-  color: rgba(255,224,51,.35); transition: .3s; font-weight: 400;
+  font-size: .56rem; font-style: italic;
+  color: rgba(255,224,51,.28);     /* unvisited — very dim */
+  transition: color .3s; font-weight: 400;
 }
+/* visited — medium brightness, shows it's been seen */
+.tk-node.passed .tk-title { color: rgba(255,224,51,.65); }
+.tk-node.passed .tk-sub   { color: rgba(255,224,51,.38); }
+/* active — full yellow */
 .tk-node.active .tk-title { color: var(--comic-y); }
-.tk-node.active .tk-sub   { color: rgba(255,224,51,.7); }
-/* visited pages → bright yellow heading */
-.tk-node.passed .tk-title { color: var(--comic-y); opacity: .75; }
-.tk-node.passed .tk-sub   { color: rgba(255,224,51,.45); }
+.tk-node.active .tk-sub   { color: rgba(255,224,51,.65); }
 
 /* Panel bottom */
 .panel-btm {
