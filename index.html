@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Swetha M | My Samosa Story</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="grain"></div>
 <div class="cursor" id="cursor"><div class="cd"></div><div class="cr"></div></div>
+
 <header class="mob-bar">
   <div class="mob-logo">Swetha</div>
   <div class="mob-actions">
@@ -17,9 +17,13 @@
     <a href="Resume.pdf" download class="mob-btn">Resume</a>
   </div>
 </header>
+
 <aside class="panel" id="panel">
   <div class="panel-top">
-    <img class="panel-photo" src="images/2e8212_908a7d3e2f624.jpg" alt="Swetha">
+    <div class="panel-hero">
+      <img class="panel-photo" src="images/2e8212_908a7d3e2f624.jpg" alt="Swetha">
+      <div class="panel-hero-grad"></div>
+    </div>
     <div class="panel-id">
       <div class="panel-name" onclick="go(0)">Swetha</div>
       <div class="panel-sub">My Samosa Story</div>
@@ -28,13 +32,28 @@
   <div class="tracker" id="tracker">
     <div class="tk-line-bg"></div>
     <div class="tk-line-prog" id="tkProg"></div>
-    <div class="tk-samosa" id="tkSamosa"><img src="images/samosa.png" alt="samosa scrubber"></div>
+    <div class="tk-samosa" id="tkSamosa"><img src="images/samosa.png" alt="samosa"></div>
     <div class="tk-nodes" id="tkNodes">
-      <div class="tk-node active" data-i="0" onclick="go(0)"><div class="tk-dot"></div><div class="tk-info"><span class="tk-title">Home</span><span class="tk-sub">Hey! I'm Swetha!</span></div></div>
-      <div class="tk-node" data-i="1" onclick="go(1)"><div class="tk-dot"></div><div class="tk-info"><span class="tk-title">Soft Dough</span><span class="tk-sub">Childhood to UG</span></div></div>
-      <div class="tk-node" data-i="2" onclick="go(2)"><div class="tk-dot"></div><div class="tk-info"><span class="tk-title">Filling</span><span class="tk-sub">UG to Masters</span></div></div>
-      <div class="tk-node" data-i="3" onclick="go(3)"><div class="tk-dot"></div><div class="tk-info"><span class="tk-title">Deep Fry</span><span class="tk-sub">Work Experience</span></div></div>
-      <div class="tk-node" data-i="4" onclick="go(4)"><div class="tk-dot"></div><div class="tk-info"><span class="tk-title">Plating</span><span class="tk-sub">Ready to Serve</span></div></div>
+      <div class="tk-node active" data-i="0" onclick="go(0)">
+        <div class="tk-dot"></div>
+        <div class="tk-info"><span class="tk-title">Home</span><span class="tk-sub">Hey! I'm Swetha!</span></div>
+      </div>
+      <div class="tk-node" data-i="1" onclick="go(1)">
+        <div class="tk-dot"></div>
+        <div class="tk-info"><span class="tk-title">Soft Dough</span><span class="tk-sub">Childhood to UG</span></div>
+      </div>
+      <div class="tk-node" data-i="2" onclick="go(2)">
+        <div class="tk-dot"></div>
+        <div class="tk-info"><span class="tk-title">Filling</span><span class="tk-sub">UG to Masters</span></div>
+      </div>
+      <div class="tk-node" data-i="3" onclick="go(3)">
+        <div class="tk-dot"></div>
+        <div class="tk-info"><span class="tk-title">Deep Fry</span><span class="tk-sub">Work Experience</span></div>
+      </div>
+      <div class="tk-node" data-i="4" onclick="go(4)">
+        <div class="tk-dot"></div>
+        <div class="tk-info"><span class="tk-title">Plating</span><span class="tk-sub">Ready to Serve</span></div>
+      </div>
     </div>
   </div>
   <div class="panel-btm">
@@ -43,14 +62,22 @@
       Resume
     </a>
     <div class="panel-socials">
-      <button class="soc-icon" id="abBtn" title="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></button>
-      <a href="mailto:swetrials98@gmail.com" class="soc-icon" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-      <a href="https://www.linkedin.com/in/swetha-m-babb11201/" target="_blank" class="soc-icon" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a>
+      <button class="soc-icon" id="abBtn" title="About">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </button>
+      <a href="mailto:swetrials98@gmail.com" class="soc-icon" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/swetha-m-babb11201/" target="_blank" class="soc-icon" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+      </a>
     </div>
   </div>
 </aside>
+
 <main class="main" id="mainScroll">
-  <!-- SECTION 0: HOME -->
+
+  <!-- HOME -->
   <section class="sec s-home" id="s0">
     <div class="home-bg-gradient"></div>
     <div class="home-grid-lines"></div>
@@ -74,7 +101,8 @@
       </div>
     </div>
   </section>
-  <!-- SECTION 1: SOFT DOUGH -->
+
+  <!-- SOFT DOUGH -->
   <section class="sec s-sd" id="s1">
     <div class="blob-bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
     <span class="sec-num-bg">01</span>
@@ -85,7 +113,11 @@
         <p class="sec-lead rv">Where I let myself be shaped, so I can rise into something stronger.</p>
         <p class="sec-body rv">Absorbing. Adapting. Becoming. From Grade 5 through UG Architecture — mouldable, curious, open to shaping.</p>
         <div class="pills rv">
-          <span class="pill">Director &amp; Actor</span><span class="pill">Upcycle Artist</span><span class="pill">Art Workshops</span><span class="pill">Architecture</span><span class="pill">Preserving History</span>
+          <span class="pill">Director &amp; Actor</span>
+          <span class="pill">Upcycle Artist</span>
+          <span class="pill">Art Workshops</span>
+          <span class="pill">Architecture</span>
+          <span class="pill">Preserving History</span>
         </div>
         <div id="sdImgs" class="rv"></div>
       </div>
@@ -97,7 +129,8 @@
       </div>
     </div>
   </section>
-  <!-- SECTION 2: FILLING -->
+
+  <!-- FILLING -->
   <section class="sec s-fl" id="s2">
     <div class="blob-bg"><div class="blob b4"></div><div class="blob b5"></div><div class="blob b6"></div></div>
     <span class="sec-num-bg">02</span>
@@ -117,7 +150,8 @@
       </div>
     </div>
   </section>
-  <!-- SECTION 3: DEEP FRY -->
+
+  <!-- DEEP FRY -->
   <section class="sec s-df" id="s3">
     <div class="blob-bg"><div class="blob b7"></div><div class="blob b8"></div><div class="blob b9"></div></div>
     <div class="heat-particles" id="heatP"></div>
@@ -137,7 +171,8 @@
       </div>
     </div>
   </section>
-  <!-- SECTION 4: PLATING -->
+
+  <!-- PLATING -->
   <section class="sec s-pl" id="s4">
     <div class="blob-bg"><div class="blob b10"></div><div class="blob b11"></div><div class="blob b12"></div></div>
     <div class="plating-shimmer" id="platingShimmer"></div>
@@ -175,13 +210,14 @@
     </div>
     <div class="footer-copy">© 2026 Swetha's Samosa Story</div>
   </section>
+
 </main>
-<!-- ABOUT OVERLAY -->
+
 <div class="about-ov" id="aboutOv">
   <button class="ab-close" id="abClose">&times;</button>
   <div class="ab-wrap" id="abWrap"></div>
 </div>
-<!-- MODAL -->
+
 <div class="modal-ov" id="modalOv">
   <div class="modal-box" id="modalBox">
     <div class="modal-head">
@@ -194,8 +230,9 @@
     <div class="modal-inner" id="mInner"></div>
   </div>
 </div>
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lb"><img id="lbImg"></div>
+
+<div class="lightbox" id="lb"><img id="lbImg" src="" alt=""></div>
+
 <script src="script.js"></script>
 </body>
 </html>
