@@ -47,7 +47,7 @@
   --brown:  #7A5C3A;
 
   --panel-w: clamp(170px, 15vw, 240px);
-  --fh: 'Bangers', 'CA Smut', cursive;
+  --fh: 'CA Smut', 'Bangers', cursive;
   --fb: 'Raleway', sans-serif;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
