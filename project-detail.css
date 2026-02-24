@@ -1,0 +1,362 @@
+/* ==============================================
+   SWETHA M | PROJECT DETAIL PAGES
+   project-detail.css
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+
+@font-face {
+    font-family: 'CA Smut';
+    src: url('fonts/CASmut-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CA Smut Fill';
+    src: url('fonts/CASmut-Fill.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --ink: #111007;
+    --ink2: #3A2E18;
+    --paper: #FFFCF2;
+    --gold: #D4A017;
+    --c-home: #FFE033;
+    --bg: #0D0B07;
+    --fh: 'CA Smut', 'Bangers', cursive;
+    --fhf: 'CA Smut Fill', 'CA Smut', cursive;
+    --fb: 'Comic Neue', cursive;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--paper);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fb);
+    color: var(--ink);
+    background: var(--paper);
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ── NAV ── */
+.pd-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .85rem 5%;
+    background: var(--bg);
+    border-bottom: 3px solid var(--c-home);
+}
+
+.pd-back {
+    font-family: var(--fhf);
+    font-size: .82rem;
+    letter-spacing: .07em;
+    color: var(--c-home);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    transition: .2s;
+}
+
+.pd-back:hover {
+    color: #fff;
+}
+
+.pd-brand {
+    font-family: var(--fhf);
+    font-size: 1.1rem;
+    color: var(--c-home);
+    letter-spacing: .1em;
+}
+
+/* ── HERO ── */
+.pd-hero {
+    background: var(--bg);
+    background-image: radial-gradient(circle, rgba(255, 224, 51, .04) 1px, transparent 1px);
+    background-size: 10px 10px;
+    padding: 5rem 5% 4rem;
+    border-bottom: 4px solid var(--c-home);
+}
+
+.pd-hero-inner {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.pd-logo-badge {
+    display: inline-block;
+    font-family: var(--fb);
+    font-size: .6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: rgba(255, 224, 51, .7);
+    background: rgba(255, 224, 51, .08);
+    border: 1.5px solid rgba(255, 224, 51, .3);
+    padding: .22rem .65rem;
+    border-radius: 4px;
+    margin-bottom: .8rem;
+}
+
+.pd-cat {
+    font-family: var(--fb);
+    font-size: .68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    color: rgba(255, 224, 51, .5);
+    margin-bottom: .5rem;
+}
+
+.pd-title {
+    font-family: var(--fh);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    color: var(--c-home);
+    line-height: .98;
+    letter-spacing: .04em;
+    -webkit-text-stroke: 2px var(--c-home);
+    margin-bottom: .4rem;
+}
+
+.pd-subtitle {
+    font-family: var(--fb);
+    font-size: clamp(.9rem, 2vw, 1.15rem);
+    color: rgba(255, 255, 255, .55);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+    line-height: 1.5;
+}
+
+.pd-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-bottom: 1.4rem;
+}
+
+.pd-tag {
+    font-family: var(--fb);
+    font-size: .58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--c-home);
+    padding: .2rem .55rem;
+    border: 2px solid rgba(255, 224, 51, .4);
+    border-radius: 3px;
+    background: rgba(255, 224, 51, .07);
+}
+
+.pd-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-family: var(--fb);
+    font-size: .75rem;
+    color: rgba(255, 255, 255, .4);
+}
+
+.pd-meta strong {
+    color: rgba(255, 224, 51, .7);
+}
+
+/* ── PREVIEW IMAGE ── */
+.pd-preview-img {
+    width: 100%;
+    background: #111;
+    border-bottom: 3px solid var(--ink);
+    max-height: 520px;
+    overflow: hidden;
+}
+
+.pd-preview-img img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    object-position: top center;
+    opacity: .92;
+}
+
+/* ── MAIN CONTENT ── */
+.pd-main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 5% 6rem;
+}
+
+/* ── SECTIONS ── */
+.pd-section {
+    margin-bottom: 3rem;
+}
+
+.pd-section h2 {
+    font-family: var(--fhf);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--ink);
+    letter-spacing: .04em;
+    margin-bottom: .9rem;
+    padding-bottom: .5rem;
+    border-bottom: 3px solid var(--ink);
+}
+
+.pd-section h3 {
+    font-family: var(--fhf);
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin-bottom: .6rem;
+    letter-spacing: .04em;
+}
+
+.pd-section p {
+    font-size: .92rem;
+    color: rgba(58, 46, 24, .62);
+    line-height: 1.9;
+    margin-bottom: .65rem;
+}
+
+.pd-section ul,
+.pd-section ol {
+    padding-left: 1.4rem;
+    margin-bottom: .65rem;
+}
+
+.pd-section li {
+    font-size: .92rem;
+    color: rgba(58, 46, 24, .62);
+    line-height: 1.8;
+    margin-bottom: .25rem;
+}
+
+.pd-section strong {
+    color: var(--ink);
+}
+
+.pd-section em {
+    font-style: italic;
+}
+
+.pd-section blockquote {
+    border-left: 4px solid var(--ink);
+    padding: .5rem 0 .5rem 1.2rem;
+    margin: 1rem 0;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--ink2);
+    font-size: 1rem;
+    line-height: 1.7;
+    background: rgba(212, 160, 23, .07);
+    border-radius: 0 6px 6px 0;
+}
+
+/* Callout variant */
+.pd-section--callout {
+    background: rgba(255, 224, 51, .1);
+    border: 2.5px solid var(--ink);
+    border-radius: 8px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+.pd-section--callout h3 {
+    font-family: var(--fhf);
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: .7rem;
+}
+
+/* ── IMAGES ── */
+.pd-img-wrap {
+    margin: 2rem 0;
+    border: 3px solid var(--ink);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.pd-img-wrap img {
+    width: 100%;
+    display: block;
+}
+
+.pd-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.pd-img-grid img {
+    border: 3px solid var(--ink);
+    border-radius: 6px;
+    box-shadow: 4px 4px 0 var(--ink);
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ── FOOTER ── */
+.pd-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    background: var(--bg);
+    border-top: 3px solid var(--c-home);
+    font-family: var(--fb);
+    font-size: .7rem;
+    color: rgba(255, 224, 51, .4);
+}
+
+.pd-back-footer {
+    font-family: var(--fhf);
+    font-size: .82rem;
+    letter-spacing: .06em;
+    color: var(--c-home);
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+.pd-back-footer:hover {
+    color: #fff;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+    .pd-img-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pd-meta {
+        gap: .8rem;
+    }
+}

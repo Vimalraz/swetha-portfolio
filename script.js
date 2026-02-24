@@ -4,24 +4,24 @@
 
 /* ── IMAGE MAP ── */
 const I = {
-  sd_act:     'images/0f68d0_4f166f852c484.jpg',
+  sd_act: 'images/0f68d0_4f166f852c484.jpg',
   sd_upcycle: 'images/0f68d0_b00e0015156c4.jpg',
-  sd_art1:    'images/0f68d0_1f5c8ab1c0af4.png',
-  sd_art2:    'images/0f68d0_8585c661723e4.png',
-  sd_art3:    'images/0f68d0_9b3b79ad881e4.png',
-  sd_arch:    'images/2e8212_7d30ad38443c4.png',
-  sd_hist:    'images/0f68d0_9a19b4b3597c4.png',
-  sam_char:   'images/2e8212_6a9190b7ad904.png',
+  sd_art1: 'images/0f68d0_1f5c8ab1c0af4.png',
+  sd_art2: 'images/0f68d0_8585c661723e4.png',
+  sd_art3: 'images/0f68d0_9b3b79ad881e4.png',
+  sd_arch: 'images/2e8212_7d30ad38443c4.png',
+  sd_hist: 'images/0f68d0_9a19b4b3597c4.png',
+  sam_char: 'images/2e8212_6a9190b7ad904.png',
 
-  p1:  'images/2e8212_9256175e51824.jpg',
-  p2:  'images/2e8212_212f62f77a854.png',
-  p3:  'images/2e8212_ac7a2a82f41a4.png',
-  p4:  'images/2e8212_e85f1a1a78714.png',
-  p5:  'images/2e8212_ef31311e7f144.png',
-  p6:  'images/2e8212_9ccbd8b6be9a4.png',
-  p7:  'images/2e8212_e628b22cd9de4.png',
-  p8:  'images/2e8212_345a09e86a6c4.png',
-  p9:  'images/2e8212_4173cf4f6dfd4.png',
+  p1: 'images/2e8212_9256175e51824.jpg',
+  p2: 'images/2e8212_212f62f77a854.png',
+  p3: 'images/2e8212_ac7a2a82f41a4.png',
+  p4: 'images/2e8212_e85f1a1a78714.png',
+  p5: 'images/2e8212_ef31311e7f144.png',
+  p6: 'images/2e8212_9ccbd8b6be9a4.png',
+  p7: 'images/2e8212_e628b22cd9de4.png',
+  p8: 'images/2e8212_345a09e86a6c4.png',
+  p9: 'images/2e8212_4173cf4f6dfd4.png',
   p10: 'images/2e8212_660a8aa2be5d4.png',
   p11: 'images/2e8212_c318a8522a844.png',
   p12: 'images/2e8212_cce9c56fd2724.png',
@@ -48,44 +48,44 @@ const I = {
   sh7: 'images/2e8212_90cae88e15474.png',
   sh8: 'images/2e8212_947f27eabaa44.png',
 
-  wl1:  'images/wedlink_1.jpg',
-  wl2:  'images/wedlink_2.jpg',
-  wl3:  'images/wedlink_3.jpg',
-  wl4:  'images/wedlink_4.jpg',
-  wl5:  'images/wedlink_5.jpg',
-  wl6:  'images/wedlink_6.jpg',
-  wl7:  'images/wedlink_7.jpg',
-  wl8:  'images/wedlink_8.jpg',
-  wl9:  'images/wedlink_9.jpg',
+  wl1: 'images/wedlink_1.jpg',
+  wl2: 'images/wedlink_2.jpg',
+  wl3: 'images/wedlink_3.jpg',
+  wl4: 'images/wedlink_4.jpg',
+  wl5: 'images/wedlink_5.jpg',
+  wl6: 'images/wedlink_6.jpg',
+  wl7: 'images/wedlink_7.jpg',
+  wl8: 'images/wedlink_8.jpg',
+  wl9: 'images/wedlink_9.jpg',
   wl10: 'images/wedlink_10.jpg',
 
-  ab1:  'images/2e8212_908a7d3e2f624.jpg',
-  ab2:  'images/0f68d0_86f4cf1546044.jpg',
-  ab3:  'images/0f68d0_afacc9e55f914.jpg',
-  ab4:  'images/0f68d0_6887ae8c95214.jpg',
-  ab5:  'images/2e8212_a2c9b63659094.jpg',
-  ab6:  'images/0f68d0_e8e4bcbe54ea4.jpg',
+  ab1: 'images/2e8212_908a7d3e2f624.jpg',
+  ab2: 'images/0f68d0_86f4cf1546044.jpg',
+  ab3: 'images/0f68d0_afacc9e55f914.jpg',
+  ab4: 'images/0f68d0_6887ae8c95214.jpg',
+  ab5: 'images/2e8212_a2c9b63659094.jpg',
+  ab6: 'images/0f68d0_e8e4bcbe54ea4.jpg',
 
   vol1: 'images/2e8212_1241dcf1f3104.png',
   vol2: 'images/2e8212_65286c01acaf4.png',
   vol3: 'images/volunteer1.jpg',
   vol4: 'images/volunteer2.jpg',
 
-  thumb_piracy:   'images/filling_piracy.jpg',
+  thumb_piracy: 'images/filling_piracy.jpg',
   thumb_behavior: 'images/filling_behavior.jpg',
-  thumb_service:  'images/deepfry_service.jpg',
-  thumb_shell:    'images/deepfry_shell.jpg',
-  thumb_wedding:  'images/deepfry_wedding.jpg',
+  thumb_service: 'images/deepfry_service.jpg',
+  thumb_shell: 'images/deepfry_shell.jpg',
+  thumb_wedding: 'images/deepfry_wedding.jpg',
 };
 
 /* ── DOM REFS ── */
-const mainEl    = document.getElementById('mainScroll');
-const sections  = document.querySelectorAll('.sec');
-const tkNodes   = document.querySelectorAll('.tk-node');
-const tkSamosa  = document.getElementById('tkSamosa');
-const tkProg    = document.getElementById('tkProg');
+const mainEl = document.getElementById('mainScroll');
+const sections = document.querySelectorAll('.sec');
+const tkNodes = document.querySelectorAll('.tk-node');
+const tkSamosa = document.getElementById('tkSamosa');
+const tkProg = document.getElementById('tkProg');
 const trackerEl = document.getElementById('tracker');
-let   curSec    = 0;
+let curSec = 0;
 
 /* ── NAVIGATION ── */
 function go(i) {
@@ -95,9 +95,9 @@ window.go = go;
 
 /* ── TRACKER ── */
 function getDotY(nodeEl) {
-  const dot      = nodeEl.querySelector('.tk-dot');
+  const dot = nodeEl.querySelector('.tk-dot');
   const wrapRect = trackerEl.getBoundingClientRect();
-  const dotRect  = dot.getBoundingClientRect();
+  const dotRect = dot.getBoundingClientRect();
   return dotRect.top - wrapRect.top + dot.offsetHeight / 2;
 }
 
@@ -110,7 +110,7 @@ function updateTracker(idx) {
   tkSamosa.style.top = targetY + 'px';
   const firstY = getDotY(tkNodes[0]);
   const h = Math.max(0, targetY - firstY);
-  tkProg.style.top    = firstY + 'px';
+  tkProg.style.top = firstY + 'px';
   tkProg.style.height = h + 'px';
   curSec = idx;
 }
@@ -118,8 +118,8 @@ function updateTracker(idx) {
 /* ── SCROLL HANDLER ── */
 mainEl.addEventListener('scroll', () => {
   const scrollTop = mainEl.scrollTop;
-  const viewH     = mainEl.clientHeight;
-  let   activeIdx = 0;
+  const viewH = mainEl.clientHeight;
+  let activeIdx = 0;
   sections.forEach((sec, i) => {
     if (scrollTop >= sec.offsetTop - viewH / 2) activeIdx = i;
   });
@@ -152,10 +152,10 @@ function revealElements() {
       100% { transform: translateY(-8vh) scale(1.1); opacity: 0; }
     }`;
   document.head.appendChild(s);
-  const colors = ['rgba(212,160,23,.3)','rgba(232,150,12,.22)','rgba(255,210,51,.2)','rgba(224,124,90,.15)','rgba(255,240,180,.18)'];
+  const colors = ['rgba(212,160,23,.3)', 'rgba(232,150,12,.22)', 'rgba(255,210,51,.2)', 'rgba(224,124,90,.15)', 'rgba(255,240,180,.18)'];
   for (let i = 0; i < 32; i++) {
-    const p   = document.createElement('div');
-    const sz  = 2 + Math.random() * 5;
+    const p = document.createElement('div');
+    const sz = 2 + Math.random() * 5;
     const dur = 7 + Math.random() * 10;
     const del = Math.random() * 9;
     const lft = Math.random() * 70;
@@ -173,9 +173,9 @@ function revealElements() {
 (function spawnHeat() {
   const c = document.getElementById('heatP');
   if (!c) return;
-  const colors = ['#D4A017','#E8960C','#E07C5A','#FFD233','#FF8000'];
+  const colors = ['#D4A017', '#E8960C', '#E07C5A', '#FFD233', '#FF8000'];
   for (let i = 0; i < 26; i++) {
-    const p  = document.createElement('div');
+    const p = document.createElement('div');
     const sz = 2 + Math.random() * 5;
     p.classList.add('hp');
     Object.assign(p.style, {
@@ -183,7 +183,7 @@ function revealElements() {
       width: sz + 'px', height: sz + 'px',
       background: colors[Math.floor(Math.random() * colors.length)],
       animationDuration: (2.5 + Math.random() * 3) + 's',
-      animationDelay:    (Math.random() * 4) + 's',
+      animationDelay: (Math.random() * 4) + 's',
     });
     c.appendChild(p);
   }
@@ -194,7 +194,7 @@ function revealElements() {
   const c = document.getElementById('platingShimmer');
   if (!c) return;
   for (let i = 0; i < 22; i++) {
-    const d  = document.createElement('div');
+    const d = document.createElement('div');
     const sz = 2 + Math.random() * 4;
     d.classList.add('ps-dot');
     Object.assign(d.style, {
@@ -203,54 +203,72 @@ function revealElements() {
       width: sz + 'px', height: sz + 'px',
       background: 'var(--gold)', borderRadius: '50%',
       animationDuration: (2 + Math.random() * 4) + 's',
-      animationDelay:    (Math.random() * 5) + 's',
+      animationDelay: (Math.random() * 5) + 's',
     });
     c.appendChild(d);
   }
 })();
 
 /* ── CAROUSEL (SOFT DOUGH) ──
-   Slide order per spec:
-   1. The Young Creative
-   2+3. As a Director & Actor
-   4+5+6. As an Upcycle Artist
-   7. Architecture Journey
-   8. As an Upcycle Artist (heritage / history)
+   New slide order:
+   0. Young Creative
+   1. Director & Actor (sd_act)
+   2. Director & Actor (sd_upcycle)
+   3. Upcycle Artist (sd_art1)
+   4. Upcycle Artist (sd_art2)
+   5. Upcycle Artist (sd_art3)
+   6. Upcycle Artist (sd_hist) ← was slide 7
+   7. Art Workshops (artworkshop.jpg) ← NEW
+   8. Art Workshops (artworkshop2.jpg) ← NEW
+   9. Architecture (sd_arch)
 */
 const slides = [
-  { img: I.sam_char,  title: 'The Young Creative',     desc: 'Every curiosity and creative experiment became part of the mix.' },
-  { img: I.sd_act,    title: 'As a Director & Actor',  desc: 'My earliest experiments with storytelling — directing and acting in school.' },
-  { img: I.sd_upcycle,title: 'As a Director & Actor',  desc: 'Learning how narratives shape emotions through performance and direction.' },
-  { img: I.sd_art1,   title: 'As an Upcycle Artist',   desc: 'Turning discarded materials into something beautiful. First taste of design thinking.' },
-  { img: I.sd_art2,   title: 'As an Upcycle Artist',   desc: 'From handmade crafts to mixed-media — experiments in form, colour, and expression.' },
-  { img: I.sd_art3,   title: 'As an Upcycle Artist',   desc: 'Exploring different art forms and mediums across creative workshops.' },
-  { img: I.sd_arch,   title: 'Architecture Journey',   desc: 'B.Arch at Anna University. Spatial design and how environments shape behaviour.' },
-  { img: I.sd_hist,   title: 'As an Upcycle Artist',   desc: 'Documenting heritage through a maker\'s lens — design carries cultural memory.' },
+  { img: I.sam_char, title: 'The Young Creative', desc: 'Every curiosity and creative experiment became part of the mix.' },
+  { img: I.sd_act, title: 'As a Director & Actor', desc: 'My earliest experiments with storytelling — directing and acting in school.' },
+  { img: I.sd_upcycle, title: 'As a Director & Actor', desc: 'Learning how narratives shape emotions through performance and direction.' },
+  { img: I.sd_art1, title: 'As an Upcycle Artist', desc: 'Turning discarded materials into something beautiful. First taste of design thinking.' },
+  { img: I.sd_art2, title: 'As an Upcycle Artist', desc: 'From handmade crafts to mixed-media — experiments in form, colour, and expression.' },
+  { img: I.sd_art3, title: 'As an Upcycle Artist', desc: 'Exploring different art forms and mediums across creative workshops.' },
+  { img: I.sd_hist, title: 'As an Upcycle Artist', desc: 'Documenting heritage through a maker\'s lens — design carries cultural memory.' },
+  { img: 'images/artworkshop.jpg', title: 'Art Workshops', desc: 'Taking art workshops and exploring creative expression across mediums.' },
+  { img: 'images/artworkshop2.jpg', title: 'Art Workshops', desc: 'Art as a tool for connection — workshops with kids, communities, and beyond.' },
+  { img: I.sd_arch, title: 'Architecture Journey', desc: 'B.Arch at Anna University. Spatial design and how environments shape behaviour.' },
 ];
 
-let cHTML = '<div class="carousel" id="carousel"><div class="carousel-track" id="cTrack">';
+/* Build carousel HTML — vertical right-side nav */
+let cHTML = '<div class="carousel" id="carousel"><div class="carousel-main"><div class="carousel-track" id="cTrack">';
 slides.forEach(s => {
   cHTML += `<div class="carousel-slide">
     <img src="${s.img}" alt="${s.title}" onclick="lbox(this.src)">
     <div class="carousel-caption"><h4>${s.title}</h4><p>${s.desc}</p></div>
   </div>`;
 });
-cHTML += '</div><div class="carousel-nav"><button class="carousel-btn" id="cPrev">&#8249;</button><div class="carousel-dots" id="cDots">';
+cHTML += '</div></div>'; /* end carousel-main */
+/* Vertical right column: ← | dots | → */
+cHTML += '<div class="carousel-sidebar"><button class="carousel-btn" id="cPrev">&#8592;</button><div class="carousel-dots" id="cDots">';
 slides.forEach((_, i) => {
   cHTML += `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-i="${i}"></button>`;
 });
-cHTML += '</div><button class="carousel-btn" id="cPause" title="Pause / Play">⏸</button><button class="carousel-btn" id="cNext">&#8250;</button></div></div>';
+cHTML += '</div><button class="carousel-btn" id="cNext">&#8594;</button><button class="carousel-btn carousel-pause-btn" id="cPause" title="Pause / Play">⏸</button></div>';
+cHTML += '</div>'; /* end carousel */
 document.getElementById('sdImgs').innerHTML = cHTML;
 
-let cIdx    = 0;
+let cIdx = 0;
 let cPaused = false;
 const cTrack = document.getElementById('cTrack');
-let   cDots  = document.querySelectorAll('.carousel-dot');
+let cDots = document.querySelectorAll('.carousel-dot');
 
 function goSlide(i) {
   cIdx = ((i % slides.length) + slides.length) % slides.length;
   cTrack.style.transform = `translateX(-${cIdx * 100}%)`;
   cDots.forEach((d, j) => d.classList.toggle('active', j === cIdx));
+  /* Highlight the active pill based on slide group */
+  const groups = [0, 1, 3, 7, 9]; /* start index of each group */
+  let activePillIdx = 0;
+  groups.forEach((start, gi) => { if (cIdx >= start) activePillIdx = gi; });
+  document.querySelectorAll('.pill-tab').forEach((p, pi) => {
+    p.classList.toggle('pill-active', pi === activePillIdx);
+  });
 }
 
 let cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
@@ -259,8 +277,8 @@ function resetAuto() {
   if (!cPaused) cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
 }
 
-document.getElementById('cPrev').onclick  = () => { goSlide(cIdx - 1); resetAuto(); };
-document.getElementById('cNext').onclick  = () => { goSlide(cIdx + 1); resetAuto(); };
+document.getElementById('cPrev').onclick = () => { goSlide(cIdx - 1); resetAuto(); };
+document.getElementById('cNext').onclick = () => { goSlide(cIdx + 1); resetAuto(); };
 document.getElementById('cPause').onclick = () => {
   cPaused = !cPaused;
   document.getElementById('cPause').textContent = cPaused ? '▶' : '⏸';
@@ -268,12 +286,19 @@ document.getElementById('cPause').onclick = () => {
 };
 cDots.forEach(d => d.onclick = () => { goSlide(+d.dataset.i); resetAuto(); });
 
+/* Pill-tab click → jump to carousel group */
+document.querySelectorAll('.pill-tab').forEach(btn => {
+  btn.onclick = () => { goSlide(+btn.dataset.slide); resetAuto(); };
+});
+/* Set first pill active on load */
+goSlide(0);
+
 const carEl = document.getElementById('carousel');
 carEl.addEventListener('mouseenter', () => clearInterval(cAuto));
 carEl.addEventListener('mouseleave', () => { if (!cPaused) cAuto = setInterval(() => goSlide(cIdx + 1), 6000); });
 let touchX = 0;
 carEl.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-carEl.addEventListener('touchend',   e => {
+carEl.addEventListener('touchend', e => {
   const d = touchX - e.changedTouches[0].clientX;
   if (Math.abs(d) > 40) { goSlide(cIdx + (d > 0 ? 1 : -1)); resetAuto(); }
 }, { passive: true });
@@ -283,6 +308,7 @@ document.getElementById('flCards').innerHTML = `
 <div class="card" onclick="openM('piracy')">
   <img class="card-img" src="${I.thumb_piracy}" alt="">
   <div class="card-body">
+    <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Virtual Social Behaviour</span>
     <h3 class="card-t">Piracy in Telegram</h3>
     <p class="card-d">How social behaviours exist in virtual platforms and how the interface facilitates such behaviour</p>
@@ -292,6 +318,7 @@ document.getElementById('flCards').innerHTML = `
 <div class="card" onclick="openM('behavior')">
   <img class="card-img" src="${I.thumb_behavior}" alt="">
   <div class="card-body">
+    <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Behavioural Design</span>
     <h3 class="card-t">Clean Hands Among Food Vendors</h3>
     <p class="card-d">Understanding and influencing hygiene behaviour through design interventions</p>
@@ -304,6 +331,7 @@ document.getElementById('dfCards').innerHTML = `
 <div class="card" onclick="openM('service')">
   <img class="card-img" src="${I.thumb_service}" alt="">
   <div class="card-body">
+    <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Service Design</span>
     <h3 class="card-t">Empowering Student Decisions</h3>
     <p class="card-d">Designing a service ecosystem for clarity in decision-making</p>
@@ -313,6 +341,7 @@ document.getElementById('dfCards').innerHTML = `
 <div class="card" onclick="openM('shell')">
   <img class="card-img" src="${I.thumb_shell}" alt="">
   <div class="card-body">
+    <div class="card-logo-row"><span class="card-logo-placeholder">Shell</span></div>
     <span class="card-cat">User Research</span>
     <h3 class="card-t">UX Research at Shell</h3>
     <p class="card-d">Strengthening Service Design and UXR practices at enterprise scale</p>
@@ -322,6 +351,7 @@ document.getElementById('dfCards').innerHTML = `
 <div class="card" onclick="openM('wedding')">
   <img class="card-img" src="${I.thumb_wedding}" alt="">
   <div class="card-body">
+    <div class="card-logo-row"><span class="card-logo-placeholder">WedLink</span></div>
     <span class="card-cat">UXR &amp; Service Design</span>
     <h3 class="card-t">Wedlink: Wedding Workforce</h3>
     <p class="card-d">Technology as a bridge for fair pay and dignity in Indian weddings</p>
@@ -332,10 +362,12 @@ document.getElementById('dfCards').innerHTML = `
 /* ── PROJECT DATA ── */
 const P = {
   piracy: {
-    cat:  'Virtual Social Behaviour',
-    t:    'Piracy in Telegram',
-    tags: ['Netnography','Autonetnography','Interviews','UX Strategies','UI Mockups'],
+    cat: 'Virtual Social Behaviour',
+    t: 'Piracy in Telegram',
+    logo: 'NID Gandhinagar',
+    tags: ['Netnography', 'Autonetnography', 'Interviews', 'UX Strategies', 'UI Mockups'],
     hero: I.p5,
+    page: 'piracy.html',
     summary: 'In the fast-paced world of technological advancements, this project looks into how human social behaviours exist in a virtual platform and how the interface triggers or facilitates such behaviour. Through netnography, autonetnography, and interviews, we explored piracy culture on Telegram and designed UX interventions to make users more conscious of their choices.',
     b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Type:</strong> Individual project</p>
 <p><strong>Primary research:</strong> Netnography, Autonetnography, Interviews<br><strong>Secondary research:</strong> Articles, Research papers, Documentaries</p>
@@ -368,10 +400,12 @@ const P = {
   },
 
   behavior: {
-    cat:  'Behavioural Design',
-    t:    'Clean Hand Practice Among Street Food Vendors',
-    tags: ['Field Study','Behaviour Analysis','Change Canvas','Observations','Prototyping'],
+    cat: 'Behavioural Design',
+    t: 'Clean Hand Practice Among Street Food Vendors',
+    logo: 'NID Gandhinagar',
+    tags: ['Field Study', 'Behaviour Analysis', 'Change Canvas', 'Observations', 'Prototyping'],
     hero: I.b3,
+    page: 'behavior.html',
     summary: 'Understanding how people think, feel, and act to create designs that influence their behavior positively. Through field studies in Ahmedabad and Gandhinagar, we identified compromised hygiene as a core deviant behaviour and designed interventions using the Behaviour Change Canvas.',
     b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Team:</strong> Swetha, Disha, Pramoddini</p>
 <img src="${I.b1}">
@@ -393,33 +427,93 @@ const P = {
   },
 
   service: {
-    cat:  'Service Design',
-    t:    'Empowering Students to Attain Clarity',
-    tags: ['Service Design','Market Need Research','Service Blueprint','Prototyping','5W Analysis'],
+    cat: 'Service Design',
+    t: 'Noodle: Empowering Students to Attain Clarity',
+    logo: 'NID Gandhinagar',
+    tags: ['Service Design', 'Market Need Research', 'Service Blueprint', 'Prototyping', '5W Analysis'],
     hero: I.s4,
-    summary: 'How service design can reduce ambiguity, mental overload, and emotional conflict in decision-making. People don\'t lack options; they lack structure, reflection, and emotional grounding.',
+    page: 'noodle.html',
+    summary: 'We began with a simple but powerful question: What is an unsaid need among people — one that, when addressed, can create a large and meaningful impact? Through wish boxes, interactive walls, interviews, and observations, six strong needs emerged. One stood out — the need to become decisive. We designed <em>Noodle</em>, a clarity framework tailored for final-year students torn between entrepreneurship and employment, helping them ask the right questions rather than giving them answers.',
     b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Team:</strong> 3 members</p>
 <img src="${I.s1}">
-<h3>Overview</h3>
-<p>People don't lack options. They lack structure, reflection, and emotional grounding.</p>
-<h3>5W Method</h3>
-<p>Final chosen need: "The need to become decisive."</p>
-<img src="${I.s3}">
-<h3>Understanding Decision Making</h3>
-<blockquote>"Decision involving emotions and morality makes it difficult for me"</blockquote>
-<blockquote>"I take decisions out of randomness when confusing and later regret"</blockquote>
+
+<h3>The Search for an Unsaid Need</h3>
+<p>We began with a simple but powerful question:</p>
+<blockquote>What is an unsaid need among people — one that, when addressed, can create a large and meaningful impact?</blockquote>
+<p>Instead of assuming answers, we decided to listen.</p>
+<p>We placed a <strong>Wish Box</strong> in public spaces and invited people to anonymously write down what they truly wished for. We created an interactive wall where passersby could respond to a thought-provoking question. We conducted informal interviews. We held brainstorming sessions. We observed patterns.</p>
+<p>Slowly, six strong needs emerged.</p>
+<p>To move from insight to action, we applied the <strong>5W Method</strong> (Who, What, Why, When, Where) to evaluate each need critically. One need stood out — urgent, universal, and deeply human:</p>
+<blockquote>The Need to Become Decisive</blockquote>
+
+<hr>
+<h3>Finding the Pattern Beneath Decisions</h3>
+<p>Human beings have evolved across centuries — technologically, socially, intellectually. Yet one struggle continues to persist: <strong>Ambiguity in decision-making.</strong></p>
+<p>We hesitate. We overthink. We get stuck between emotion and logic — especially when decisions involve:</p>
+<ul>
+  <li>Morality vs practicality</li>
+  <li>Career vs passion</li>
+  <li>Stability vs risk</li>
+  <li>Relationships, education, finances</li>
+</ul>
+<p>The inability to decide doesn't just delay outcomes — it creates anxiety, self-doubt, and emotional exhaustion.</p>
 <img src="${I.s2}">
-<h3>What Was Designed?</h3>
-<p>Service framework: guided sessions, cue cards, spatial design, reflective tools.</p>
-<img src="${I.s4}">`
+<p>To understand decisiveness, we analysed both successful and failed decisions. Across contexts and personalities, we noticed a common thread: <strong>Every decision silently interacts with Past, Present, and Future.</strong></p>
+<ul>
+  <li>What do I already have?</li>
+  <li>What should I build or acquire?</li>
+  <li>What is driving me toward this choice?</li>
+  <li>What could go right?</li>
+  <li>What could go wrong?</li>
+</ul>
+<p>From this insight emerged a structure we called:</p>
+<blockquote>The Triangle of Clarity</blockquote>
+<p>Every strong decision seemed to rest on three anchors:</p>
+<ol>
+  <li><strong>Drivers</strong> – What is pushing or pulling me toward this choice?</li>
+  <li><strong>Information</strong> – What do I know? What am I assuming?</li>
+  <li><strong>Consequences</strong> – What are the best and worst outcomes?</li>
+</ol>
+<p>We converted this into a digestible, conversational format — a guided Q&amp;A tool that gently walks a person through clarity.</p>
+<img src="${I.s3}">
+
+<hr>
+<h3>The First Failure</h3>
+<p>When we tested the framework, we faced another reality. It worked, but it was <strong>too open-ended</strong>. Participants felt it was insightful yet broad. It lacked situational depth.</p>
+<p><em>If confusion is contextual, clarity must be contextual too. A universal framework needs situational tailoring.</em></p>
+
+<hr>
+<h3>Narrowing the Chaos</h3>
+<p>One space stood out immediately: <strong>Final-year college students</strong> — brimming with ideas, dreaming of startups, yet afraid to take the leap. Torn between:</p>
+<ul>
+  <li>Entrepreneurship vs Employment</li>
+  <li>Risk vs Security</li>
+  <li>Passion vs Predictability</li>
+</ul>
+<p>This was not just a career decision. <em>It was an identity decision.</em></p>
+
+<hr>
+<h3>Introducing: Noodle</h3>
+<p>We redesigned our framework specifically for this scenario — sharper, more relatable, guided.</p>
+<p>We called it <strong>Noodle</strong> — because a confused mind feels like tangled noodles: twisted, overlapping, hard to separate. Noodle untangles that chaos.</p>
+<p>Instead of telling them what to choose, Noodle helps them <em>see clearly enough to choose for themselves.</em></p>
+<img src="${I.s4}">
+
+<hr>
+<h3>The Impact We Aim For</h3>
+<p>Decisiveness is not about making fast decisions. It is about making <strong>conscious</strong> ones.</p>
+<p>By moving from a broad human need → a structured clarity framework → a contextual, tailored solution, we transformed confusion into a navigable process.</p>
+<blockquote>Because sometimes, the biggest impact does not come from giving answers. It comes from helping people ask the right questions.</blockquote>`
   },
 
   shell: {
-    cat:  'User Research',
-    t:    'UX Research at Shell',
-    tags: ['Design Maturity','Stakeholder Interviews','Framework Development','Co-creation','DesignOps'],
+    cat: 'User Research',
+    t: 'Shell Research & Service Design Hub',
+    logo: 'Shell',
+    tags: ['Design Maturity', 'Stakeholder Interviews', 'Framework Development', 'Co-creation', 'DesignOps'],
     hero: I.sh2,
-    summary: 'Strengthening the role of Service Design and User Research within Shell\'s Experience Design team by addressing gaps in design maturity. Through interviews with 7 seasoned practitioners, we identified key barriers and co-created solutions.',
+    page: 'shell.html',
+    summary: 'The initiative originated from an internal Design Maturity Survey conducted by Shell\'s Experience Design (EXD) team. Our vision was to enhance the effectiveness, consistency, and strategic influence of UXR and Service Design by addressing systemic gaps — leading to the creation of a centralised, scalable Shell Research & Service Design Hub, a playbook, knowledge library, and capability-building platform.',
     b: `<img src="${I.sh1}">
 <h3>Research Plan</h3>
 <p><strong>Participants:</strong> 7 Shell practitioners &nbsp;·&nbsp; <strong>Sessions:</strong> 1 hour each</p>
@@ -442,11 +536,13 @@ const P = {
   },
 
   wedding: {
-    cat:  'UXR & Service Design',
-    t:    'Wedlink: Reimagining the Wedding Workforce',
-    tags: ['Ethnographic Research','Service Design','Platform Design','Stakeholder Mapping','Figma Prototype'],
+    cat: 'UXR & Service Design',
+    t: 'Wedlink: Reimagining the Wedding Workforce',
+    logo: 'WedLink',
+    tags: ['Ethnographic Research', 'Service Design', 'Platform Design', 'Stakeholder Mapping', 'Figma Prototype'],
     hero: I.wl1,
-    summary: 'Designing a digital platform for fair work and payment transparency in the Indian wedding industry. With 8 to 10 million weddings annually, we mapped stakeholders, identified informal worker challenges, and proposed policy, technology, and industry solutions through Wedlink.',
+    page: 'wedlink.html',
+    summary: 'WedLink is a human-centered digital platform designed to address deeply rooted challenges by leveraging technology not just as a transactional tool, but as an infrastructure for dignity, fairness, and trust across the wedding workforce ecosystem.',
     b: `<p><strong>Timeline:</strong> 8 weeks &nbsp;·&nbsp; <strong>Type:</strong> UXR &amp; Service Design</p>
 <img src="${I.wl1}">
 <h3>The Problem</h3>
@@ -479,22 +575,32 @@ const P = {
 };
 
 /* ── MODAL ── */
-const modalOv  = document.getElementById('modalOv');
+const modalOv = document.getElementById('modalOv');
 const modalBox = document.getElementById('modalBox');
-const mInner   = document.getElementById('mInner');
-const mCat     = document.getElementById('mCat');
+const mInner = document.getElementById('mInner');
+const mCat = document.getElementById('mCat');
 
 function openM(key) {
   const p = P[key];
   if (!p) return;
   mCat.textContent = p.cat;
+  /* Top-bar "View full project details" button */
+  const mViewBtn = document.getElementById('mViewBtn');
+  if (p.page) {
+    mViewBtn.href = p.page;
+    mViewBtn.style.display = 'inline-flex';
+  } else {
+    mViewBtn.style.display = 'none';
+  }
   mInner.innerHTML = `
     <h3 class="m-title">${p.t}</h3>
+    ${p.logo ? `<div class="m-logo-row"><span class="m-logo-badge">${p.logo}</span></div>` : ''}
     <div class="m-tags">${p.tags.map(t => `<span class="m-tag">${t}</span>`).join('')}</div>
     ${p.hero ? `<img class="m-hero-img" src="${p.hero}" alt="">` : ''}
     <div class="m-summary">${p.summary}</div>
-    <button class="m-expand-btn" onclick="modalBox.classList.add('expanded');modalBox.scrollTop=0">View full project ↓</button>
-    <div class="m-body">${p.b}</div>`;
+    ${p.b ? `<div class="m-body">${p.b}</div>` : ''}
+  `;
+
   modalOv.classList.add('open');
   modalBox.classList.remove('expanded');
   modalBox.scrollTop = 0;
@@ -504,17 +610,13 @@ window.openM = openM;
 window.closeM = closeM;
 
 modalOv.addEventListener('click', e => { if (e.target === modalOv) closeM(); });
-document.getElementById('mExpBtn').onclick = () => {
-  modalBox.classList.toggle('expanded');
-  modalBox.scrollTop = 0;
-};
 document.addEventListener('click', e => {
   if (e.target.matches('.m-body img')) lbox(e.target.src);
 });
 
 /* ── ABOUT OVERLAY ── */
 const aboutOv = document.getElementById('aboutOv');
-const abWrap  = document.getElementById('abWrap');
+const abWrap = document.getElementById('abWrap');
 
 abWrap.innerHTML = `
 <div class="ab-hero">
@@ -625,9 +727,9 @@ abWrap.innerHTML = `
   </div>
 </div>`;
 
-function openAbout()  { aboutOv.classList.add('open'); }
+function openAbout() { aboutOv.classList.add('open'); }
 function closeAbout() { aboutOv.classList.remove('open'); }
-document.getElementById('abBtn').onclick   = openAbout;
+document.getElementById('abBtn').onclick = openAbout;
 document.getElementById('abClose').onclick = closeAbout;
 aboutOv.addEventListener('click', e => { if (e.target === aboutOv) closeAbout(); });
 const mobAbBtn = document.getElementById('mobAbBtn');
@@ -635,9 +737,9 @@ if (mobAbBtn) mobAbBtn.onclick = openAbout;
 
 /* ── LIGHTBOX ── */
 function lbox(src) {
-  const lb  = document.getElementById('lb');
+  const lb = document.getElementById('lb');
   const img = document.getElementById('lbImg');
-  img.src   = src;
+  img.src = src;
   lb.classList.add('open');
 }
 window.lbox = lbox;
@@ -654,15 +756,15 @@ document.addEventListener('keydown', e => {
   }
   if (modalOv.classList.contains('open') || aboutOv.classList.contains('open')) return;
   if (e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); if (curSec < sections.length - 1) go(curSec + 1); }
-  if (e.key === 'ArrowUp')                    { e.preventDefault(); if (curSec > 0) go(curSec - 1); }
+  if (e.key === 'ArrowUp') { e.preventDefault(); if (curSec > 0) go(curSec - 1); }
 });
 
 /* ── 3D TILT on samosa visuals ── */
 document.querySelectorAll('.sam-tilt-wrap').forEach(wrap => {
   wrap.addEventListener('mousemove', e => {
     const r = wrap.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width  - .5) * 18;
-    const y = ((e.clientY - r.top)  / r.height - .5) * 18;
+    const x = ((e.clientX - r.left) / r.width - .5) * 18;
+    const y = ((e.clientY - r.top) / r.height - .5) * 18;
     wrap.style.transform = `perspective(700px) rotateY(${x}deg) rotateX(${-y}deg)`;
   });
   wrap.addEventListener('mouseleave', () => {
@@ -691,8 +793,8 @@ document.querySelectorAll('.sam-tilt-wrap').forEach(wrap => {
   if (!sam || !sec) return;
   sec.addEventListener('mousemove', e => {
     const r = sec.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width  - .5) * 20;
-    const y = ((e.clientY - r.top)  / r.height - .5) * 12;
+    const x = ((e.clientX - r.left) / r.width - .5) * 20;
+    const y = ((e.clientY - r.top) / r.height - .5) * 12;
     sam.style.transform = `translateY(var(--fy,0px)) rotate(-1deg) translate(${x}px,${y}px)`;
   });
   sec.addEventListener('mouseleave', () => { sam.style.transform = ''; });
