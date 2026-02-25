@@ -367,7 +367,7 @@ const P = {
     logo: 'NID Gandhinagar',
     tags: ['Netnography', 'Autonetnography', 'Interviews', 'UX Strategies', 'UI Mockups'],
     hero: I.p5,
-    page: 'piracy.html',
+    page: 'piracy2.html',
     summary: 'In the fast-paced world of technological advancements, this project looks into how human social behaviours exist in a virtual platform and how the interface triggers or facilitates such behaviour. Through netnography, autonetnography, and interviews, we explored piracy culture on Telegram and designed UX interventions to make users more conscious of their choices.',
     b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Type:</strong> Individual project</p>
 <p><strong>Primary research:</strong> Netnography, Autonetnography, Interviews<br><strong>Secondary research:</strong> Articles, Research papers, Documentaries</p>
@@ -405,7 +405,7 @@ const P = {
     logo: 'NID Gandhinagar',
     tags: ['Field Study', 'Behaviour Analysis', 'Change Canvas', 'Observations', 'Prototyping'],
     hero: I.b3,
-    page: 'behavior.html',
+    page: 'behavior2.html',
     summary: 'Understanding how people think, feel, and act to create designs that influence their behavior positively. Through field studies in Ahmedabad and Gandhinagar, we identified compromised hygiene as a core deviant behaviour and designed interventions using the Behaviour Change Canvas.',
     b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Team:</strong> Swetha, Disha, Pramoddini</p>
 <img src="${I.b1}">
@@ -431,7 +431,7 @@ const P = {
     t: 'Noodle: Empowering Students to Attain Clarity',
     logo: 'NID Gandhinagar',
     tags: ['Service Design', 'Market Need Research', 'Service Blueprint', 'Prototyping', '5W Analysis'],
-    page: 'noodle.html',
+    page: 'noodle2.html',
     summary: ' ',
     b: `<img src="images/noodlecover.png">
 
