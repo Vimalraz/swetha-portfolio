@@ -767,7 +767,7 @@ body:has(button:hover) .cr {
   top: 1.5rem;
   line-height: 1;
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
   color: transparent;
   -webkit-text-stroke: 2px rgba(0, 0, 0, .22);
   letter-spacing: -.01em;
@@ -1506,6 +1506,304 @@ body:has(button:hover) .cr {
   }
 }
 
+/* ── SOFT DOUGH SECTION LAYOUT ── */
+
+/* Full-section wave background — sits behind everything */
+.sd-wave-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  display: block;
+}
+
+/* Main content layer — three columns: text+carousel | mascot | arch-carousel */
+.sd-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem 2%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Left: text + tabbed carousel — fixed width matching right */
+.sd-left {
+  flex: 0 0 440px;
+  width: 440px;
+  max-width: 440px;
+  min-width: 0;
+  height: 400px;
+  max-height: 400px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+}
+
+/* Centre: dough mascot column — aligned with text at top */
+.sd-mascot {
+  flex: 0 0 auto;
+  width: 280px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  padding-top: 2.5rem;
+  pointer-events: none;
+}
+
+.sd-mascot .sam-tilt-wrap {
+  width: 300px;
+  height: 300px;
+}
+
+.sd-mascot .sam-png {
+  width: 290px;
+  height: 290px;
+}
+
+/* Right: architecture carousel — same fixed width as left */
+.sd-right {
+  flex: 0 0 440px;
+  width: 440px;
+  max-width: 440px;
+  min-width: 0;
+  height: 400px;
+  max-height: 400px;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* Architecture label above its carousel */
+.sd-arch-label {
+  font-family: var(--fhf) !important;
+  font-size: 1.4rem;
+  letter-spacing: .08em;
+  color: var(--a-sd);
+  text-transform: uppercase;
+  padding: 0 .25rem;
+}
+
+/* ── CHROME TABS ── */
+.car-tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0;
+  border-bottom: 2.5px solid var(--ink);
+  margin-bottom: 0;
+}
+
+.car-tab {
+  flex: 1;
+  padding: .42rem .5rem;
+  background: rgba(26, 126, 191, .06);
+  border: 2px solid var(--ink);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  font-family: var(--fhf) !important;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(17, 16, 7, .45);
+  cursor: pointer;
+  transition: all .15s;
+  margin-right: -1px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.car-tab:hover {
+  background: rgba(26, 126, 191, .12);
+  color: var(--a-sd);
+}
+
+.car-tab-active {
+  background: #FFFFFF !important;
+  color: var(--a-sd) !important;
+  border-color: var(--ink) !important;
+  border-bottom: 2.5px solid #FFFFFF !important;
+  z-index: 2;
+  font-weight: 900;
+  margin-bottom: -2.5px;
+}
+
+/* The car-body wraps carousel-main + carousel-sidebar */
+.car-body {
+  height: 380px;
+  display: flex;
+  border: 2.5px solid var(--ink);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 0 var(--ink);
+  overflow: hidden;
+}
+
+/* Override the old .carousel wrapper — must be column so tabs stack on top */
+.carousel {
+  margin-top: .6rem;
+  display: flex !important;
+  flex-direction: column !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* ── ARCHITECTURE CAROUSEL ── */
+.arch-carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 2.5px solid var(--ink);
+  border-radius: 6px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 0 var(--ink);
+  overflow: hidden;
+}
+
+/* Tab header — mirrors active car-tab: white bg, blue text, bottom border flush */
+.arch-tab-header {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 2.5px solid var(--ink);
+  background: #FFFFFF;
+}
+
+.arch-tab-label {
+  flex: 1;
+  padding: .42rem .75rem;
+  font-family: var(--fhf) !important;
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--a-sd);
+  background: #FFFFFF;
+  border: none;
+  display: block;
+}
+
+/* Body row: image area + right sidebar */
+.arch-body {
+  height: 380px;
+  display: flex;
+  overflow: hidden;
+}
+
+.arch-main {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.arch-track {
+  display: flex;
+  transition: transform .38s cubic-bezier(.25, .46, .45, .94);
+  height: 100%;
+}
+
+.arch-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.arch-slide img {
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
+  background: #F5F9FF;
+  display: block;
+  cursor: pointer;
+}
+
+/* Right sidebar — matches .carousel-sidebar exactly */
+.arch-sidebar {
+  flex: 0 0 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--c-sd);
+  border-left: 2.5px solid var(--ink);
+  padding: .5rem .3rem;
+  gap: .25rem;
+}
+
+.arch-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 2px solid var(--ink);
+  background: #FFF;
+  color: var(--ink);
+  font-size: .85rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .15s;
+  box-shadow: 2px 2px 0 var(--ink);
+  flex-shrink: 0;
+}
+
+.arch-btn:hover {
+  background: var(--ink);
+  color: #FFF;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, .3);
+}
+
+.arch-dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .28rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.arch-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .18);
+  border: 1.5px solid rgba(0, 0, 0, .22);
+  cursor: pointer;
+  transition: .3s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.arch-dot.active {
+  background: var(--a-sd);
+  border-color: var(--a-sd);
+  width: 9px;
+  height: 9px;
+  box-shadow: 0 0 0 2px rgba(26, 126, 191, .25);
+}
+
 /* ── BLOBS ── */
 .s-sd .blob-bg,
 .s-fl .blob-bg,
@@ -1863,17 +2161,17 @@ body:has(button:hover) .cr {
   background: var(--c-pl);
 }
 
-/* ── CAROUSEL ── */
+/* ── CAROUSEL (base styles — overridden by the SD section above) ── */
 .carousel {
   margin-top: .9rem;
   display: flex;
+  flex-direction: column;
   border: 3px solid var(--ink);
   border-radius: 6px;
   background: #FFFFFF;
   box-shadow: 5px 5px 0 var(--ink);
   overflow: hidden;
   width: 100%;
-  max-width: 580px;
 }
 
 .carousel-main {
@@ -1898,11 +2196,12 @@ body:has(button:hover) .cr {
 
 .carousel-slide img {
   width: 100%;
-  height: 280px;
+  height: 250px;
   object-fit: contain;
   background: #FAFAFA;
   border-bottom: 2px solid var(--ink);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .carousel-caption {

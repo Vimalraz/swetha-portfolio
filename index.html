@@ -159,29 +159,73 @@
         <div class="blob b3"></div>
       </div>
       <span class="sec-num-bg">01</span>
-      <div class="sec-inner">
-        <div class="sec-text">
-          <div class="sec-eyebrow rv">Childhood to Adolescence</div>
-          <h2 class="sec-h rv">Soft Dough</h2>
-          <p class="sec-lead rv">Where I let myself be shaped, so I can rise into something stronger.</p>
-          <p class="sec-body rv">Absorbing. Adapting. Becoming. From Grade 5 through UG Architecture — mouldable,
-            curious, open to shaping.</p>
-          <div class="pills rv">
-            <button class="pill pill-tab" data-slide="0">Young Creative</button>
-            <button class="pill pill-tab" data-slide="1">Director &amp; Actor</button>
-            <button class="pill pill-tab" data-slide="3">Upcycle Artist</button>
-            <button class="pill pill-tab" data-slide="7">Art Workshops</button>
-            <button class="pill pill-tab" data-slide="9">Architecture</button>
+
+      <!-- BACKGROUND WAVE COLOR BLOCK — behind everything -->
+      <svg class="sd-wave-svg" viewBox="0 0 1000 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+        <path d="M 1000 600 L 999 30 C 841 62 820 75 732 220 C 645 357 614 376 434 410 Q 256 445 200 600 Z"
+          fill="#7EC8E3" />
+      </svg>
+
+      <!-- MAIN CONTENT LAYER -->
+      <div class="sd-content">
+        <!-- LEFT: text + tabbed carousel -->
+        <div class="sd-left">
+          <div class="sec-text">
+            <div class="sec-eyebrow rv">Childhood to Adolescence</div>
+            <h2 class="sec-h rv">Soft Dough</h2>
+            <p class="sec-lead rv">Where I let myself be shaped, so I can rise into something stronger.</p>
+            <p class="sec-body rv">Absorbing. Adapting. Becoming. From Grade 5 through UG Architecture — mouldable,
+              curious, open to shaping.</p>
           </div>
+          <!-- Carousel with tabs on top -->
           <div id="sdImgs" class="rv"></div>
         </div>
-        <div class="sec-visual rv">
+
+        <!-- MASCOT: dough character between columns -->
+        <div class="sd-mascot">
           <div class="sam-tilt-wrap" id="v1">
-            <img class="sam-png" src="images/dough.png" alt="Soft Dough Samosa">
+            <img class="sam-png" src="images/dough.png" alt="Soft Dough Character">
             <div class="sam-shadow"></div>
           </div>
         </div>
+
+        <!-- RIGHT: architecture carousel -->
+        <div class="sd-right">
+          <div class="arch-carousel rv" id="archCarousel">
+            <!-- Tab-style header — matches the left carousel's active tab look -->
+            <div class="arch-tab-header">
+              <span class="arch-tab-label">Architecture</span>
+            </div>
+            <!-- Body: image area + right sidebar (mirrors left carousel) -->
+            <div class="arch-body">
+              <div class="arch-main">
+                <div class="arch-track" id="archTrack">
+                  <div class="arch-slide"><img src="images/soft-dough/architecture/1.PNG" alt="Architecture 1"></div>
+                  <div class="arch-slide"><img src="images/soft-dough/architecture/2.PNG" alt="Architecture 2"></div>
+                  <div class="arch-slide"><img src="images/soft-dough/architecture/3.PNG" alt="Architecture 3"></div>
+                  <div class="arch-slide"><img src="images/soft-dough/architecture/4.PNG" alt="Architecture 4"></div>
+                  <div class="arch-slide"><img src="images/soft-dough/architecture/5.png" alt="Architecture 5"></div>
+                </div>
+              </div>
+              <!-- Right sidebar: prev | dots | next -->
+              <div class="arch-sidebar">
+                <button class="arch-btn" id="archPrev">&#8592;</button>
+                <div class="arch-dots" id="archDots">
+                  <button class="arch-dot active" data-i="0"></button>
+                  <button class="arch-dot" data-i="1"></button>
+                  <button class="arch-dot" data-i="2"></button>
+                  <button class="arch-dot" data-i="3"></button>
+                  <button class="arch-dot" data-i="4"></button>
+                </div>
+                <button class="arch-btn" id="archNext">&#8594;</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+
     </section>
 
     <!-- FILLING -->

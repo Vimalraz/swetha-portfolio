@@ -209,18 +209,18 @@ function revealElements() {
   }
 })();
 
-/* ── CAROUSEL (SOFT DOUGH) ──
-   New slide order:
-   0. Young Creative
-   1. Director & Actor (sd_act)
-   2. Director & Actor (sd_upcycle)
-   3. Upcycle Artist (sd_art1)
-   4. Upcycle Artist (sd_art2)
-   5. Upcycle Artist (sd_art3)
-   6. Upcycle Artist (sd_hist) ← was slide 7
-   7. Art Workshops (artworkshop.jpg) ← NEW
-   8. Art Workshops (artworkshop2.jpg) ← NEW
-   9. Architecture (sd_arch)
+/* ── CAROUSEL (SOFT DOUGH) — tabs: Young Creative | Director & Actor | Upcycle Artist | Art Workshops ──
+   Architecture is now its own carousel on the right.
+   Slide indices:
+   0  Young Creative
+   1  Director & Actor (sd_act)
+   2  Director & Actor (sd_upcycle)
+   3  Upcycle Artist (sd_art1)
+   4  Upcycle Artist (sd_art2)
+   5  Upcycle Artist (sd_art3)
+   6  Upcycle Artist (sd_hist)
+   7  Art Workshops (artworkshop.jpg)
+   8  Art Workshops (artworkshop2.jpg)
 */
 const slides = [
   { img: I.sam_char, title: 'The Young Creative', desc: 'Every curiosity and creative experiment became part of the mix.' },
@@ -232,25 +232,40 @@ const slides = [
   { img: I.sd_hist, title: 'As an Upcycle Artist', desc: 'Documenting heritage through a maker\'s lens — design carries cultural memory.' },
   { img: 'images/artworkshop.jpg', title: 'Art Workshops', desc: 'Taking art workshops and exploring creative expression across mediums.' },
   { img: 'images/artworkshop2.jpg', title: 'Art Workshops', desc: 'Art as a tool for connection — workshops with kids, communities, and beyond.' },
-  { img: I.sd_arch, title: 'Architecture Journey', desc: 'B.Arch at Anna University. Spatial design and how environments shape behaviour.' },
 ];
 
-/* Build carousel HTML — vertical right-side nav */
-let cHTML = '<div class="carousel" id="carousel"><div class="carousel-main"><div class="carousel-track" id="cTrack">';
+/* Tab definitions: label + first slide index for this group */
+const sdTabs = [
+  { label: 'Young Creative', start: 0 },
+  { label: 'Director & Actor', start: 1 },
+  { label: 'Upcycle Artist', start: 3 },
+  { label: 'Art Workshops', start: 7 },
+];
+
+/* Build carousel HTML — tabs on top, then slides, then sidebar */
+let cHTML = '<div class="carousel" id="carousel">';
+/* Tab bar */
+cHTML += '<div class="car-tabs">';
+sdTabs.forEach((t, i) => {
+  cHTML += `<button class="car-tab${i === 0 ? ' car-tab-active' : ''}" data-start="${t.start}">${t.label}</button>`;
+});
+cHTML += '</div>';
+/* Slide area + sidebar */
+cHTML += '<div class="car-body"><div class="carousel-main"><div class="carousel-track" id="cTrack">';
 slides.forEach(s => {
   cHTML += `<div class="carousel-slide">
     <img src="${s.img}" alt="${s.title}" onclick="lbox(this.src)">
     <div class="carousel-caption"><h4>${s.title}</h4><p>${s.desc}</p></div>
   </div>`;
 });
-cHTML += '</div></div>'; /* end carousel-main */
-/* Vertical right column: ← | dots | → */
+cHTML += '</div></div>';
+/* Vertical sidebar: ← | dots | → | pause */
 cHTML += '<div class="carousel-sidebar"><button class="carousel-btn" id="cPrev">&#8592;</button><div class="carousel-dots" id="cDots">';
 slides.forEach((_, i) => {
   cHTML += `<button class="carousel-dot${i === 0 ? ' active' : ''}" data-i="${i}"></button>`;
 });
 cHTML += '</div><button class="carousel-btn" id="cNext">&#8594;</button><button class="carousel-btn carousel-pause-btn" id="cPause" title="Pause / Play">⏸</button></div>';
-cHTML += '</div>'; /* end carousel */
+cHTML += '</div></div>'; /* end car-body + carousel */
 document.getElementById('sdImgs').innerHTML = cHTML;
 
 let cIdx = 0;
@@ -258,17 +273,19 @@ let cPaused = false;
 const cTrack = document.getElementById('cTrack');
 let cDots = document.querySelectorAll('.carousel-dot');
 
+function getActiveTabIdx(slideIdx) {
+  let ti = 0;
+  sdTabs.forEach((t, i) => { if (slideIdx >= t.start) ti = i; });
+  return ti;
+}
+
 function goSlide(i) {
   cIdx = ((i % slides.length) + slides.length) % slides.length;
   cTrack.style.transform = `translateX(-${cIdx * 100}%)`;
   cDots.forEach((d, j) => d.classList.toggle('active', j === cIdx));
-  /* Highlight the active pill based on slide group */
-  const groups = [0, 1, 3, 7, 9]; /* start index of each group */
-  let activePillIdx = 0;
-  groups.forEach((start, gi) => { if (cIdx >= start) activePillIdx = gi; });
-  document.querySelectorAll('.pill-tab').forEach((p, pi) => {
-    p.classList.toggle('pill-active', pi === activePillIdx);
-  });
+  /* Highlight active tab */
+  const ti = getActiveTabIdx(cIdx);
+  document.querySelectorAll('.car-tab').forEach((t, pi) => t.classList.toggle('car-tab-active', pi === ti));
 }
 
 let cAuto = setInterval(() => goSlide(cIdx + 1), 6000);
@@ -286,11 +303,10 @@ document.getElementById('cPause').onclick = () => {
 };
 cDots.forEach(d => d.onclick = () => { goSlide(+d.dataset.i); resetAuto(); });
 
-/* Pill-tab click → jump to carousel group */
-document.querySelectorAll('.pill-tab').forEach(btn => {
-  btn.onclick = () => { goSlide(+btn.dataset.slide); resetAuto(); };
+/* Tab click → jump to group start */
+document.querySelectorAll('.car-tab').forEach(btn => {
+  btn.onclick = () => { goSlide(+btn.dataset.start); resetAuto(); };
 });
-/* Set first pill active on load */
 goSlide(0);
 
 const carEl = document.getElementById('carousel');
@@ -302,6 +318,26 @@ carEl.addEventListener('touchend', e => {
   const d = touchX - e.changedTouches[0].clientX;
   if (Math.abs(d) > 40) { goSlide(cIdx + (d > 0 ? 1 : -1)); resetAuto(); }
 }, { passive: true });
+
+/* ── ARCHITECTURE CAROUSEL ── */
+const archSlides = document.querySelectorAll('#archTrack .arch-slide');
+const archDotsEl = document.querySelectorAll('#archDots .arch-dot');
+let aIdx = 0;
+
+function goArch(i) {
+  aIdx = ((i % archSlides.length) + archSlides.length) % archSlides.length;
+  document.getElementById('archTrack').style.transform = `translateX(-${aIdx * 100}%)`;
+  archDotsEl.forEach((d, j) => d.classList.toggle('active', j === aIdx));
+}
+
+document.getElementById('archPrev').onclick = () => goArch(aIdx - 1);
+document.getElementById('archNext').onclick = () => goArch(aIdx + 1);
+archDotsEl.forEach(d => d.onclick = () => goArch(+d.dataset.i));
+let archAuto = setInterval(() => goArch(aIdx + 1), 5000);
+const archEl = document.getElementById('archCarousel');
+archEl.addEventListener('mouseenter', () => clearInterval(archAuto));
+archEl.addEventListener('mouseleave', () => { archAuto = setInterval(() => goArch(aIdx + 1), 5000); });
+
 
 /* ── FILLING CARDS ── */
 document.getElementById('flCards').innerHTML = `
