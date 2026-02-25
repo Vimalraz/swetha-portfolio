@@ -7,14 +7,21 @@
 
 @font-face {
   font-family: 'CA Smut';
-  src: url('fonts/CASmut-Regular.otf') format('opentype');
+  src: url('./fonts/CASmut-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'CA Smut Fill';
-  src: url('fonts/CASmut-Fill.otf') format('opentype');
+  src: url('./fonts/CASmut-Fill.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('./fonts/Brandon_Grotesque.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -49,7 +56,7 @@
   --comic-y: #FFE033;
   --fh: 'CA Smut', 'Bangers', cursive;
   --fhf: 'CA Smut Fill', 'CA Smut', cursive;
-  --fb: 'Comic Neue', cursive;
+  --fb: 'Brandon Grotesque', sans-serif;
   --ease: cubic-bezier(.22, 1, .36, 1);
 }
 
@@ -664,7 +671,7 @@ body:has(button:hover) .cr {
 
 .fl-top-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   width: 100%;
 }
@@ -672,6 +679,7 @@ body:has(button:hover) .cr {
 .fl-top-row .sec-text {
   flex: 1;
   max-width: none;
+
 }
 
 .fl-visual {
@@ -716,7 +724,7 @@ body:has(button:hover) .cr {
 
 .df-top-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   width: 100%;
 }
@@ -1529,7 +1537,8 @@ body:has(button:hover) .cr {
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto auto;
+  align-content: center;
   align-items: end;
   gap: 1rem 3vw;
   padding: 6rem 4% 4rem 4%;
@@ -1544,7 +1553,7 @@ body:has(button:hover) .cr {
 .sd-left>.sec-text {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  align-self: start;
+  align-self: end;
   max-width: none;
 }
 
@@ -2032,11 +2041,13 @@ body:has(button:hover) .cr {
   display: flex;
   flex-wrap: nowrap;
   gap: 1rem;
-  margin-top: .8rem;
+  margin-top: .4rem;
   overflow-x: auto;
-  padding-bottom: .5rem;
+  padding: 10px;
+  padding-bottom: 15px;
+  margin-left: -10px;
   scrollbar-width: thin;
-  max-width: 100%;
+  max-width: calc(100% + 10px);
 }
 
 .cards::-webkit-scrollbar {
@@ -2067,8 +2078,8 @@ body:has(button:hover) .cr {
 
 .card-img {
   width: 100%;
-  height: 130px;
-  object-fit: cover;
+  height: 300px;
+  object-fit: contain;
   border-bottom: 2.5px solid var(--ink);
 }
 
@@ -2077,7 +2088,7 @@ body:has(button:hover) .cr {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: .5rem .9rem .4rem;
+  padding: .5rem .9rem .4rem 0rem;
 }
 
 .card-logo-placeholder {
@@ -2110,7 +2121,7 @@ body:has(button:hover) .cr {
 
 .card-t {
   font-family: var(--fhf) !important;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: var(--ink);
   margin-bottom: .2rem;
   line-height: 1.1;
@@ -2192,7 +2203,7 @@ body:has(button:hover) .cr {
 
 .carousel-slide img {
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: contain;
   background: #FAFAFA;
   border-bottom: 2px solid var(--ink);
@@ -2204,11 +2215,12 @@ body:has(button:hover) .cr {
   padding: .55rem .9rem;
   background: #FFF;
   flex: 1;
+  text-align: center;
 }
 
 .carousel-caption h4 {
   font-family: var(--fhf) !important;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: var(--ink);
   margin-bottom: .1rem;
   letter-spacing: .04em;
@@ -2286,8 +2298,8 @@ body:has(button:hover) .cr {
 }
 
 .carousel-dot.active {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--a-sd);
+  border-color: var(--a-sd);
   box-shadow: 0 0 0 2px rgba(26, 126, 191, .25);
   width: 9px;
   height: 9px;
