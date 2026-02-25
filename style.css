@@ -500,74 +500,61 @@ body:has(button:hover) .cr {
   box-shadow: 1px 1px 0 rgba(255, 224, 51, .3);
 }
 
-/* ── PANEL CONTACT ROWS ── */
+/* ── PANEL CONTACT BUTTONS (side by side) ── */
 .panel-contacts {
   display: flex;
-  flex-direction: column;
-  gap: .35rem;
+  flex-direction: row;
+  gap: .4rem;
   margin-top: .25rem;
 }
 
-.panel-contact-row {
+.panel-contact-btn {
+  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: .6rem;
-  padding: .42rem .6rem;
+  gap: .28rem;
+  padding: .45rem .3rem;
   border: 1.5px solid rgba(255, 224, 51, .22);
-  border-radius: 5px;
+  border-radius: 6px;
   background: rgba(255, 224, 51, .05);
-  color: rgba(255, 224, 51, .75);
+  color: rgba(255, 224, 51, .8);
   text-decoration: none;
   transition: all .2s;
 }
 
-.panel-contact-row:hover {
-  background: rgba(255, 224, 51, .14);
-  border-color: rgba(255, 224, 51, .5);
+.panel-contact-btn:hover {
+  background: rgba(255, 224, 51, .15);
+  border-color: rgba(255, 224, 51, .55);
   color: var(--comic-y);
-  transform: translate(-1px, -1px);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 0 rgba(255, 224, 51, .2);
 }
 
-.pcr-icon {
-  width: 26px;
-  height: 26px;
+.pcb-icon {
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 224, 51, .12);
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-.pcr-icon svg {
-  width: 13px;
-  height: 13px;
+.pcb-icon svg {
+  width: 14px;
+  height: 14px;
 }
 
-.pcr-text {
-  display: flex;
-  flex-direction: column;
-  gap: .06rem;
-  min-width: 0;
-}
-
-.pcr-label {
-  font-size: .48rem;
+.pcb-label {
+  font-size: .52rem;
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   font-weight: 800;
-  color: rgba(255, 224, 51, .45);
+  color: inherit;
   line-height: 1;
-}
-
-.pcr-val {
-  font-size: .58rem;
-  color: rgba(255, 224, 51, .75);
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.2;
+  font-family: var(--fb);
 }
 
 /* ── MAIN SCROLL ── */
@@ -946,7 +933,7 @@ body:has(button:hover) .cr {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(135deg, #FFF9C4 0%, #FFF176 25%, #FFE500 60%, #F9D000 100%);
+  background: #FFFFFF;
 }
 
 .home-grid-lines {
@@ -961,8 +948,8 @@ body:has(button:hover) .cr {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, .09) 1.5px, transparent 1.5px);
-  background-size: 12px 12px;
+  background-image: radial-gradient(circle, rgba(255, 210, 0, .35) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
 }
 
 .home-grid-lines::after {
@@ -970,7 +957,8 @@ body:has(button:hover) .cr {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(200, 150, 0, .08) 100%);
+  /* subtle warm vignette on white — very faint */
+  background: radial-gradient(ellipse at 60% 50%, transparent 55%, rgba(255, 200, 0, .06) 100%);
 }
 
 .home-particles {
@@ -983,14 +971,22 @@ body:has(button:hover) .cr {
 
 .home-inner {
   z-index: 5;
-  align-items: center !important;
+  align-items: stretch !important;
   padding-top: 0 !important;
+  padding-right: 0 !important;
   height: 100%;
+  max-width: none !important;
+  width: 100% !important;
+  overflow: hidden;
 }
 
 .home-text {
   flex: 1;
   z-index: 5;
+  padding: 0 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home-eyebrow {
@@ -1104,45 +1100,326 @@ body:has(button:hover) .cr {
   }
 }
 
-.home-visual {
-  flex: 0 0 auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
+/* ── HOME LAYOUT (fully layered / absolute) ── */
+.home-inner {
+  /* no longer used — kept for selector safety */
+  display: none;
 }
 
-.home-ring {
+.home-text {
   position: absolute;
-  border-radius: 50%;
-  border: 3px solid rgba(17, 7, 0, .12);
-  animation: spinRing 20s linear infinite;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 55%;
+  z-index: 6;
+  padding: 0 5% 0 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: auto;
 }
 
-.home-ring.r1 {
-  width: 320px;
-  height: 320px;
+.home-h1 {
+  font-family: var(--fh) !important;
+  font-size: clamp(3.2rem, 6vw, 5.4rem);
+  color: var(--ink);
+  line-height: .95;
+  margin-bottom: .4rem;
+  letter-spacing: .03em;
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp .8s var(--ease) calc(var(--d, .1s)) forwards;
 }
 
-.home-ring.r2 {
-  width: 420px;
-  height: 420px;
-  border-style: dashed;
-  border-color: rgba(17, 7, 0, .07);
-  animation-direction: reverse;
-  animation-duration: 28s;
+.home-tagline {
+  font-size: .85rem;
+  font-weight: 700;
+  color: rgba(15, 10, 0, .45);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .9rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp .7s var(--ease) calc(var(--d, .1s)) forwards;
 }
 
-@keyframes spinRing {
-  from {
-    transform: rotate(0deg)
-  }
-
-  to {
-    transform: rotate(360deg)
-  }
+.home-desc {
+  font-size: .9rem;
+  line-height: 1.9;
+  color: rgba(15, 10, 0, .55);
+  max-width: 420px;
+  margin-bottom: 1.4rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp .7s var(--ease) calc(var(--d, .1s)) forwards;
 }
+
+.home-desc strong {
+  color: var(--comic-o);
+  font-weight: 700;
+}
+
+.scroll-cta {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: .75rem;
+  background: #fff;
+  border: 3px solid var(--ink);
+  color: var(--ink);
+  padding: .6rem 1.4rem .6rem 1rem;
+  border-radius: 4px;
+  font-family: var(--fhf) !important;
+  font-size: 1rem;
+  letter-spacing: .08em;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: all .2s;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp .7s var(--ease) calc(var(--d, .1s)) forwards;
+  margin-bottom: .9rem;
+}
+
+.scroll-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+  background: var(--ink);
+  color: #FFE500;
+}
+
+.home-eyebrow {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-weight: 800;
+  color: var(--comic-o);
+  border: 2px solid var(--comic-o);
+  border-radius: 30px;
+  display: inline-block;
+  padding: .3rem .9rem;
+  align-self: flex-start;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp .7s var(--ease) calc(var(--d, .1s)) forwards;
+}
+
+/* ── HOME WAVE SVG BACKGROUND — full section, sits at the very back ── */
+.home-wave-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  display: block;
+}
+
+/* Decorative samosa container — spans the full section, same low z-index */
+.home-deco-sams {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Scattered background samosas — positioned relative to the full section */
+.hem-bg {
+  position: absolute;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* ── scattered samosas — even spread, clear of character & text zones ── */
+/* TOP STRIP row — s1–s4 across full width */
+.hem-s1 {
+  width: 180px;
+  left: 2%;
+  top: 4%;
+  opacity: .15;
+  transform: rotate(-28deg);
+}
+
+.hem-s2 {
+  width: 118px;
+  left: 26%;
+  top: 9%;
+  opacity: .10;
+  transform: rotate(13deg);
+}
+
+.hem-s3 {
+  width: 168px;
+  left: 55%;
+  top: 2%;
+  opacity: .14;
+  transform: rotate(34deg);
+}
+
+.hem-s4 {
+  width: 148px;
+  right: 0%;
+  top: 6%;
+  opacity: .12;
+  transform: rotate(-9deg);
+}
+
+/* UPPER-MID row — far-left edge + right side only (text + character kept clear) */
+.hem-s5 {
+  width: 162px;
+  left: 1%;
+  top: 30%;
+  opacity: .12;
+  transform: rotate(22deg);
+}
+
+.hem-s6 {
+  width: 142px;
+  left: 70%;
+  top: 24%;
+  opacity: .11;
+  transform: rotate(-27deg);
+}
+
+.hem-s7 {
+  width: 195px;
+  right: 1%;
+  top: 38%;
+  opacity: .15;
+  transform: rotate(8deg);
+}
+
+/* LOWER-MID row — far-left edge + right side only (character zone x:42–68%, y:28–68% kept clear) */
+.hem-s8 {
+  width: 155px;
+  left: 2%;
+  top: 57%;
+  opacity: .12;
+  transform: rotate(-15deg);
+}
+
+.hem-s9 {
+  width: 138px;
+  left: 72%;
+  top: 52%;
+  opacity: .11;
+  transform: rotate(31deg);
+}
+
+.hem-s10 {
+  width: 185px;
+  right: 1%;
+  top: 56%;
+  opacity: .14;
+  transform: rotate(-20deg);
+}
+
+/* LOWER-CENTER GAP — fills open area between character and bottom strip */
+.hem-s16 {
+  width: 128px;
+  left: 40%;
+  top: 72%;
+  opacity: .10;
+  transform: rotate(-18deg);
+}
+
+/* BOTTOM STRIP row — s11–s15 spread left-to-right */
+.hem-s11 {
+  width: 148px;
+  left: 2%;
+  bottom: 3%;
+  opacity: .11;
+  transform: rotate(19deg);
+}
+
+.hem-s12 {
+  width: 125px;
+  left: 23%;
+  bottom: 8%;
+  opacity: .10;
+  transform: rotate(-35deg);
+}
+
+.hem-s13 {
+  width: 165px;
+  left: 44%;
+  bottom: 5%;
+  opacity: .13;
+  transform: rotate(25deg);
+}
+
+.hem-s14 {
+  width: 140px;
+  left: 65%;
+  bottom: 10%;
+  opacity: .12;
+  transform: rotate(-5deg);
+}
+
+.hem-s15 {
+  width: 178px;
+  right: 0%;
+  bottom: 6%;
+  opacity: .13;
+  transform: rotate(14deg);
+}
+
+
+
+.hem-gray {
+  filter: grayscale(1);
+}
+
+.hem-dark {
+  filter: brightness(0.3) sepia(1) saturate(0);
+}
+
+/* ── PROMINENT SAMOSA WRAP — overlaps into left content area ── */
+.home-prominent-wrap {
+  position: absolute;
+  /* sits at the boundary of text and color block, overlapping both */
+  right: 38%;
+  top: 50%;
+  transform: translateY(-52%);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* speech bubble above the prominent samosa */
+.home-prominent-wrap .speech-bubble {
+  position: absolute;
+  top: -52px;
+  left: 50%;
+  transform: translateX(-35%);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* prominent samosa image */
+.home-samosa {
+  width: clamp(220px, 26vw, 380px);
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  position: relative;
+  z-index: 8;
+  animation: floatY 4.5s ease-in-out infinite;
+}
+
+/* eyebrow pill spacing above CTA */
+.home-eyebrow {
+  margin-bottom: .75rem;
+}
+
 
 .speech-bubble {
   position: absolute;
