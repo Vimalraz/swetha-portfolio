@@ -884,8 +884,8 @@ document.querySelectorAll('.sam-tilt-wrap').forEach(wrap => {
   let mx = 0, my = 0, cx = 0, cy = 0;
   document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
   (function animCursor() {
-    cx += (mx - cx) * .14;
-    cy += (my - cy) * .14;
+    cx += (mx - cx) * .35;
+    cy += (my - cy) * .35;
     cursor.style.transform = `translate(${cx}px,${cy}px)`;
     requestAnimationFrame(animCursor);
   })();
