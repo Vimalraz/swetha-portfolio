@@ -1,4 +1,4 @@
-/* ==============================================
+﻿/* ==============================================
    SWETHA M | MY SAMOSA STORY — script.js
    ============================================== */
 
@@ -431,11 +431,9 @@ const P = {
     t: 'Noodle: Empowering Students to Attain Clarity',
     logo: 'NID Gandhinagar',
     tags: ['Service Design', 'Market Need Research', 'Service Blueprint', 'Prototyping', '5W Analysis'],
-    hero: I.s4,
     page: 'noodle.html',
-    summary: 'We began with a simple but powerful question: What is an unsaid need among people — one that, when addressed, can create a large and meaningful impact? Through wish boxes, interactive walls, interviews, and observations, six strong needs emerged. One stood out — the need to become decisive. We designed <em>Noodle</em>, a clarity framework tailored for final-year students torn between entrepreneurship and employment, helping them ask the right questions rather than giving them answers.',
-    b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Team:</strong> 3 members</p>
-<img src="${I.s1}">
+    summary: ' ',
+    b: `<img src="images/noodlecover.png">
 
 <h3>The Search for an Unsaid Need</h3>
 <p>We began with a simple but powerful question:</p>
@@ -445,11 +443,11 @@ const P = {
 <p>Slowly, six strong needs emerged.</p>
 <p>To move from insight to action, we applied the <strong>5W Method</strong> (Who, What, Why, When, Where) to evaluate each need critically. One need stood out — urgent, universal, and deeply human:</p>
 <blockquote>The Need to Become Decisive</blockquote>
-
-<hr>
-<h3>Finding the Pattern Beneath Decisions</h3>
-<p>Human beings have evolved across centuries — technologically, socially, intellectually. Yet one struggle continues to persist: <strong>Ambiguity in decision-making.</strong></p>
-<p>We hesitate. We overthink. We get stuck between emotion and logic — especially when decisions involve:</p>
+<p>Human beings have evolved across centuries — technologically, socially, intellectually.</p>
+<p>Yet one struggle continues to persist within us:</p>
+<p><strong>Ambiguity in decision-making.</strong></p>
+<p>We hesitate.<br>We overthink.<br>We get stuck between emotion and logic.</p>
+<p>Especially when decisions involve:</p>
 <ul>
   <li>Morality vs practicality</li>
   <li>Career vs passion</li>
@@ -457,8 +455,19 @@ const P = {
   <li>Relationships, education, finances</li>
 </ul>
 <p>The inability to decide doesn't just delay outcomes — it creates anxiety, self-doubt, and emotional exhaustion.</p>
-<img src="${I.s2}">
-<p>To understand decisiveness, we analysed both successful and failed decisions. Across contexts and personalities, we noticed a common thread: <strong>Every decision silently interacts with Past, Present, and Future.</strong></p>
+<p>But here was our real challenge:</p>
+<p><em>Decision-making is a vast umbrella.</em><br><em>How do you design a solution that works across all kinds of decisions?</em></p>
+
+<hr>
+<h3>Finding the Pattern Beneath Decisions</h3>
+<p>To understand decisiveness, we analysed both successful and failed decisions.</p>
+<p>We asked:</p>
+<ul>
+  <li>What made some decisions empowering?</li>
+  <li>What caused others to collapse?</li>
+</ul>
+<p>Across contexts and personalities, we noticed a common thread:</p>
+<p><strong>Every decision silently interacts with Past, Present, and Future.</strong></p>
 <ul>
   <li>What do I already have?</li>
   <li>What should I build or acquire?</li>
@@ -474,35 +483,46 @@ const P = {
   <li><strong>Information</strong> – What do I know? What am I assuming?</li>
   <li><strong>Consequences</strong> – What are the best and worst outcomes?</li>
 </ol>
-<p>We converted this into a digestible, conversational format — a guided Q&amp;A tool that gently walks a person through clarity.</p>
-<img src="${I.s3}">
+<p>This triangle became the foundation of our framework.</p>
+<p>We converted it into a digestible, conversational format — a guided Q&amp;A tool that gently walks a person through clarity.</p>
 
 <hr>
 <h3>The First Failure</h3>
-<p>When we tested the framework, we faced another reality. It worked, but it was <strong>too open-ended</strong>. Participants felt it was insightful yet broad. It lacked situational depth.</p>
-<p><em>If confusion is contextual, clarity must be contextual too. A universal framework needs situational tailoring.</em></p>
+<p>When we tested the framework, we faced another reality.</p>
+<p>It worked, but it was <strong>too open-ended</strong>.</p>
+<p>Participants felt it was insightful yet broad. It lacked situational depth.</p>
+<p>That failure taught us something important:</p>
+<p><em>If confusion is contextual, clarity must be contextual too.</em><br><em>A universal framework needs situational tailoring.</em></p>
 
 <hr>
 <h3>Narrowing the Chaos</h3>
-<p>One space stood out immediately: <strong>Final-year college students</strong> — brimming with ideas, dreaming of startups, yet afraid to take the leap. Torn between:</p>
+<p>We asked ourselves:</p>
+<p><em>Where does uncertainty peak?<br>Where does confusion feel overwhelming yet consequential?</em></p>
+<p>One space stood out immediately:</p>
+<p><strong>Final-year college students.</strong></p>
+<p>Students brimming with ideas.<br>Dreaming of startups.<br>Yet afraid to take the leap.</p>
+<p>Torn between:</p>
 <ul>
   <li>Entrepreneurship vs Employment</li>
   <li>Risk vs Security</li>
   <li>Passion vs Predictability</li>
 </ul>
-<p>This was not just a career decision. <em>It was an identity decision.</em></p>
+<p>This was not just a career decision.<br><em>It was an identity decision.</em></p>
 
 <hr>
 <h3>Introducing: Noodle</h3>
-<p>We redesigned our framework specifically for this scenario — sharper, more relatable, guided.</p>
-<p>We called it <strong>Noodle</strong> — because a confused mind feels like tangled noodles: twisted, overlapping, hard to separate. Noodle untangles that chaos.</p>
+<p>We redesigned our framework specifically for this scenario.<br>We made it sharper.<br>More relatable.<br>Guided.</p>
+<p>We called it:</p>
+<blockquote>Noodle</blockquote>
+<p>Because a confused mind feels like tangled noodles — twisted, overlapping, hard to separate.</p>
+<p>Noodle untangles that chaos.</p>
 <p>Instead of telling them what to choose, Noodle helps them <em>see clearly enough to choose for themselves.</em></p>
-<img src="${I.s4}">
 
 <hr>
 <h3>The Impact We Aim For</h3>
-<p>Decisiveness is not about making fast decisions. It is about making <strong>conscious</strong> ones.</p>
-<p>By moving from a broad human need → a structured clarity framework → a contextual, tailored solution, we transformed confusion into a navigable process.</p>
+<p>Decisiveness is not about making fast decisions.<br>It is about making <strong>conscious</strong> ones.</p>
+<p>By moving from a broad human need<br>to a structured clarity framework<br>to a contextual, tailored solution,</p>
+<p>We transformed confusion into a navigable process.</p>
 <blockquote>Because sometimes, the biggest impact does not come from giving answers. It comes from helping people ask the right questions.</blockquote>`
   },
 
@@ -511,28 +531,104 @@ const P = {
     t: 'Shell Research & Service Design Hub',
     logo: 'Shell',
     tags: ['Design Maturity', 'Stakeholder Interviews', 'Framework Development', 'Co-creation', 'DesignOps'],
-    hero: I.sh2,
     page: 'shell.html',
-    summary: 'The initiative originated from an internal Design Maturity Survey conducted by Shell\'s Experience Design (EXD) team. Our vision was to enhance the effectiveness, consistency, and strategic influence of UXR and Service Design by addressing systemic gaps — leading to the creation of a centralised, scalable Shell Research & Service Design Hub, a playbook, knowledge library, and capability-building platform.',
-    b: `<img src="${I.sh1}">
-<h3>Research Plan</h3>
-<p><strong>Participants:</strong> 7 Shell practitioners &nbsp;·&nbsp; <strong>Sessions:</strong> 1 hour each</p>
-<img src="${I.sh2}">
-<h3>Lack of Understanding of Design Value</h3>
-<blockquote>"Stakeholders don't always understand the value we offer."</blockquote>
-<img src="${I.sh3}"><img src="${I.sh4}">
-<h3>Business Owns the Beginning</h3>
-<blockquote>"Definition is completed by a SME and we're brought in after."</blockquote>
-<img src="${I.sh5}">
-<h3>Lack of Systematization</h3>
-<blockquote>"I don't know where to go when I join a project."</blockquote>
-<img src="${I.sh6}">
-<h3>UX Theatre</h3>
-<blockquote>"I am viewed as an add-on, a fire-fighter."</blockquote>
-<img src="${I.sh7}">
-<h3>Measuring Impact</h3>
-<p>Design value dashboard linking UX metrics to business KPIs.</p>
-<img src="${I.sh8}">`
+    summary: ' ',
+    b: `<h3>Background &amp; Vision</h3>
+<p>The initiative originated from an internal <strong>Design Maturity Survey</strong> conducted by Shell's Experience Design (EXD) team. The findings highlighted a clear opportunity to strengthen the practice of User Experience Research (UXR) and Service Design (SD) across the organisation.</p>
+<p>Our vision was to enhance the effectiveness, consistency, and strategic influence of UXR and Service Design by addressing systemic gaps revealed through the maturity assessment.</p>
+
+<hr>
+<h3>Discovery Phase</h3>
+<p>To frame the problem space, I began by exploring:</p>
+<ul>
+  <li>What constitutes design maturity?</li>
+  <li>How do leading organisations institutionalise UXR and Service Design?</li>
+  <li>What governance models, operating frameworks, and enablement structures support scalable design practices?</li>
+</ul>
+<p>In parallel, we defined our research objectives and conducted in-depth interviews with seasoned Service Designers and User Researchers across projects and business units.</p>
+
+<hr>
+<h3>Research Objectives</h3>
+<p>Our primary research aimed to understand:</p>
+<ul>
+  <li>Practitioner background, project context, and team structures</li>
+  <li>Typical approaches, methodologies, and frameworks employed</li>
+  <li>Key learnings and best practices</li>
+  <li>Recurring challenges and organisational barriers</li>
+  <li>Tools, systems, and documentation practices</li>
+</ul>
+
+<hr>
+<h3>Key Insights</h3>
+<p>The research surfaced several nuanced, often unarticulated challenges embedded within the organisational ecosystem. These were not isolated issues, but interrelated systemic friction points.</p>
+<p>Through synthesis and thematic clustering, the following core challenges emerged:</p>
+<ul>
+  <li>Limited understanding of design value at senior leadership levels</li>
+  <li>Socio-political filters leading to insight pushback and unheard researcher voices</li>
+  <li>Business functions owning early-stage problem framing without research alignment</li>
+  <li>Project silos and lack of cross-functional visibility</li>
+  <li>Inconsistent systematisation, documentation, and handoffs</li>
+  <li>Perception of EXD as "The Auditor" and instances of "UX Theatre"</li>
+  <li>Difficulty in measuring and communicating impact</li>
+</ul>
+
+<hr>
+<h3>Systems Mapping &amp; Root Cause Identification</h3>
+<p>By mapping interdependencies between these challenges, two foundational root causes were identified:</p>
+<ol>
+  <li><strong>Lack of shared understanding of design value</strong></li>
+  <li><strong>Lack of systematisation and institutional memory</strong></li>
+</ol>
+<p>These core issues were creating downstream effects across governance, collaboration, credibility, and impact measurement.</p>
+<p>We hypothesised that addressing these two levers would generate a positive ripple effect across the broader ecosystem.</p>
+
+<hr>
+<h3>Strategic Intervention</h3>
+<p>After evaluating feasibility, scalability, and organisational alignment, we identified the most impactful intervention:</p>
+<blockquote>Creation of a Centralised, Contextualised Playbook &amp; Knowledge Library</blockquote>
+<p>A dedicated platform tailored specifically to Shell's context — embedding:</p>
+<ul>
+  <li>Shell-specific case studies</li>
+  <li>Proven research and service design frameworks</li>
+  <li>Templates and documentation standards</li>
+  <li>Best practices and learning artefacts</li>
+  <li>Governance guidelines</li>
+  <li>Impact storytelling examples</li>
+</ul>
+<p>This solution aimed to:</p>
+<ul>
+  <li>Institutionalise best practices</li>
+  <li>Improve research rigour and consistency</li>
+  <li>Increase leadership literacy around design value</li>
+  <li>Reduce duplication of effort</li>
+  <li>Enable knowledge retention and handover</li>
+  <li>Strengthen credibility of EXD</li>
+</ul>
+
+<hr>
+<h3>The Solution: Shell Research &amp; Service Design Hub</h3>
+<p>The outcome was the <strong>Shell Research &amp; Service Design Hub</strong> — a centralised, scalable enablement platform designed to function as:</p>
+<ul>
+  <li>A playbook</li>
+  <li>A capability-building repository</li>
+  <li>A knowledge management system</li>
+  <li>A design maturity accelerator</li>
+</ul>
+
+<hr>
+<h3>Prototyping &amp; Validation</h3>
+<p>We developed a working prototype of the Hub and conducted usability testing with practitioners.</p>
+<p>The feedback was overwhelmingly positive regarding:</p>
+<ul>
+  <li>Practical utility</li>
+  <li>Relevance to Shell's context</li>
+  <li>Potential to improve cross-team alignment</li>
+</ul>
+<p>Constructive inputs were received around UI clarity, navigation, and information architecture, which informed further refinements.</p>
+
+<hr>
+<h3>Impact Potential</h3>
+<p>The Shell Research &amp; SD Hub positions EXD as a <strong>strategic enabler</strong> rather than an execution layer. By strengthening systematisation and improving the articulation of design value, the Hub contributes to long-term design maturity growth and organisational alignment.</p>`
   },
 
   wedding: {
@@ -540,38 +636,11 @@ const P = {
     t: 'Wedlink: Reimagining the Wedding Workforce',
     logo: 'WedLink',
     tags: ['Ethnographic Research', 'Service Design', 'Platform Design', 'Stakeholder Mapping', 'Figma Prototype'],
-    hero: I.wl1,
     page: 'wedlink.html',
-    summary: 'WedLink is a human-centered digital platform designed to address deeply rooted challenges by leveraging technology not just as a transactional tool, but as an infrastructure for dignity, fairness, and trust across the wedding workforce ecosystem.',
-    b: `<p><strong>Timeline:</strong> 8 weeks &nbsp;·&nbsp; <strong>Type:</strong> UXR &amp; Service Design</p>
-<img src="${I.wl1}">
-<h3>The Problem</h3>
-<p>8 to 10 million weddings per year. Over 10 million people in the "wedding economy." Millions of informal workers face delayed payments, no contracts, poor working conditions, and no insurance.</p>
-<img src="${I.wl2}">
-<h3>Research</h3>
-<p>Ethnographic field research across wedding venues, vendor interviews, and secondary data analysis of the unorganized wedding workforce.</p>
-<img src="${I.wl3}">
-<h3>Stakeholder Ecosystem</h3>
-<p>Mapping the complex web of planners, vendors, labourers, clients, decorators, caterers, and middlemen that make up the Indian wedding industry.</p>
-<img src="${I.wl4}">
-<h3>Key Insights</h3>
-<p>Workers lack bargaining power. Payment delays are systemic. No standardized contracts exist. Middlemen take disproportionate cuts.</p>
-<img src="${I.wl5}">
-<h3>Wedlink Platform</h3>
-<p>A neutral digital ecosystem connecting, regulating, and protecting vendors and labourers through transparent job matching and digital escrow payments.</p>
-<img src="${I.wl6}">
-<h3>User Flows</h3>
-<p>Designed end-to-end user journeys for vendors, labourers, and event planners including onboarding, job discovery, booking, payment, and rating systems.</p>
-<img src="${I.wl7}">
-<h3>UI Design</h3>
-<p>High-fidelity screens designed in Figma covering the core experience: dashboard, job listings, payment tracking, reviews, and crew management.</p>
-<img src="${I.wl8}"><img src="${I.wl9}">
-<h3>Solution Framework</h3>
-<p><strong>Policy:</strong> Social security, micro-insurance for gig workers.<br><strong>Technology:</strong> Digital escrow payments, job-matching platform.<br><strong>Industry:</strong> Vendor guilds, fair-work certification standards.</p>
-<img src="${I.wl10}">
-<h3>Impact</h3>
-<p>Wedlink bridges the gap between informal labour and fair work practices, creating accountability and transparency in an industry worth hundreds of billions.</p>`
+    summary: ' ',
+    b: `<p>Content to be provided</p>`
   },
+
 };
 
 /* ── MODAL ── */
