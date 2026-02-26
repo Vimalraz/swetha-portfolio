@@ -660,7 +660,7 @@ body:has(button:hover) .cr {
 
 .fl-top-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   width: 100%;
 }
@@ -689,7 +689,7 @@ body:has(button:hover) .cr {
 
 .fl-cards-row {
   width: 100%;
-  margin-top: -90px;
+  margin-top: -70px;
 }
 
 .fl-cards-row .cards {
@@ -714,7 +714,7 @@ body:has(button:hover) .cr {
 
 .df-top-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   width: 100%;
 }
@@ -742,7 +742,7 @@ body:has(button:hover) .cr {
 
 .df-cards-row {
   width: 100%;
-  margin-top: -110px;
+  margin-top: -70px;
 }
 
 .df-cards-row .cards {
