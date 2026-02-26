@@ -689,6 +689,7 @@ body:has(button:hover) .cr {
 
 .fl-cards-row {
   width: 100%;
+  margin-top: -90px;
 }
 
 .fl-cards-row .cards {
@@ -741,6 +742,7 @@ body:has(button:hover) .cr {
 
 .df-cards-row {
   width: 100%;
+  margin-top: -110px;
 }
 
 .df-cards-row .cards {
@@ -3248,6 +3250,11 @@ body:has(button:hover) .cr {
   .fl-cards-row .card,
   .df-cards-row .card {
     width: clamp(240px, 60vw, 320px);
+  }
+
+  .fl-cards-row,
+  .df-cards-row {
+    margin-top: -30px;
   }
 
   .mh-view-btn {
