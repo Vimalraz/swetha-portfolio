@@ -378,7 +378,7 @@ document.getElementById('dfCards').innerHTML = `
   <img class="card-img" src="${I.thumb_shell}" alt="">
   <div class="card-body">
     <div class="card-logo-row"><span class="card-logo-placeholder">Shell</span></div>
-    <span class="card-cat">User Research</span>
+    <span class="card-cat">User research and UX design</span>
     <h3 class="card-t">UX Research at Shell</h3>
     <p class="card-d">Strengthening Service Design and UXR practices at<br> enterprise scale for sustainable impact</p>
     <div class="card-arr">Read more →</div>
@@ -388,7 +388,7 @@ document.getElementById('dfCards').innerHTML = `
   <img class="card-img" src="${I.thumb_wedding}" alt="">
   <div class="card-body">
     <div class="card-logo-row"><span class="card-logo-placeholder">WedLink</span></div>
-    <span class="card-cat">UXR &amp; Service Design</span>
+    <span class="card-cat">User research and UX design</span>
     <h3 class="card-t">Wedlink: Wedding Workforce</h3>
     <p class="card-d">Technology as a bridge for fair pay and dignity in Indian weddings</p>
     <div class="card-arr">Read more →</div>
@@ -402,37 +402,24 @@ const P = {
     t: 'Piracy in Telegram',
     logo: 'NID Gandhinagar',
     tags: ['Netnography', 'Autonetnography', 'Interviews', 'UX Strategies', 'UI Mockups'],
-    hero: I.p5,
     page: 'piracy2.html',
-    summary: 'In the fast-paced world of technological advancements, this project looks into how human social behaviours exist in a virtual platform and how the interface triggers or facilitates such behaviour. Through netnography, autonetnography, and interviews, we explored piracy culture on Telegram and designed UX interventions to make users more conscious of their choices.',
-    b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Type:</strong> Individual project</p>
-<p><strong>Primary research:</strong> Netnography, Autonetnography, Interviews<br><strong>Secondary research:</strong> Articles, Research papers, Documentaries</p>
-<img src="${I.p1}">
-<h3>What Rules the World Today?</h3>
-<p>Information and content. This information is often gatekept and considered Intellectual Property. Gatekeeping information and monetizing it makes it inaccessible to all classes of people.</p>
-<img src="${I.p2}">
-<h3>Triangle of Digital Responsibility</h3>
-<p>Piracy as acceptable and normative behavior. Blurred line between ethical and unethical download.</p>
-<img src="${I.p3}">
-<h3>Two Schools of Thought</h3>
-<p><strong>Known/accepted deviancy:</strong> It isn't theft, it's duplication. Gateway for less fortunate people to access high-end content.</p>
-<p><strong>Pain to creators:</strong> Eats away profits. "Get everything for free" mindset.</p>
-<img src="${I.p4}">
-<h3>Why Does One Indulge in Piracy?</h3>
-<p><strong>Extrinsic:</strong> Saving money, try and buy, perceived utility, expanding collection.<br><strong>Intrinsic:</strong> Excitement of getting something free, fun and achievement, breaking the rule.</p>
-<img src="${I.p5}">
-<h3>Why Telegram?</h3>
-<p>Up to 50 public/private groups per day. Unlimited channel members. 500+ resources. Wide reach, free, stable, ad-free.</p>
-<img src="${I.p6}">
-<h3>The Research Question</h3>
-<blockquote>"How might we make users more conscious of their choice to indulge in piracy and enable the platform to keep a stronger check on it?"</blockquote>
-<img src="${I.p7}">
-<h3>Research and UX Strategies</h3>
-<p>Analysis of existing UI, design interventions and their operationalization.</p>
-<img src="${I.p8}">
-<h3>Solutions</h3>
-<p>Divide the mass, paralyze the spreading channels. Business model considerations.</p>
-<img src="${I.p9}"><img src="${I.p10}"><img src="${I.p11}"><img src="${I.p12}"><img src="${I.p13}">`
+    b: `<img src="./images/projectmodal/piracy.png">
+<h3>What was this project about?</h3>
+<p>Understanding digital piracy as a human behavior shaped by platform design, social norms, and access to content.</p>
+<h3>What was the core research focus?</h3>
+<p>To explore why users engage in piracy, how they justify it, and how online environments influence this behavior.</p>
+<h3>What research methods were used?</h3>
+<p>Netnography, auto-ethnography, and interviews to study digital communities, peer-to-peer networks, and content-sharing platforms.</p>
+<h3>What key problem was identified?</h3>
+<p>Piracy is often normalized and rationalized due to anonymity, ease of sharing, community culture, and perceived inaccessibility or high cost of content.</p>
+<h3>What behavioral insights emerged?</h3>
+<p>Users frequently view piracy as “harmless access” rather than theft, creating a moral disconnect between consumption and the impact on creators.</p>
+<h3>What design opportunity was identified?</h3>
+<p>To intervene at the platform level by redesigning cues, feedback systems, and awareness mechanisms that influence ethical decision-making.</p>
+<h3>What solutions were proposed?</h3>
+<p>Interface nudges, watermarking, verification systems, reporting tools, and transparency mechanisms to make consequences more visible and reduce opportunistic piracy.</p>
+<h3>What is the intended impact?</h3>
+<p>To shift user perception and behavior from normalized piracy toward responsible digital consumption through design-led, systemic interventions rather than purely punitive measures.</p>`
   },
 
   behavior: {
@@ -440,26 +427,24 @@ const P = {
     t: 'Clean Hand Practice Among Street Food Vendors',
     logo: 'NID Gandhinagar',
     tags: ['Field Study', 'Behaviour Analysis', 'Change Canvas', 'Observations', 'Prototyping'],
-    hero: I.b3,
     page: 'behavior2.html',
-    summary: 'Understanding how people think, feel, and act to create designs that influence their behavior positively. Through field studies in Ahmedabad and Gandhinagar, we identified compromised hygiene as a core deviant behaviour and designed interventions using the Behaviour Change Canvas.',
-    b: `<p><strong>Timeline:</strong> 4 weeks &nbsp;·&nbsp; <strong>Team:</strong> Swetha, Disha, Pramoddini</p>
-<img src="${I.b1}">
-<h3>Objectives</h3>
-<p>Identify and implement behavior change in the context of street food in Ahmedabad and Gandhinagar, India.</p>
-<img src="${I.b2}">
-<h3>Research — 3 Phases</h3>
-<p><strong>Phase 1:</strong> Visits to street food markets to identify patterns.<br><strong>Phase 2:</strong> Identify deviant behaviors, choose target behavior.<br><strong>Phase 3:</strong> Understand drivers, employ ideation techniques.</p>
-<img src="${I.b3}">
-<h3>Field Observations</h3>
-<p>Ease in street food environments. Unsaid vendor unity. Cooking exhibition as crowd puller and pusher.</p>
-<img src="${I.b4}">
-<h3>Deviant Behaviours</h3>
-<p><strong>Core:</strong> Compromised hygiene by vendors and customers. Gives liberty for other deviancies.</p>
-<img src="${I.b6}">
-<h3>Design Intervention</h3>
-<p>Behaviour Change Canvas: making handwashing the path of least resistance.</p>
-<img src="${I.b5}">`
+    b: `<img src="./images/projectmodal/behavior.png">
+<h3>What was this project about?</h3>
+<p>Understanding why street food vendors do not consistently practice clean hand hygiene despite being aware of health risks.</p>
+<h3>What was the core research focus?</h3>
+<p>To study real-world hygiene behaviors in street food ecosystems and identify what influences vendors’ everyday actions.</p>
+<h3>What research methods were used?</h3>
+<p>Field observations, interviews, and secondary research to examine behavioral patterns, contextual constraints, and social norms.</p>
+<h3>What key problem was identified?</h3>
+<p>Hygiene lapses are not caused by ignorance alone — they are driven by time pressure, customer demand, economic priorities, lack of infrastructure, and normalized unsafe routines.</p>
+<h3>What behavioral insights emerged?</h3>
+<p>Vendors prioritize speed and income over sanitation, while customers often overlook hygiene for taste and convenience — reinforcing existing habits.</p>
+<h3>What opportunity did the research uncover?</h3>
+<p>To design interventions that make hygienic behavior easier, more visible, and socially reinforced rather than effortful or punitive.</p>
+<h3>What was the proposed direction?</h3>
+<p>Develop low-cost, scalable, workflow-friendly solutions that integrate seamlessly into vendors’ daily routines.</p>
+<h3>What is the intended impact?</h3>
+<p>To enable sustainable behavior change in street food ecosystems by aligning hygiene practices with vendors’ practical and economic realities.</p>`
   },
 
   service: {
@@ -468,213 +453,396 @@ const P = {
     logo: 'NID Gandhinagar',
     tags: ['Service Design', 'Market Need Research', 'Service Blueprint', 'Prototyping', '5W Analysis'],
     page: 'noodle2.html',
-    summary: ' ',
-    b: `<img src="images/noodlecover.png">
-
-<h3>The Search for an Unsaid Need</h3>
-<p>We began with a simple but powerful question:</p>
-<blockquote>What is an unsaid need among people — one that, when addressed, can create a large and meaningful impact?</blockquote>
-<p>Instead of assuming answers, we decided to listen.</p>
-<p>We placed a <strong>Wish Box</strong> in public spaces and invited people to anonymously write down what they truly wished for. We created an interactive wall where passersby could respond to a thought-provoking question. We conducted informal interviews. We held brainstorming sessions. We observed patterns.</p>
-<p>Slowly, six strong needs emerged.</p>
-<p>To move from insight to action, we applied the <strong>5W Method</strong> (Who, What, Why, When, Where) to evaluate each need critically. One need stood out — urgent, universal, and deeply human:</p>
-<blockquote>The Need to Become Decisive</blockquote>
-<p>Human beings have evolved across centuries — technologically, socially, intellectually.</p>
-<p>Yet one struggle continues to persist within us:</p>
-<p><strong>Ambiguity in decision-making.</strong></p>
-<p>We hesitate.<br>We overthink.<br>We get stuck between emotion and logic.</p>
-<p>Especially when decisions involve:</p>
+    b: `<img src="./images/projectmodal/noodle.png">
+<h3>1. What question did we begin with?</h3>
+<p>We began with a simple yet powerful question:</p>
+<p><strong>What is an unsaid human need that, when addressed, can create meaningful impact?</strong></p>
+<p>Instead of assuming answers, we chose to listen.</p>
+<h3>2. How did we explore this unsaid need?</h3>
+<p>We used participatory and observational methods:</p>
 <ul>
-  <li>Morality vs practicality</li>
-  <li>Career vs passion</li>
-  <li>Stability vs risk</li>
-  <li>Relationships, education, finances</li>
+<li>Placed a <strong>Wish Box</strong> in public spaces for anonymous responses</li>
+<li>Created an <strong>interactive wall</strong> with a thought-provoking question</li>
+<li>Conducted <strong>informal interviews</strong></li>
+<li>Facilitated <strong>brainstorming sessions</strong></li>
+<li>Observed emerging <strong>patterns</strong></li>
 </ul>
-<p>The inability to decide doesn't just delay outcomes — it creates anxiety, self-doubt, and emotional exhaustion.</p>
-<p>But here was our real challenge:</p>
-<p><em>Decision-making is a vast umbrella.</em><br><em>How do you design a solution that works across all kinds of decisions?</em></p>
-
-<hr>
-<h3>Finding the Pattern Beneath Decisions</h3>
-<p>To understand decisiveness, we analysed both successful and failed decisions.</p>
-<p>We asked:</p>
+<p>From these interactions, <strong>six strong needs</strong> surfaced.</p>
+<h3>3. How did we evaluate these needs?</h3>
+<p>We applied the <strong>5W Method</strong>:</p>
 <ul>
-  <li>What made some decisions empowering?</li>
-  <li>What caused others to collapse?</li>
+<li><strong>Who</strong> is affected?</li>
+<li><strong>What</strong> exactly is the need?</li>
+<li><strong>Why</strong> does it matter?</li>
+<li><strong>When</strong> does it surface most strongly?</li>
+<li><strong>Where</strong> does it occur?</li>
 </ul>
-<p>Across contexts and personalities, we noticed a common thread:</p>
-<p><strong>Every decision silently interacts with Past, Present, and Future.</strong></p>
+<p>Through this critical evaluation, one need stood out — urgent, universal, and deeply human:</p>
+<p><strong>The Need to Become Decisive</strong></p>
+<h3>4. Why is decisiveness such an important need?</h3>
+<p>Despite technological and intellectual evolution, humans continue to struggle with:</p>
 <ul>
-  <li>What do I already have?</li>
-  <li>What should I build or acquire?</li>
-  <li>What is driving me toward this choice?</li>
-  <li>What could go right?</li>
-  <li>What could go wrong?</li>
+<li>Ambiguity</li>
+<li>Overthinking</li>
+<li>Emotional conflict</li>
+<li>Fear of consequences</li>
 </ul>
-<p>From this insight emerged a structure we called:</p>
-<blockquote>The Triangle of Clarity</blockquote>
-<p>Every strong decision seemed to rest on three anchors:</p>
+<p>Decisions often involve tension between:</p>
+<ul>
+<li>Morality vs practicality</li>
+<li>Career vs passion</li>
+<li>Stability vs risk</li>
+<li>Logic vs emotion</li>
+</ul>
+<p>Indecision doesn’t just delay outcomes.<br>It creates <strong>anxiety, self-doubt, and emotional exhaustion.</strong></p>
+<h3>5. What was the core challenge?</h3>
+<p>Decision-making is vast.</p>
+<p>How do you design a solution that works across:</p>
+<ul>
+<li>Career choices</li>
+<li>Relationship decisions</li>
+<li>Financial risks</li>
+<li>Identity shifts</li>
+</ul>
+<p>We needed to find the structure beneath all decisions.</p>
+<h3>6. What pattern did we discover?</h3>
+<p>By analysing successful and failed decisions, we observed:</p>
+<p>Every decision silently interacts with:</p>
+<ul>
+<li><strong>Past</strong> – What do I already have?</li>
+<li><strong>Present</strong> – What is influencing me right now?</li>
+<li><strong>Future</strong> – What could happen next?</li>
+</ul>
+<p>This led us to identify three consistent anchors in strong decisions.</p>
+<h3>7. What is the Triangle of Clarity?</h3>
+<p>We distilled our insight into a framework called:</p>
+<h4>The Triangle of Clarity</h4>
+<p>Every strong decision rests on three anchors:</p>
 <ol>
-  <li><strong>Drivers</strong> – What is pushing or pulling me toward this choice?</li>
-  <li><strong>Information</strong> – What do I know? What am I assuming?</li>
-  <li><strong>Consequences</strong> – What are the best and worst outcomes?</li>
+<li><strong>Drivers</strong> – What is pushing or pulling me toward this choice?</li>
+<li><strong>Information</strong> – What do I know? What am I assuming?</li>
+<li><strong>Consequences</strong> – What are the best and worst outcomes?</li>
 </ol>
-<p>This triangle became the foundation of our framework.</p>
-<p>We converted it into a digestible, conversational format — a guided Q&amp;A tool that gently walks a person through clarity.</p>
-
-<hr>
-<h3>The First Failure</h3>
-<p>When we tested the framework, we faced another reality.</p>
-<p>It worked, but it was <strong>too open-ended</strong>.</p>
-<p>Participants felt it was insightful yet broad. It lacked situational depth.</p>
-<p>That failure taught us something important:</p>
-<p><em>If confusion is contextual, clarity must be contextual too.</em><br><em>A universal framework needs situational tailoring.</em></p>
-
-<hr>
-<h3>Narrowing the Chaos</h3>
-<p>We asked ourselves:</p>
-<p><em>Where does uncertainty peak?<br>Where does confusion feel overwhelming yet consequential?</em></p>
-<p>One space stood out immediately:</p>
-<p><strong>Final-year college students.</strong></p>
-<p>Students brimming with ideas.<br>Dreaming of startups.<br>Yet afraid to take the leap.</p>
-<p>Torn between:</p>
+<p>We translated this into a guided, conversational Q&amp;A tool to help individuals navigate clarity.</p>
+<h3>8. Did the framework work?</h3>
+<p>Partially.</p>
+<p>When tested, participants found it insightful, but too broad.</p>
+<p>It lacked situational depth.</p>
+<p>This failure revealed a key insight:</p>
+<p>If confusion is contextual, clarity must be contextual too.</p>
+<h3>9. Where does uncertainty feel most intense?</h3>
+<p>We asked:</p>
+<p>Where does decision anxiety peak?</p>
+<p>One space stood out:</p>
+<h4>Final-year college students.</h4>
+<p>Students who are:</p>
 <ul>
-  <li>Entrepreneurship vs Employment</li>
-  <li>Risk vs Security</li>
-  <li>Passion vs Predictability</li>
+<li>Dreaming of startups</li>
+<li>Considering corporate jobs</li>
+<li>Torn between passion and security</li>
+<li>Balancing ambition and fear</li>
 </ul>
-<p>This was not just a career decision.<br><em>It was an identity decision.</em></p>
-
-<hr>
-<h3>Introducing: Noodle</h3>
-<p>We redesigned our framework specifically for this scenario.<br>We made it sharper.<br>More relatable.<br>Guided.</p>
-<p>We called it:</p>
-<blockquote>Noodle</blockquote>
-<p>Because a confused mind feels like tangled noodles — twisted, overlapping, hard to separate.</p>
-<p>Noodle untangles that chaos.</p>
-<p>Instead of telling them what to choose, Noodle helps them <em>see clearly enough to choose for themselves.</em></p>
-
-<hr>
-<h3>The Impact We Aim For</h3>
-<p>Decisiveness is not about making fast decisions.<br>It is about making <strong>conscious</strong> ones.</p>
-<p>By moving from a broad human need<br>to a structured clarity framework<br>to a contextual, tailored solution,</p>
+<p>This wasn’t just a career decision.<br>It was an <strong>identity decision.</strong></p>
+<h3>10. What solution emerged?</h3>
+<p>We redesigned the framework specifically for this scenario.</p>
+<p>We made it:</p>
+<ul>
+<li>Sharper</li>
+<li>Relatable</li>
+<li>Guided</li>
+<li>Context-specific</li>
+</ul>
+<p>We named it:</p>
+<h3>Noodle</h3>
+<p>Because a confused mind feels like tangled noodles, twisted and overlapping.</p>
+<p>Noodle doesn’t tell students what to choose.<br>It helps them untangle their thoughts so they can choose for themselves.</p>
+<h3>11. What impact are we aiming for?</h3>
+<p>Decisiveness is not about speed.</p>
+<p>It is about <strong>conscious clarity</strong>.</p>
+<p>By moving from:</p>
+<ul>
+<li>A broad human need</li>
+<li>→ to a structured clarity framework</li>
+<li>→ to a contextual, tailored solution</li>
+</ul>
 <p>We transformed confusion into a navigable process.</p>
-<blockquote>Because sometimes, the biggest impact does not come from giving answers. It comes from helping people ask the right questions.</blockquote>`
+<p>Because real impact doesn’t always come from giving answers.</p>
+<p>Sometimes, it comes from helping people ask better questions.</p>`
   },
 
   shell: {
-    cat: 'User Research',
+    cat: 'User research and UX design',
     t: 'Shell Research & Service Design Hub',
     logo: 'Shell',
     tags: ['Design Maturity', 'Stakeholder Interviews', 'Framework Development', 'Co-creation', 'DesignOps'],
     page: 'shell.html',
-    summary: ' ',
-    b: `<h3>Background &amp; Vision</h3>
-<p>The initiative originated from an internal <strong>Design Maturity Survey</strong> conducted by Shell's Experience Design (EXD) team. The findings highlighted a clear opportunity to strengthen the practice of User Experience Research (UXR) and Service Design (SD) across the organisation.</p>
-<p>Our vision was to enhance the effectiveness, consistency, and strategic influence of UXR and Service Design by addressing systemic gaps revealed through the maturity assessment.</p>
-
-<hr>
-<h3>Discovery Phase</h3>
-<p>To frame the problem space, I began by exploring:</p>
+    b: `<img src="./images/projectmodal/shell.png">
+<h3>1. What sparked the creation of the Shell Research & Service Design Hub?</h3>
+<p>The initiative originated from an internal <strong>Design Maturity Survey</strong> conducted by Shell’s Experience Design (EXD) team.</p>
+<p>The findings revealed a clear opportunity to strengthen:</p>
 <ul>
-  <li>What constitutes design maturity?</li>
-  <li>How do leading organisations institutionalise UXR and Service Design?</li>
-  <li>What governance models, operating frameworks, and enablement structures support scalable design practices?</li>
+<li>User Experience Research (UXR)</li>
+<li>Service Design (SD)</li>
+<li>Organisational understanding of design value</li>
 </ul>
-<p>In parallel, we defined our research objectives and conducted in-depth interviews with seasoned Service Designers and User Researchers across projects and business units.</p>
-
-<hr>
-<h3>Research Objectives</h3>
-<p>Our primary research aimed to understand:</p>
+<p>The survey highlighted systemic gaps affecting consistency, credibility, and strategic impact.</p>
+<h3>2. What was the vision behind the initiative?</h3>
+<p>The vision was to enhance the <strong>effectiveness, consistency, and strategic influence</strong> of UXR and Service Design across Shell.</p>
+<p>Rather than solving isolated issues, the goal was to address systemic barriers preventing design from scaling as a mature organisational capability.</p>
+<h3>3. How did you approach the discovery phase?</h3>
+<p>To frame the problem space, we explored:</p>
 <ul>
-  <li>Practitioner background, project context, and team structures</li>
-  <li>Typical approaches, methodologies, and frameworks employed</li>
-  <li>Key learnings and best practices</li>
-  <li>Recurring challenges and organisational barriers</li>
-  <li>Tools, systems, and documentation practices</li>
+<li>What constitutes design maturity?</li>
+<li>How do leading organisations institutionalise UXR and Service Design?</li>
+<li>What governance models and operating structures enable scalable design practices?</li>
 </ul>
-
-<hr>
-<h3>Key Insights</h3>
-<p>The research surfaced several nuanced, often unarticulated challenges embedded within the organisational ecosystem. These were not isolated issues, but interrelated systemic friction points.</p>
-<p>Through synthesis and thematic clustering, the following core challenges emerged:</p>
+<p>Simultaneously, we conducted in-depth interviews with experienced Service Designers and User Researchers across business units to understand ground realities.</p>
+<h3>4. What were the key research objectives?</h3>
+<p>We aimed to understand:</p>
 <ul>
-  <li>Limited understanding of design value at senior leadership levels</li>
-  <li>Socio-political filters leading to insight pushback and unheard researcher voices</li>
-  <li>Business functions owning early-stage problem framing without research alignment</li>
-  <li>Project silos and lack of cross-functional visibility</li>
-  <li>Inconsistent systematisation, documentation, and handoffs</li>
-  <li>Perception of EXD as "The Auditor" and instances of "UX Theatre"</li>
-  <li>Difficulty in measuring and communicating impact</li>
+<li>Practitioner backgrounds and team structures</li>
+<li>Common methodologies and frameworks</li>
+<li>Best practices and learnings</li>
+<li>Recurring challenges and organisational barriers</li>
+<li>Tools, systems, and documentation practices</li>
 </ul>
-
-<hr>
-<h3>Systems Mapping &amp; Root Cause Identification</h3>
-<p>By mapping interdependencies between these challenges, two foundational root causes were identified:</p>
+<p>This helped uncover both visible and unarticulated friction points.</p>
+<h3>5. What key insights emerged from the research?</h3>
+<p>The challenges identified were systemic and interconnected rather than isolated issues. Core friction points included:</p>
+<ul>
+<li>Limited understanding of design value at senior leadership levels</li>
+<li>Socio-political filters leading to insight pushback</li>
+<li>Business teams framing problems without research alignment</li>
+<li>Project silos and lack of cross-functional visibility</li>
+<li>Inconsistent documentation and systematisation</li>
+<li>Perception of EXD as “The Auditor” and instances of “UX Theatre”</li>
+<li>Difficulty in measuring and communicating impact</li>
+</ul>
+<p>These issues collectively weakened credibility and influence.</p>
+<h3>6. What were the root causes behind these challenges?</h3>
+<p>Through systems mapping and dependency analysis, two foundational root causes emerged:</p>
 <ol>
-  <li><strong>Lack of shared understanding of design value</strong></li>
-  <li><strong>Lack of systematisation and institutional memory</strong></li>
+<li>Lack of shared understanding of design value</li>
+<li>Lack of systematisation and institutional memory</li>
 </ol>
-<p>These core issues were creating downstream effects across governance, collaboration, credibility, and impact measurement.</p>
-<p>We hypothesised that addressing these two levers would generate a positive ripple effect across the broader ecosystem.</p>
-
-<hr>
-<h3>Strategic Intervention</h3>
-<p>After evaluating feasibility, scalability, and organisational alignment, we identified the most impactful intervention:</p>
-<blockquote>Creation of a Centralised, Contextualised Playbook &amp; Knowledge Library</blockquote>
-<p>A dedicated platform tailored specifically to Shell's context — embedding:</p>
+<p>These root causes created ripple effects across governance, collaboration, and impact measurement.</p>
+<h3>7. What strategic intervention was identified?</h3>
+<p>After evaluating feasibility and scalability, the most impactful solution identified was:</p>
+<h4>Creation of a Centralised, Contextualised Playbook & Knowledge Library</h4>
+<p>A dedicated platform tailored specifically to Shell’s ecosystem.</p>
+<h3>8. What would this playbook include?</h3>
+<p>The proposed Hub would embed:</p>
 <ul>
-  <li>Shell-specific case studies</li>
-  <li>Proven research and service design frameworks</li>
-  <li>Templates and documentation standards</li>
-  <li>Best practices and learning artefacts</li>
-  <li>Governance guidelines</li>
-  <li>Impact storytelling examples</li>
+<li>Shell-specific case studies</li>
+<li>Proven UXR and Service Design frameworks</li>
+<li>Templates and documentation standards</li>
+<li>Best practices and learning artefacts</li>
+<li>Governance guidelines</li>
+<li>Impact storytelling examples</li>
 </ul>
-<p>This solution aimed to:</p>
+<p>This ensured relevance and contextual credibility.</p>
+<h3>9. What problems was the solution designed to solve?</h3>
+<p>The Hub aimed to:</p>
 <ul>
-  <li>Institutionalise best practices</li>
-  <li>Improve research rigour and consistency</li>
-  <li>Increase leadership literacy around design value</li>
-  <li>Reduce duplication of effort</li>
-  <li>Enable knowledge retention and handover</li>
-  <li>Strengthen credibility of EXD</li>
+<li>Institutionalise best practices</li>
+<li>Improve research rigour and consistency</li>
+<li>Increase leadership literacy around design value</li>
+<li>Reduce duplication of effort</li>
+<li>Enable knowledge retention and smoother handovers</li>
+<li>Strengthen EXD’s credibility</li>
 </ul>
-
-<hr>
-<h3>The Solution: Shell Research &amp; Service Design Hub</h3>
-<p>The outcome was the <strong>Shell Research &amp; Service Design Hub</strong> — a centralised, scalable enablement platform designed to function as:</p>
+<h3>10. What is the Shell Research & Service Design Hub?</h3>
+<p>The outcome was the <strong>Shell Research & Service Design Hub</strong>, designed to function as:</p>
 <ul>
-  <li>A playbook</li>
-  <li>A capability-building repository</li>
-  <li>A knowledge management system</li>
-  <li>A design maturity accelerator</li>
+<li>A playbook</li>
+<li>A capability-building repository</li>
+<li>A knowledge management system</li>
+<li>A design maturity accelerator</li>
 </ul>
-
-<hr>
-<h3>Prototyping &amp; Validation</h3>
-<p>We developed a working prototype of the Hub and conducted usability testing with practitioners.</p>
-<p>The feedback was overwhelmingly positive regarding:</p>
+<p>It serves both practitioners and leadership stakeholders.</p>
+<h3>11. How was the solution validated?</h3>
+<p>A working prototype of the Hub was developed and tested with practitioners.</p>
+<p>Feedback highlighted:</p>
 <ul>
-  <li>Practical utility</li>
-  <li>Relevance to Shell's context</li>
-  <li>Potential to improve cross-team alignment</li>
+<li>Strong practical utility</li>
+<li>High contextual relevance</li>
+<li>Improved potential for cross-team alignment</li>
 </ul>
-<p>Constructive inputs were received around UI clarity, navigation, and information architecture, which informed further refinements.</p>
-
-<hr>
-<h3>Impact Potential</h3>
-<p>The Shell Research &amp; SD Hub positions EXD as a <strong>strategic enabler</strong> rather than an execution layer. By strengthening systematisation and improving the articulation of design value, the Hub contributes to long-term design maturity growth and organisational alignment.</p>`
+<p>Constructive inputs on navigation, UI clarity, and information architecture were incorporated into refinements.</p>
+<h3>12. What is the long-term impact potential?</h3>
+<p>The Hub repositions EXD from being perceived as an execution layer to a <strong>strategic enabler</strong>.</p>
+<p>By improving systematisation and strengthening the articulation of design value, the Hub contributes to:</p>
+<ul>
+<li>Long-term design maturity growth</li>
+<li>Stronger organisational alignment</li>
+<li>Greater credibility and influence of UXR & Service Design</li>
+</ul>
+<h3>13. What is the core transformation achieved?</h3>
+<p>The project moved from diagnosing maturity gaps to building a scalable organisational infrastructure.</p>
+<p>Instead of addressing symptoms, it targeted foundational levers —<br><strong>design literacy and systematisation</strong> — enabling sustainable impact.</p>`
   },
 
   wedding: {
-    cat: 'UXR & Service Design',
+    cat: 'User research and UX design',
     t: 'Wedlink: Reimagining the Wedding Workforce',
     logo: 'WedLink',
     tags: ['Ethnographic Research', 'Service Design', 'Platform Design', 'Stakeholder Mapping', 'Figma Prototype'],
     page: 'wedlink.html',
-    summary: ' ',
-    b: `<p>Content to be provided</p>`
+    b: `<img src="./images/projectmodal/wedlink.png">
+<h3>1. What problem does this project explore?</h3>
+<p>India’s wedding industry is a <strong>billion-dollar ecosystem</strong>, known for glamour and grandeur.</p>
+<p>But behind the celebration lies an invisible workforce —<br>over <strong>3 million people</strong> who power the industry.</p>
+<p>This includes:</p>
+<ul>
+<li>Decor teams</li>
+<li>Caterers</li>
+<li>Photographers & assistants</li>
+<li>Makeup artists</li>
+<li>Light & sound technicians</li>
+<li>Drivers</li>
+<li>Loaders & setup crews</li>
+<li>Freelancers & gig workers</li>
+</ul>
+<p>The industry is not just about luxury.<br>It is a <strong>livelihood engine</strong>.</p>
+<h3>2. What is the structural reality of this industry?</h3>
+<p>The Indian wedding industry is:</p>
+<ul>
+<li>Highly seasonal</li>
+<li>Project-based</li>
+<li>Deadline-driven</li>
+<li>Informally structured</li>
+</ul>
+<p>Teams are assembled per event.<br>When the season ends, so does the work.</p>
+<p>During off-season months, workers:</p>
+<ul>
+<li>Return to hometowns</li>
+<li>Take daily wage labour</li>
+<li>Shift to unrelated odd jobs</li>
+<li>Survive without income continuity</li>
+</ul>
+<p>This instability creates <strong>fear</strong>.<br>And fear creates <strong>power imbalance</strong>.</p>
+<h3>3. Who are the most vulnerable in this ecosystem?</h3>
+<p>The most vulnerable are support workers:</p>
+<ul>
+<li>Assistants</li>
+<li>Helpers</li>
+<li>Loaders</li>
+<li>Junior technicians</li>
+</ul>
+<p>They often:</p>
+<ul>
+<li>Do not negotiate rates</li>
+<li>Have no written contracts</li>
+<li>Experience delayed payments</li>
+<li>Lack formal grievance systems</li>
+</ul>
+<p>Their dependency makes exploitation easier.</p>
+<h3>4. How was this issue researched?</h3>
+<p>Through contextual inquiry across multiple domains of the wedding ecosystem, including:</p>
+<ul>
+<li>Informal interviews</li>
+<li>Field immersion</li>
+<li>Conversations with workers and vendors</li>
+</ul>
+<p>The goal was to understand lived realities — not assumptions.</p>
+<h3>5. What key insights emerged from the field research?</h3>
+<h4>1. Income Instability & Delayed Payments</h4>
+<ul>
+<li>Payments frequently delayed</li>
+<li>No written agreements</li>
+<li>Earnings dependent entirely on season</li>
+<li>No digital income records</li>
+</ul>
+<p>Financial unpredictability is normalised.</p>
+<h4>2. Lack of Autonomy, Respect & Dignity</h4>
+<ul>
+<li>Workers seen as replaceable</li>
+<li>Long hours without acknowledgment</li>
+<li>No voice in decisions</li>
+<li>No safe way to question unfair treatment</li>
+</ul>
+<p>Delivery is prioritised over dignity.</p>
+<h4>3. Basic Human Needs Are Overlooked</h4>
+<ul>
+<li>No proper rest areas</li>
+<li>Unstructured meal arrangements</li>
+<li>Lack of safety measures</li>
+<li>No insurance or emergency support</li>
+</ul>
+<p>Worker welfare is treated as optional.</p>
+<h4>4. Informality Is Structural — Not Accidental</h4>
+<p>This is not individual misconduct.<br>It is systemic.</p>
+<ul>
+<li>No contracts</li>
+<li>No payroll structures</li>
+<li>No formal hiring systems</li>
+<li>No dispute redressal mechanisms</li>
+</ul>
+<p>The system runs on trust, relationships, and fear.</p>
+<h4>5. No Social Safety Net</h4>
+<p>Most workers lack:</p>
+<ul>
+<li>Provident Fund (PF)</li>
+<li>Insurance</li>
+<li>Savings buffers</li>
+<li>Documented work history</li>
+</ul>
+<p>When season ends, stability ends.</p>
+<h3>6. What intervention was proposed?</h3>
+<p>To address these systemic gaps, a digital platform was conceptualised:</p>
+<h3>Wedlink</h3>
+<p>A structured, accountability-driven gig platform for the wedding workforce.</p>
+<h3>7. What does Wedlink do?</h3>
+<h4>1. Job Discovery Platform</h4>
+<ul>
+<li>Vendors post verified job listings</li>
+<li>Workers apply transparently</li>
+<li>Hiring becomes structured, not relationship-dependent</li>
+</ul>
+<h4>2. Escrow-Based Payment Assurance</h4>
+<ul>
+<li>Vendors deposit payment in advance</li>
+<li>Funds are securely held</li>
+<li>Payment released upon work completion</li>
+</ul>
+<p>This ensures timely payouts and reduces financial exploitation.</p>
+<h4>3. Digital Work History</h4>
+<p>Workers build:</p>
+<ul>
+<li>Verified job records</li>
+<li>Ratings & reviews</li>
+<li>Skill tags</li>
+<li>Experience documentation</li>
+</ul>
+<p>This increases credibility and bargaining power.</p>
+<h4>4. Dispute Resolution & Helpline</h4>
+<p>A structured support system for:</p>
+<ul>
+<li>Payment disputes</li>
+<li>Work condition complaints</li>
+<li>Harassment reporting</li>
+</ul>
+<p>Support shifts from informal negotiation to institutional protection.</p>
+<h3>8. What systemic shift does Wedlink aim to create?</h3>
+<p>Wedlink aims to move the industry:</p>
+<ul>
+<li>Informal hiring to Structured gig marketplace</li>
+<li>Verbal agreements to Escrow-backed contracts</li>
+<li>Invisible labour to Recognised professionals</li>
+<li>Fear-driven loyalty to Platform-based trust</li>
+<li>Exploitation to Accountability</li>
+</ul>
+<h3>9. What is the larger impact vision?</h3>
+<p>Wedlink is not just a hiring platform.</p>
+<p>It is an attempt to:</p>
+<ul>
+<li>Bring dignity to invisible labour</li>
+<li>Create income continuity</li>
+<li>Introduce financial transparency</li>
+<li>Formalise an informal ecosystem</li>
+<li>Build accountability without removing flexibility</li>
+</ul>
+<p>The goal is to strengthen the <strong>invisible spine</strong> of India’s wedding economy —<br>by giving workers visibility, structure, and security.</p>`
   },
 
 };
@@ -702,8 +870,8 @@ function openM(key) {
     ${p.logo ? `<div class="m-logo-row"><span class="m-logo-badge">${p.logo}</span></div>` : ''}
     <div class="m-tags">${p.tags.map(t => `<span class="m-tag">${t}</span>`).join('')}</div>
     ${p.hero ? `<img class="m-hero-img" src="${p.hero}" alt="">` : ''}
-    <div class="m-summary">${p.summary}</div>
     ${p.b ? `<div class="m-body">${p.b}</div>` : ''}
+    ${p.page ? `<a class="mh-view-btn inline-view-btn" href="${p.page}" target="_blank">View full project details</a>` : ''}
   `;
 
   modalOv.classList.add('open');

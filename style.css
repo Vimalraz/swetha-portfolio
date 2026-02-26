@@ -2501,11 +2501,11 @@ body:has(button:hover) .cr {
   border: 2.5px solid var(--ink);
   border-radius: 5px;
   font-family: var(--fb) !important;
-  font-size: .68rem;
+  font-size: .85rem;
   font-weight: 800;
   letter-spacing: .04em;
-  padding: .38rem .85rem;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, .35);
+  padding: .5rem 1rem;
+  box-shadow: 3px 3px 0 var(--ink);
   transition: all .2s;
   white-space: nowrap;
   text-decoration: none;
@@ -2610,6 +2610,10 @@ body:has(button:hover) .cr {
 /* Keep old m-view-btn hidden (no longer injected, but just in case) */
 .m-view-btn {
   display: none;
+}
+
+.inline-view-btn {
+  margin-top: 1rem;
 }
 
 .m-expand-btn {
@@ -3247,7 +3251,7 @@ body:has(button:hover) .cr {
   }
 
   .mh-view-btn {
-    font-size: .58rem;
-    padding: .3rem .55rem;
+    font-size: .75rem;
+    padding: .45rem .8rem;
   }
 }
