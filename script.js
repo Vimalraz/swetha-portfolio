@@ -71,11 +71,11 @@ const I = {
   vol3: 'images/volunteer1.jpg',
   vol4: 'images/volunteer2.jpg',
 
-  thumb_piracy: 'images/Covers/piracy.png',
-  thumb_behavior: 'images/Covers/behavior.png',
-  thumb_service: 'images/Covers/noodle.png',
-  thumb_shell: 'images/Covers/shell.png',
-  thumb_wedding: 'images/Covers/wedlink.png',
+  thumb_piracy: './images/Covers/piracy.png',
+  thumb_behavior: './images/Covers/behavior.png',
+  thumb_service: './images/Covers/noodle.png',
+  thumb_shell: './images/Covers/shell.png',
+  thumb_wedding: './images/Covers/wedlink.png',
 };
 
 /* ── DOM REFS ── */
