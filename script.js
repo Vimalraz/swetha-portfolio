@@ -74,7 +74,7 @@ const I = {
   thumb_piracy: 'images/Covers/piracy.png',
   thumb_behavior: 'images/Covers/behavior.png',
   thumb_service: 'images/Covers/noodle.png',
-  thumb_shell: 'images/deepfry_shell.jpg',
+  thumb_shell: 'images/Covers/shell.png',
   thumb_wedding: 'images/Covers/wedlink.png',
 };
 
@@ -347,7 +347,7 @@ document.getElementById('flCards').innerHTML = `
     <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Virtual Social Behaviour</span>
     <h3 class="card-t">Piracy in Telegram</h3>
-    <p class="card-d">How social behaviours exist in virtual platforms and how the interface facilitates such behaviour</p>
+    <p class="card-d">Social behaviours online and how interfaces trigger or facilitate them</p>
     <div class="card-arr">Read more →</div>
   </div>
 </div>
@@ -380,7 +380,7 @@ document.getElementById('dfCards').innerHTML = `
     <div class="card-logo-row"><span class="card-logo-placeholder">Shell</span></div>
     <span class="card-cat">User Research</span>
     <h3 class="card-t">UX Research at Shell</h3>
-    <p class="card-d">Strengthening Service Design and UXR practices at enterprise scale</p>
+    <p class="card-d">Strengthening Service Design and UXR practices at<br> enterprise scale for sustainable impact</p>
     <div class="card-arr">Read more →</div>
   </div>
 </div>
