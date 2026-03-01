@@ -28,6 +28,7 @@
 
 :root {
   --ink: #111007;
+  --sh-col: rgba(17, 16, 7, 0.5);
   --ink2: #3A2E18;
   --paper: #FFFCF2;
   --c-home: #FFE033;
@@ -217,13 +218,13 @@ body:has(button:hover) .cr {
   text-transform: uppercase;
   padding: .3rem .65rem;
   border-radius: 3px;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
   transition: .2s;
 }
 
 .mob-btn:hover {
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
 }
 
 /* ── LEFT PANEL ── */
@@ -321,7 +322,7 @@ body:has(button:hover) .cr {
   background: var(--comic-y);
   color: var(--ink);
   border-color: var(--ink);
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
   transform: translate(-1px, -1px);
 }
 
@@ -490,7 +491,7 @@ body:has(button:hover) .cr {
   letter-spacing: .08em;
   text-transform: uppercase;
   padding: .45rem .8rem;
-  box-shadow: 3px 3px 0 rgba(17, 16, 7, .15);
+  box-shadow: 3px 3px 0 rgba(17, 16, 7, 0.95);
   transition: .2s;
 }
 
@@ -504,7 +505,7 @@ body:has(button:hover) .cr {
   background: var(--ink);
   color: var(--comic-y);
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0 rgba(17, 16, 7, .1);
+  box-shadow: 1px 1px 0 rgba(17, 16, 7, 0.95);
 }
 
 /* ── PANEL CONTACT BUTTONS (side by side) ── */
@@ -535,7 +536,7 @@ body:has(button:hover) .cr {
   border-color: rgba(17, 16, 7, .3);
   color: var(--ink);
   transform: translateY(-2px);
-  box-shadow: 0 3px 0 rgba(17, 16, 7, .1);
+  box-shadow: 0 3px 0 rgba(17, 16, 7, 0.5);
 }
 
 .pcb-icon {
@@ -790,11 +791,15 @@ body:has(button:hover) .cr {
 
 /* ── TEXT HIERARCHY ── */
 .sec-eyebrow {
+  display: inline-block;
   font-size: .72rem;
   text-transform: uppercase;
   letter-spacing: .22em;
   font-weight: 800;
-  margin-bottom: .5rem;
+  margin-bottom: .8rem;
+  padding: 0.4em 1em;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
 }
 
 .sec-h {
@@ -802,21 +807,20 @@ body:has(button:hover) .cr {
   font-size: clamp(3.2rem, 5.5vw, 5rem);
   line-height: 1.0;
   margin-bottom: .5rem;
-  -webkit-text-stroke: 2px var(--ink);
-  paint-order: stroke fill;
+  font-weight: normal;
 }
 
 .sec-lead {
-  font-size: .96rem;
+  font-size: 1.2rem;
   font-style: italic;
-  line-height: 1.8;
+  line-height: 1.3;
   max-width: 520px;
   margin-bottom: .5rem;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .sec-body {
-  font-size: .88rem;
+  font-size: 1rem;
   line-height: 1.9;
   max-width: 500px;
   margin-bottom: .5rem;
@@ -1007,8 +1011,7 @@ body:has(button:hover) .cr {
   line-height: .98;
   margin-bottom: .4rem;
   letter-spacing: .04em;
-  -webkit-text-stroke: 2px var(--ink);
-  paint-order: stroke fill;
+  font-weight: normal;
   opacity: 0;
   transform: translateY(24px);
   animation: fadeUp .8s var(--ease) calc(var(--d, .1s)) forwards;
@@ -1027,7 +1030,7 @@ body:has(button:hover) .cr {
 }
 
 .home-desc {
-  font-size: .9rem;
+  font-size: 2.5rem;
   line-height: 1.9;
   color: rgba(15, 10, 0, .55);
   max-width: 440px;
@@ -1055,7 +1058,7 @@ body:has(button:hover) .cr {
   font-family: var(--fhf) !important;
   font-size: 1rem;
   letter-spacing: .08em;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
   transition: all .2s;
   text-transform: uppercase;
   opacity: 0;
@@ -1065,7 +1068,7 @@ body:has(button:hover) .cr {
 
 .scroll-cta:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 6px 6px 0 var(--sh-col, var(--ink));
   background: var(--ink);
   color: #FFE500;
 }
@@ -1126,8 +1129,7 @@ body:has(button:hover) .cr {
   line-height: .95;
   margin-bottom: .4rem;
   letter-spacing: .03em;
-  -webkit-text-stroke: 2px var(--ink);
-  paint-order: stroke fill;
+  font-weight: normal;
   opacity: 0;
   transform: translateY(24px);
   animation: fadeUp .8s var(--ease) calc(var(--d, .1s)) forwards;
@@ -1175,7 +1177,7 @@ body:has(button:hover) .cr {
   font-family: var(--fhf) !important;
   font-size: 1rem;
   letter-spacing: .08em;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
   transition: all .2s;
   text-transform: uppercase;
   opacity: 0;
@@ -1186,7 +1188,7 @@ body:has(button:hover) .cr {
 
 .scroll-cta:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 6px 6px 0 var(--sh-col, var(--ink));
   background: var(--ink);
   color: #FFE500;
 }
@@ -1432,7 +1434,7 @@ body:has(button:hover) .cr {
   padding: .5rem 1.1rem;
   border-radius: 18px;
   border: 3px solid var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
   white-space: nowrap;
   z-index: 6;
   opacity: 0;
@@ -1555,6 +1557,8 @@ body:has(button:hover) .cr {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   width: 100%;
+  max-width: 540px;
+  justify-self: start;
 }
 
 /* Centre: dough mascot */
@@ -1578,11 +1582,12 @@ body:has(button:hover) .cr {
   height: 290px;
 }
 
-/* Right: architecture carousel */
 .sd-right {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   width: 100%;
+  max-width: 540px;
+  justify-self: start;
   display: block;
 }
 
@@ -1651,7 +1656,7 @@ body:has(button:hover) .cr {
   border-top: none;
   border-radius: 0 0 6px 6px;
   background: #FFFFFF;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
   overflow: hidden;
 }
 
@@ -1676,7 +1681,7 @@ body:has(button:hover) .cr {
   border: 2.5px solid var(--ink);
   border-radius: 6px;
   background: #FFFFFF;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
   overflow: hidden;
 }
 
@@ -1763,7 +1768,7 @@ body:has(button:hover) .cr {
   align-items: center;
   justify-content: center;
   transition: .15s;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
   flex-shrink: 0;
 }
 
@@ -1771,7 +1776,7 @@ body:has(button:hover) .cr {
   background: var(--ink);
   color: #FFF;
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, .3);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
 }
 
 .arch-dots {
@@ -1970,7 +1975,7 @@ body:has(button:hover) .cr {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: .05em;
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
   transition: all .2s;
 }
 
@@ -1982,12 +1987,12 @@ body:has(button:hover) .cr {
   background: var(--ink);
   color: #FFFFFF;
   transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, .3);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
 }
 
 .s-sd .pill {
   border-color: var(--a-sd);
-  box-shadow: 3px 3px 0 var(--a-sd);
+  box-shadow: 3px 3px 0 rgba(26, 126, 191, 0.5);
 }
 
 .s-sd .pill-tab:hover {
@@ -2005,7 +2010,7 @@ body:has(button:hover) .cr {
 
 .s-fl .pill {
   border-color: var(--a-fl);
-  box-shadow: 3px 3px 0 var(--a-fl);
+  box-shadow: 3px 3px 0 rgba(200, 106, 0, 0.5);
 }
 
 .s-fl .pill:hover {
@@ -2014,7 +2019,7 @@ body:has(button:hover) .cr {
 
 .s-df .pill {
   border-color: var(--a-df);
-  box-shadow: 3px 3px 0 var(--a-df);
+  box-shadow: 3px 3px 0 rgba(204, 34, 0, 0.5);
 }
 
 .s-df .pill:hover {
@@ -2023,7 +2028,7 @@ body:has(button:hover) .cr {
 
 .s-pl .pill {
   border-color: var(--a-pl);
-  box-shadow: 3px 3px 0 var(--a-pl);
+  box-shadow: 3px 3px 0 rgba(42, 122, 48, 0.5);
 }
 
 .s-pl .pill:hover {
@@ -2061,13 +2066,13 @@ body:has(button:hover) .cr {
   flex-shrink: 0;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 5px 5px 0 var(--ink);
+  box-shadow: 5px 5px 0 var(--sh-col, var(--ink));
   transition: all .22s var(--ease);
 }
 
 .card:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0 var(--ink);
+  box-shadow: 8px 8px 0 var(--sh-col, var(--ink));
 }
 
 .card-img {
@@ -2139,7 +2144,7 @@ body:has(button:hover) .cr {
   border: 2px solid var(--ink);
   padding: .15rem .5rem;
   border-radius: 3px;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
   transition: .2s;
   text-transform: uppercase;
   letter-spacing: .05em;
@@ -2147,7 +2152,7 @@ body:has(button:hover) .cr {
 
 .card:hover .card-arr {
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
 }
 
 .s-fl .card-arr {
@@ -2170,7 +2175,7 @@ body:has(button:hover) .cr {
   border: 3px solid var(--ink);
   border-radius: 6px;
   background: #FFFFFF;
-  box-shadow: 5px 5px 0 var(--ink);
+  box-shadow: 5px 5px 0 var(--sh-col, var(--ink));
   overflow: hidden;
   width: 100%;
 }
@@ -2253,14 +2258,14 @@ body:has(button:hover) .cr {
   transition: .2s;
   font-weight: 800;
   flex-shrink: 0;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
 }
 
 .carousel-btn:hover {
   background: var(--ink);
   color: #FFF;
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, .3);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
 }
 
 .carousel-pause-btn {
@@ -2320,7 +2325,7 @@ body:has(button:hover) .cr {
   background: #FFFFFF;
   border: 3px solid var(--ink);
   border-radius: 6px;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
   color: var(--ink);
   transition: all .22s var(--ease);
   position: relative;
@@ -2329,7 +2334,7 @@ body:has(button:hover) .cr {
 
 .cc:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 6px 6px 0 var(--sh-col, var(--ink));
 }
 
 .cc-icon {
@@ -2438,7 +2443,7 @@ body:has(button:hover) .cr {
   background: #FFFDF2;
   border: 3px solid var(--ink);
   border-radius: 8px;
-  box-shadow: 8px 8px 0 var(--ink);
+  box-shadow: 8px 8px 0 var(--sh-col, var(--ink));
   width: 94%;
   max-width: 720px;
   max-height: 75vh;
@@ -2507,7 +2512,7 @@ body:has(button:hover) .cr {
   font-weight: 800;
   letter-spacing: .04em;
   padding: .5rem 1rem;
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
   transition: all .2s;
   white-space: nowrap;
   text-decoration: none;
@@ -2517,7 +2522,7 @@ body:has(button:hover) .cr {
   background: var(--comic-y);
   color: var(--ink);
   transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, .3);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
 }
 
 /* Close (×) button */
@@ -2533,7 +2538,7 @@ body:has(button:hover) .cr {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
   transition: .2s;
   flex-shrink: 0;
 }
@@ -2542,7 +2547,7 @@ body:has(button:hover) .cr {
   background: var(--ink);
   color: #FFF;
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, .25);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
 }
 
 .modal-inner {
@@ -2733,14 +2738,14 @@ body:has(button:hover) .cr {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
   transition: .2s;
   z-index: 1001;
 }
 
 .ab-close:hover {
   transform: translate(-1px, -1px);
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, .25);
+  box-shadow: 5px 5px 0 var(--sh-col, var(--ink));
 }
 
 .ab-wrap {
@@ -2771,7 +2776,7 @@ body:has(button:hover) .cr {
   object-fit: cover;
   border-radius: 8px;
   border: 4px solid var(--ink);
-  box-shadow: 7px 7px 0 var(--ink);
+  box-shadow: 7px 7px 0 var(--sh-col, var(--ink));
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -2821,7 +2826,7 @@ body:has(button:hover) .cr {
   border: 2.5px solid var(--ink);
   border-radius: 4px;
   background: var(--c-home);
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
   letter-spacing: .04em;
   text-transform: uppercase;
 }
@@ -2902,7 +2907,7 @@ body:has(button:hover) .cr {
   border-radius: 3px;
   transition: .2s;
   font-weight: 700;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
   text-transform: uppercase;
   letter-spacing: .03em;
 }
@@ -2911,7 +2916,7 @@ body:has(button:hover) .cr {
   background: var(--ink);
   color: #FFF;
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, .25);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
 }
 
 .tools {
@@ -2945,7 +2950,7 @@ body:has(button:hover) .cr {
   object-fit: cover;
   border-radius: 6px;
   border: 2.5px solid var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--sh-col, var(--ink));
   opacity: .85;
   cursor: pointer;
   transition: .2s;
@@ -2955,7 +2960,7 @@ body:has(button:hover) .cr {
 .ab-img-row img:hover {
   opacity: 1;
   transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, .25);
+  box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
 }
 
 .ab-p {
@@ -3013,7 +3018,7 @@ body:has(button:hover) .cr {
     border: 3px solid var(--ink);
     border-radius: 8px;
     padding: 2.5rem 1.5rem;
-    box-shadow: 8px 8px 0 var(--ink);
+    box-shadow: 8px 8px 0 var(--sh-col, var(--ink));
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -3054,7 +3059,7 @@ body:has(button:hover) .cr {
     font-size: 1rem;
     padding: 0.7rem 1.5rem;
     cursor: pointer;
-    box-shadow: 4px 4px 0 var(--ink);
+    box-shadow: 4px 4px 0 var(--sh-col, var(--ink));
     transition: 0.2s;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -3063,7 +3068,7 @@ body:has(button:hover) .cr {
   .mw-btn:active,
   .mw-btn:hover {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--ink);
+    box-shadow: 2px 2px 0 var(--sh-col, var(--ink));
     background: var(--ink);
     color: var(--comic-y);
   }
