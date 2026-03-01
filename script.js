@@ -346,7 +346,7 @@ document.getElementById('flCards').innerHTML = `
   <div class="card-body">
     <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Virtual Social Behaviour</span>
-    <h3 class="card-t">Piracy in Telegram</h3>
+    <h3 class="card-t">Piracy the Robinhood of modern era ?</h3>
     <p class="card-d">Social behaviours online and how interfaces trigger or facilitate them</p>
     <div class="card-arr">Read more →</div>
   </div>
@@ -356,7 +356,7 @@ document.getElementById('flCards').innerHTML = `
   <div class="card-body">
     <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Behavioural Design</span>
-    <h3 class="card-t">Clean Hands Among Food Vendors</h3>
+    <h3 class="card-t">Clean hands among food vendors</h3>
     <p class="card-d">Understanding and influencing hygiene behaviour through design interventions</p>
     <div class="card-arr">Read more →</div>
   </div>
@@ -369,7 +369,7 @@ document.getElementById('dfCards').innerHTML = `
   <div class="card-body">
     <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Service Design</span>
-    <h3 class="card-t">Empowering Student Decisions</h3>
+    <h3 class="card-t">Empowering students in informed decision making</h3>
     <p class="card-d">Designing a service ecosystem for clarity in decision-making</p>
     <div class="card-arr">Read more →</div>
   </div>
@@ -379,7 +379,7 @@ document.getElementById('dfCards').innerHTML = `
   <div class="card-body">
     <div class="card-logo-row"><span class="card-logo-placeholder">Shell</span></div>
     <span class="card-cat">User research and UX design</span>
-    <h3 class="card-t">UX Research at Shell</h3>
+    <h3 class="card-t">Improving UXR & Service design practice in Shell.</h3>
     <p class="card-d">Strengthening Service Design and UXR practices at<br> enterprise scale for sustainable impact</p>
     <div class="card-arr">Read more →</div>
   </div>
@@ -387,7 +387,7 @@ document.getElementById('dfCards').innerHTML = `
 <div class="card" onclick="openM('wedding')">
   <img class="card-img" src="${I.thumb_wedding}" alt="">
   <div class="card-body">
-    <div class="card-logo-row"><span class="card-logo-placeholder">WedLink</span></div>
+    <div class="card-logo-row"><span class="card-logo-placeholder">Life in frame</span></div>
     <span class="card-cat">User research and UX design</span>
     <h3 class="card-t">Wedlink: Wedding Workforce</h3>
     <p class="card-d">Technology as a bridge for fair pay and dignity in Indian weddings</p>
@@ -685,7 +685,7 @@ const P = {
   wedding: {
     cat: 'User research and UX design',
     t: 'Wedlink: Reimagining the Wedding Workforce',
-    logo: 'WedLink',
+    logo: 'Life in frame',
     tags: ['Ethnographic Research', 'Service Design', 'Platform Design', 'Stakeholder Mapping', 'Figma Prototype'],
     page: 'wedlink.html',
     b: `<img src="./images/projectmodal/wedlink.png">
