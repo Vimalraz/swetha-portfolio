@@ -669,8 +669,6 @@ body:has(button:hover) .cr {
 
 .fl-top-row .sec-text {
   flex: 1;
-  max-width: none;
-
 }
 
 .fl-visual {
@@ -723,7 +721,6 @@ body:has(button:hover) .cr {
 
 .df-top-row .sec-text {
   flex: 1;
-  max-width: none;
 }
 
 .df-visual {
