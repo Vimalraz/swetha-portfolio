@@ -346,7 +346,7 @@ document.getElementById('flCards').innerHTML = `
   <div class="card-body">
     <div class="card-logo-row"><span class="card-logo-placeholder">NID Gandhinagar</span></div>
     <span class="card-cat">Virtual Social Behaviour</span>
-    <h3 class="card-t">Piracy the Robinhood of modern era ?</h3>
+    <h3 class="card-t">Piracy the Robinhood of <br>modern era ?</h3>
     <p class="card-d">Social behaviours online and how interfaces trigger or facilitate them</p>
     <div class="card-arr">Read more →</div>
   </div>
