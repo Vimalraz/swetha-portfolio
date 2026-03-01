@@ -1557,7 +1557,7 @@ body:has(button:hover) .cr {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   width: 100%;
-  max-width: 540px;
+  max-width: 449px;
   justify-self: start;
 }
 
@@ -1586,7 +1586,7 @@ body:has(button:hover) .cr {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   width: 100%;
-  max-width: 540px;
+  max-width: 449px;
   justify-self: start;
   display: block;
 }
