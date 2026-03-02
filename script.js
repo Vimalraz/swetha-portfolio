@@ -402,7 +402,7 @@ const P = {
     t: 'Piracy in Telegram',
     logo: 'NID Gandhinagar',
     tags: ['Netnography', 'Autonetnography', 'Interviews', 'UX Strategies', 'UI Mockups'],
-    page: 'piracy2.html',
+    page: 'https://swetrials98.wixsite.com/samosa-story/piracy',
     b: `<img src="./images/projectmodal/piracy.png">
 <h3>What was this project about?</h3>
 <p>Understanding digital piracy as a human behavior shaped by platform design, social norms, and access to content.</p>
@@ -427,7 +427,7 @@ const P = {
     t: 'Clean Hand Practice Among Street Food Vendors',
     logo: 'NID Gandhinagar',
     tags: ['Field Study', 'Behaviour Analysis', 'Change Canvas', 'Observations', 'Prototyping'],
-    page: 'behavior2.html',
+    page: 'https://swetrials98.wixsite.com/samosa-story/copy-of-human-behavior',
     b: `<img src="./images/projectmodal/behavior.png">
 <h3>What was this project about?</h3>
 <p>Understanding why street food vendors do not consistently practice clean hand hygiene despite being aware of health risks.</p>
@@ -452,7 +452,7 @@ const P = {
     t: 'Noodle: Empowering Students to Attain Clarity',
     logo: 'NID Gandhinagar',
     tags: ['Service Design', 'Market Need Research', 'Service Blueprint', 'Prototyping', '5W Analysis'],
-    page: 'noodle2.html',
+    page: 'https://swetrials98.wixsite.com/samosa-story/service-design',
     b: `<img src="./images/projectmodal/noodle.png">
 <h3>1. What question did we begin with?</h3>
 <p>We began with a simple yet powerful question:</p>
@@ -575,7 +575,7 @@ const P = {
     t: 'Shell Research & Service Design Hub',
     logo: 'Shell',
     tags: ['Design Maturity', 'Stakeholder Interviews', 'Framework Development', 'Co-creation', 'DesignOps'],
-    page: 'shell.html',
+    page: 'https://swetrials98.wixsite.com/samosa-story/shell-research-service-design-hub',
     b: `<img src="./images/projectmodal/shell.png">
 <h3>1. What sparked the creation of the Shell Research & Service Design Hub?</h3>
 <p>The initiative originated from an internal <strong>Design Maturity Survey</strong> conducted by Shell’s Experience Design (EXD) team.</p>
@@ -687,7 +687,7 @@ const P = {
     t: 'Wedlink: Reimagining the Wedding Workforce',
     logo: 'Life in frame',
     tags: ['Ethnographic Research', 'Service Design', 'Platform Design', 'Stakeholder Mapping', 'Figma Prototype'],
-    page: 'wedlink.html',
+    page: 'https://swetrials98.wixsite.com/samosa-story/event-design',
     b: `<img src="./images/projectmodal/wedlink.png">
 <h3>1. What problem does this project explore?</h3>
 <p>India’s wedding industry is a <strong>billion-dollar ecosystem</strong>, known for glamour and grandeur.</p>
@@ -871,7 +871,7 @@ function openM(key) {
     <div class="m-tags">${p.tags.map(t => `<span class="m-tag">${t}</span>`).join('')}</div>
     ${p.hero ? `<img class="m-hero-img" src="${p.hero}" alt="">` : ''}
     ${p.b ? `<div class="m-body">${p.b}</div>` : ''}
-    ${p.page ? `<a class="mh-view-btn inline-view-btn" href="${p.page}" target="_blank">View full project details</a>` : ''}
+    ${p.page ? `<a class="mh-view-btn inline-view-btn" href="${p.page}" target="_blank" rel="noopener noreferrer">View full project details</a>` : ''}
   `;
 
   modalOv.classList.add('open');
