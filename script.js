@@ -509,9 +509,9 @@ const P = {
 <p>By analysing successful and failed decisions, we observed:</p>
 <p>Every decision silently interacts with:</p>
 <ul>
-<li><strong>Past</strong> – What do I already have?</li>
-<li><strong>Present</strong> – What is influencing me right now?</li>
-<li><strong>Future</strong> – What could happen next?</li>
+<li><strong>Past</strong> - What do I already have?</li>
+<li><strong>Present</strong> - What is influencing me right now?</li>
+<li><strong>Future</strong> - What could happen next?</li>
 </ul>
 <p>This led us to identify three consistent anchors in strong decisions.</p>
 <h3>7. What is the Triangle of Clarity?</h3>
@@ -519,9 +519,9 @@ const P = {
 <h4>The Triangle of Clarity</h4>
 <p>Every strong decision rests on three anchors:</p>
 <ol>
-<li><strong>Drivers</strong> – What is pushing or pulling me toward this choice?</li>
-<li><strong>Information</strong> – What do I know? What am I assuming?</li>
-<li><strong>Consequences</strong> – What are the best and worst outcomes?</li>
+<li><strong>Drivers</strong> - What is pushing or pulling me toward this choice?</li>
+<li><strong>Information</strong> - What do I know? What am I assuming?</li>
+<li><strong>Consequences</strong> - What are the best and worst outcomes?</li>
 </ol>
 <p>We translated this into a guided, conversational Q&amp;A tool to help individuals navigate clarity.</p>
 <h3>8. Did the framework work?</h3>
@@ -559,11 +559,10 @@ const P = {
 <h3>11. What impact are we aiming for?</h3>
 <p>Decisiveness is not about speed.</p>
 <p>It is about <strong>conscious clarity</strong>.</p>
-<p>By moving from:</p>
+<p>By moving from <b>A broad human need</b>:</p>
 <ul>
-<li>A broad human need</li>
-<li>? to a structured clarity framework</li>
-<li>? to a contextual, tailored solution</li>
+<li> To a structured clarity framework</li>
+<li> To a contextual, tailored solution</li>
 </ul>
 <p>We transformed confusion into a navigable process.</p>
 <p>Because real impact doesn’t always come from giving answers.</p>
