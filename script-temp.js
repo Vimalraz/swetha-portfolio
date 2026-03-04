@@ -1,4 +1,4 @@
-﻿/* ==============================================
+/* ==============================================
    SWETHA M | MY SAMOSA STORY - script.js
    ============================================== */
 
@@ -907,7 +907,6 @@ abWrap.innerHTML = `
   </div>
 </div>
 
-<!--
 <div class="ab-section">
   <h3 class="ab-st">Work Experience</h3>
   <div class="tl">
@@ -929,7 +928,6 @@ abWrap.innerHTML = `
     <div class="ds">Worked on enterprise-level UX research initiatives. Led projects involving design systems research and case studies on Google, Microsoft, Intuit, Samsung and Salesforce systems. Contributed to shaping Shell's internal design system strategy.</div>
   </div>
 </div>
--->
 
 <div class="ab-section">
   <h3 class="ab-st">The Skinlanguage (Blog)</h3>
