@@ -2144,9 +2144,9 @@ body:has(button:hover) .cr {
 }
 
 .card-t {
-  font-family: var(--fhf) !important;
-  font-size: 1.5rem;
-  font-weight: normal !important;
+  font-family: var(--fb) !important;
+  font-size: 1.6rem;
+  font-weight: 800 !important;
   color: var(--ink);
   margin-bottom: .2rem;
   line-height: 1.1;
@@ -2582,12 +2582,12 @@ body:has(button:hover) .cr {
 }
 
 .m-title {
-  font-family: var(--fhf) !important;
-  font-size: 1.8rem;
-  font-weight: normal !important;
+  font-family: var(--fb) !important;
+  font-size: 1.95rem;
+  font-weight: 800 !important;
   color: var(--ink);
   margin: .3rem 0;
-  letter-spacing: .05em;
+  letter-spacing: .02em;
 }
 
 .m-logo-row {
@@ -2670,9 +2670,9 @@ body:has(button:hover) .cr {
 }
 
 .m-body h3 {
-  font-family: var(--fhf) !important;
-  font-size: 1.25rem;
-  font-weight: normal !important;
+  font-family: var(--fb) !important;
+  font-size: 1.35rem;
+  font-weight: 800 !important;
   color: var(--ink);
   margin: 1.2rem 0 .4rem;
   letter-spacing: .04em;
