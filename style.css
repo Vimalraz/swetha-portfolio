@@ -2676,7 +2676,16 @@ body:has(button:hover) .cr {
   font-size: 1.35rem;
   font-weight: 800 !important;
   color: var(--ink);
-  margin: 1.2rem 0 .4rem;
+  margin: 2.8rem 0 .8rem;
+  letter-spacing: .04em;
+}
+
+.m-body h4 {
+  font-family: var(--fb) !important;
+  font-size: 1.15rem;
+  font-weight: 800 !important;
+  color: var(--ink);
+  margin: 2.2rem 0 .6rem;
   letter-spacing: .04em;
 }
 
